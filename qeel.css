@@ -1,171 +1,35 @@
-/* ==================================================
-   BANDEAU STATISTIQUE AU-DESSUS DU QEEL
-   ================================================== */
-
-.qeel-stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-
-  width: calc(100% - 10px);
-  max-width: 890px;
-  height: 52px;
-
-  margin: 0 auto 10px;
-  padding: 8px 10px;
-
-  background: var(--transparent-one);
-  border-radius: var(--radius-normal);
-  backdrop-filter: blur(2px);
-  box-sizing: border-box;
-}
-
-.qeel-stat {
-  --stat-line: var(--two);
-
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-
-  min-width: 0;
-  height: 36px;
-  margin: 0;
-  padding: 5px 10px;
-  overflow: hidden;
-
-  color: var(--textColorAccent);
-  background: var(--neutral);
-  border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-mini);
-  box-sizing: border-box;
-}
-
-/* Deuxième statistique : autre ligne */
-.qeel-stat:nth-child(2) {
-  --stat-line: var(--three);
-}
-
-/* Roundel Underground */
-.qeel-stat::before {
-  flex: 0 0 22px;
-  width: 22px;
-  height: 22px;
-  content: "";
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent calc(50% - 2px),
-      var(--stat-line) calc(50% - 2px),
-      var(--stat-line) calc(50% + 2px),
-      transparent calc(50% + 2px)
-    );
-
-  border: 4px solid var(--stat-line);
-  border-radius: 50%;
-  box-sizing: border-box;
-}
-
-/* Ligne de métro après la statistique */
-.qeel-stat::after {
-  flex: 1;
-  min-width: 40px;
-  height: 11px;
-  content: "";
-  opacity: .8;
-
-  background:
-    radial-gradient(
-      circle at 15% 50%,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      var(--neutral) 0 2px,
-      var(--two) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 85% 50%,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    linear-gradient(
-      to right,
-      var(--one),
-      var(--two),
-      var(--three)
-    ) center / 100% 2px no-repeat;
-}
-
-.qeel-stat > span {
-  position: relative;
-  z-index: 1;
-  flex: 0 1 auto;
-  min-width: 0;
-}
-
-.qeel-stat s1 {
-  display: block;
-  margin: 0;
-  padding: 0;
-
-  color: var(--textColorAccent);
-  font-family: var(--font-title);
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: .7px;
-  line-height: 18px;
-
-  text-align: left;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-
-/* ==================================================
-   QEEL
-   ================================================== */
+/* ===== QEEL ===== */
 
 .qeel {
   --qeel-gap: 10px;
-
   display: grid;
   grid-template-columns: 370px minmax(0, 1fr);
   grid-template-rows: 252px;
   align-items: stretch;
   gap: var(--qeel-gap);
-
   width: calc(100% - 10px);
   max-width: 890px;
   margin: 0 auto;
   padding: 10px;
-
   background: var(--transparent-one);
-  border-radius: var(--radius-normal);
   backdrop-filter: blur(2px);
+  border-radius: var(--radius-normal);
   box-sizing: border-box;
 }
 
+/* Ancien divider : inutile et masqué même s'il est resté dans le HTML */
 .qeel-divider {
   display: none !important;
 }
 
 
-/* ==================================================
-   COLONNE GAUCHE
-   ================================================== */
+/* ===== COLONNE GAUCHE ===== */
 
 .qeel-left {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
   grid-template-rows: 210px 32px;
   gap: var(--qeel-gap);
-
   height: 252px;
   min-width: 0;
 }
@@ -200,24 +64,19 @@
   right: 6px;
   bottom: 6px;
   left: 6px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 28px;
   padding: 4px 6px;
-
   color: var(--stay-white);
   background: var(--group-colour);
   border-radius: var(--radius-mini);
-
   font-family: var(--font-title);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: .7px;
   line-height: 11px;
-
   opacity: 0;
   text-align: center;
   text-transform: uppercase;
@@ -242,7 +101,7 @@
 
 .qeel-group.qeel-sd {
   --group-colour: #81628c;
-  --group-image: url("https://64.media.tumblr.com/5d5688a44de0e546aa588f6e17ffc49/cb36f3c89f2e504a-9a/s250x400/81f1ac3775aa2e51f132c3dfb7128be9e9217249.gif");
+  --group-image: url("https://64.media.tumblr.com/5d5688a44de0e546aa588f6e17ffc862/cb36f3c89f2e504a-9a/s250x400/81f1ac3775aa2e51f132c3dfb7128be9e9217249.gif");
 }
 
 .qeel-group.qeel-cs {
@@ -250,93 +109,37 @@
   --group-image: url("https://64.media.tumblr.com/02ab95a2fc760bc9fab1eeb0431f800b/cb36f3c89f2e504a-5b/s250x400/2f029fe6360ee33d2575a84ffabddc17c429b594.gif");
 }
 
-
-/* ==================================================
-   MINI-PLAN DANS L’ANCIEN EMPLACEMENT DES STATS
-   ================================================== */
-
-.qeel-left::after {
+.qeel-stats {
+  display: flex;
   grid-column: 1;
-  grid-row: 2;
-
-  display: block;
-  width: 210px;
-  height: 32px;
-  content: "";
-
-  background:
-    /* Stations de la ligne supérieure */
-    radial-gradient(
-      circle at 10% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 38% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 70% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-
-    /* Stations de la ligne inférieure */
-    radial-gradient(
-      circle at 28% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 61% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 90% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-
-    /* Correspondance centrale */
-    radial-gradient(
-      circle at 49% 16px,
-      var(--neutral) 0 3px,
-      var(--two) 3.5px 6px,
-      transparent 6.5px
-    ),
-
-    /* Rails */
-    linear-gradient(
-      to right,
-      var(--one),
-      var(--two)
-    ) center 9px / 100% 2px no-repeat,
-
-    linear-gradient(
-      to right,
-      var(--two),
-      var(--three)
-    ) center 23px / 100% 2px no-repeat,
-
-    var(--neutral);
-
-  border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-mini);
-  box-sizing: border-box;
+  gap: var(--qeel-gap);
 }
 
+.qeel-stat {
+  display: flex;
+  flex: 0 0 100px;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 4px;
+  color: var(--stay-white);
+  background: linear-gradient(.07turn, var(--one), var(--two));
+  border-radius: var(--radius-mini);
+  box-sizing: border-box;
+  font-size: var(--mini-size);
+  line-height: 16px;
+}
 
-/* ==================================================
-   DERNIER INSCRIT
-   ================================================== */
+.qeel-stat .iconrasu {
+  color: var(--stay-white);
+  font-size: 10px;
+}
+
+.qeel-stat s1 {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+}
 
 .qeel-derinsc {
   grid-column: 2;
@@ -353,15 +156,16 @@
   border-radius: var(--radius-normal);
 }
 
+/* Avatar du dernier inscrit : discret et grisé par défaut */
+
 #lastuser_avatar {
   position: absolute !important;
   inset: 0 !important;
-
   display: block !important;
   width: 100% !important;
   height: 100% !important;
   overflow: hidden;
-
+  display: block;
   filter: none;
   opacity: 1;
 }
@@ -369,43 +173,39 @@
 #lastuser_avatar img {
   position: absolute !important;
   inset: 0 !important;
-
   display: block !important;
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
   max-height: none !important;
-
   margin: 0 !important;
   object-fit: cover !important;
   object-position: center;
-
   filter: grayscale(100%) brightness(.55) contrast(1.08);
   transition: filter .35s ease;
 }
 
+
 .qeel-derinsc-bloc {
   position: absolute;
   inset: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-
   padding: 8px;
   color: var(--stay-white);
   background: rgba(20, 18, 30, .42);
   border-radius: inherit;
-
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-
   opacity: 1;
   text-align: center;
   transition: opacity .35s ease;
 }
+
+/* Petit intitulé au-dessus du pseudo */
 
 .qeel-derinsc-bloc::before {
   content: "just arrived";
@@ -418,6 +218,8 @@
   text-transform: uppercase;
 }
 
+
+/* Au survol : avatar net, cartouche et nom invisibles */
 #last_user:hover #lastuser_avatar,
 #last_user:hover #lastuser_avatar img {
   filter: grayscale(0) brightness(1) contrast(1);
@@ -439,17 +241,14 @@
 }
 
 
-/* ==================================================
-   COLONNE DROITE
-   ================================================== */
+/* ===== COLONNE DROITE ===== */
 
 .qeel-members {
   display: grid;
   grid-column: 2;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) !important;
   grid-template-rows: 21px minmax(0, 1fr) 21px minmax(0, 1fr);
   gap: var(--qeel-gap);
-
   min-width: 0;
   min-height: 0;
   align-self: stretch;
@@ -467,60 +266,17 @@
 .qeel-24h {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-
+  justify-content: center;
   height: 21px;
   min-height: 21px;
   margin: 0;
   padding: 0 10px;
   overflow: hidden;
-
-  color: var(--textColorAccent);
   background: var(--neutral);
   border-radius: var(--radius-mini);
   box-sizing: border-box;
-
   font-size: 14px;
   line-height: 14px;
-  white-space: nowrap;
-}
-
-
-/* Ligne qui prolonge le titre */
-.qeel-online::after,
-.qeel-24h::after {
-  flex: 1;
-  min-width: 45px;
-  height: 9px;
-  content: "";
-  opacity: .85;
-
-  background:
-    radial-gradient(
-      circle at 15% 50%,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      var(--neutral) 0 2px,
-      var(--two) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 85% 50%,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    linear-gradient(
-      to right,
-      var(--one),
-      var(--two),
-      var(--three)
-    ) center / 100% 2px no-repeat;
 }
 
 .qeel-online {
@@ -549,11 +305,9 @@
   padding: 8px;
   overflow-x: hidden;
   overflow-y: auto;
-
   background: var(--neutral);
   border-radius: var(--radius-normal);
   box-sizing: border-box;
-
   font-size: var(--normal-size);
   line-height: 15px;
 }
@@ -593,9 +347,7 @@
 }
 
 
-/* ==================================================
-   SCROLLBARS
-   ================================================== */
+/* Scrollbars */
 
 .qeel-online-bloc::-webkit-scrollbar,
 .qeel-24h-bloc::-webkit-scrollbar {
@@ -614,19 +366,13 @@
 }
 
 
-/* ==================================================
-   RESPONSIVE
-   ================================================== */
+/* Responsive */
 
 @media (max-width: 830px) {
-  .qeel-stats,
-  .qeel {
-    max-width: 420px;
-  }
-
   .qeel {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
+    max-width: 420px;
   }
 
   .qeel-left,
