@@ -1,5 +1,5 @@
 /* ==================================================
-   BANDEAU STATISTIQUE AU-DESSUS DU QEEL
+   BANDEAU STATISTIQUE — REGISTRES LONDONIENS
    ================================================== */
 
 .qeel-stats {
@@ -20,9 +20,9 @@
   box-sizing: border-box;
 }
 
-.qeel-stat {
-  --stat-line: var(--two);
 
+/* Chaque statistique */
+.qeel-stat {
   position: relative;
   display: flex;
   align-items: center;
@@ -41,67 +41,62 @@
   box-sizing: border-box;
 }
 
-/* Deuxième statistique : autre ligne */
-.qeel-stat:nth-child(2) {
-  --stat-line: var(--three);
-}
 
-/* Roundel Underground */
+/* Numéro de registre */
 .qeel-stat::before {
-  flex: 0 0 22px;
-  width: 22px;
+  display: flex;
+  flex: 0 0 25px;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
   height: 22px;
-  content: "";
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent calc(50% - 2px),
-      var(--stat-line) calc(50% - 2px),
-      var(--stat-line) calc(50% + 2px),
-      transparent calc(50% + 2px)
-    );
-
-  border: 4px solid var(--stat-line);
-  border-radius: 50%;
+  color: var(--stay-white);
+  background: var(--gradient-one);
+  border-radius: 2px;
   box-sizing: border-box;
+
+  font-family: var(--font);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 9px;
+  text-align: center;
 }
 
-/* Ligne de métro après la statistique */
+.qeel-stat:first-child::before {
+  content: "01";
+}
+
+.qeel-stat:nth-child(2)::before {
+  content: "02";
+}
+
+
+/* Mention décorative à droite */
 .qeel-stat::after {
   flex: 1;
-  min-width: 40px;
-  height: 11px;
-  content: "";
-  opacity: .8;
+  min-width: 60px;
+  padding-left: 10px;
+  content: "LONDON RECORDS";
 
-  background:
-    radial-gradient(
-      circle at 15% 50%,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      var(--neutral) 0 2px,
-      var(--two) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 85% 50%,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    linear-gradient(
-      to right,
-      var(--one),
-      var(--two),
-      var(--three)
-    ) center / 100% 2px no-repeat;
+  color: var(--contrastLighter);
+  border-left: 1px solid var(--neutralDarker);
+
+  font-family: monospace;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 8px;
+
+  opacity: .72;
+  text-align: right;
+  white-space: nowrap;
 }
 
+
+/* Conteneur du texte dynamique */
 .qeel-stat > span {
   position: relative;
   z-index: 1;
@@ -109,6 +104,8 @@
   min-width: 0;
 }
 
+
+/* Nombre de messages ou de membres */
 .qeel-stat s1 {
   display: block;
   margin: 0;
@@ -126,10 +123,11 @@
   white-space: nowrap;
 }
 
-
 /* ==================================================
-   QEEL
+  QEEL
    ================================================== */
+
+
 
 .qeel {
   --qeel-gap: 10px;
@@ -252,85 +250,63 @@
 
 
 /* ==================================================
-   MINI-PLAN DANS L’ANCIEN EMPLACEMENT DES STATS
+   DÉCORATION — PLAQUE DE COORDONNÉES LONDONIENNE
    ================================================== */
 
 .qeel-left::after {
   grid-column: 1;
   grid-row: 2;
 
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 210px;
   height: 32px;
-  content: "";
+  content: "51.5074° N  ·  0.1278° W";
 
+  color: var(--contrastLight);
   background:
-    /* Stations de la ligne supérieure */
-    radial-gradient(
-      circle at 10% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 38% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 70% 9px,
-      var(--neutral) 0 2px,
-      var(--one) 2.5px 4px,
-      transparent 4.5px
-    ),
-
-    /* Stations de la ligne inférieure */
-    radial-gradient(
-      circle at 28% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 61% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-    radial-gradient(
-      circle at 90% 23px,
-      var(--neutral) 0 2px,
-      var(--three) 2.5px 4px,
-      transparent 4.5px
-    ),
-
-    /* Correspondance centrale */
-    radial-gradient(
-      circle at 49% 16px,
-      var(--neutral) 0 3px,
-      var(--two) 3.5px 6px,
-      transparent 6.5px
-    ),
-
-    /* Rails */
     linear-gradient(
-      to right,
-      var(--one),
-      var(--two)
-    ) center 9px / 100% 2px no-repeat,
-
-    linear-gradient(
-      to right,
-      var(--two),
-      var(--three)
-    ) center 23px / 100% 2px no-repeat,
-
+      90deg,
+      transparent,
+      rgba(255, 255, 255, .08),
+      transparent
+    ),
     var(--neutral);
 
   border: 1px solid var(--neutralDarker);
   border-radius: var(--radius-mini);
   box-sizing: border-box;
+
+  font-family: monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Petit repère géographique */
+.qeel-left {
+  position: relative;
+}
+
+.qeel-left::before {
+  position: absolute;
+  z-index: 2;
+  left: 9px;
+  bottom: 7px;
+
+  width: 6px;
+  height: 6px;
+  content: "";
+
+  background: var(--three);
+  border: 2px solid var(--neutral);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--three);
 }
 
 
