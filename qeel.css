@@ -1057,6 +1057,33 @@ body div.footer-container {
   margin: 0 auto 20px !important;
 }
 
+body .qeel-stats {
+  margin-bottom: 0 !important;
+  border-radius:
+    var(--radius-normal)
+    var(--radius-normal)
+    0
+    0 !important;
+}
+
+body .qeel {
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+}
+
+.qeel + br {
+  display: none !important;
+}
+
+body div.footer-container {
+  margin: 0 auto 20px !important;
+  border-radius:
+    0
+    0
+    var(--radius-normal)
+    var(--radius-normal) !important;
+}
+
 
 /* ==========================================================
    10. WIDGET MÉTÉO DE LONDRES
