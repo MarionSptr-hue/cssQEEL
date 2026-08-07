@@ -1644,22 +1644,6 @@ body .footer-container > .footer-img {
     saturate(.85);
 }
 
-.up-img::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      transparent 35%,
-      rgba(8, 8, 12, .12) 70%,
-      rgba(8, 8, 12, .42) 100%
-    );
-
-  pointer-events: none;
-}
-
 /*
  * Cette règle passe après overflow: hidden !important.
  * Le !important défini plus haut conserve donc la priorité.
