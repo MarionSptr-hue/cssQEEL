@@ -1628,17 +1628,15 @@ body .footer-container > .footer-img {
   overflow: hidden;
 }
 
-.up-img video {
+.up-img iframe {
   display: block !important;
 
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
+  padding: 0 !important;
 
-  background: #000;
-  border: 0;
-  object-fit: cover;
-  object-position: center;
+  border: 0 !important;
 }
 
 /*
