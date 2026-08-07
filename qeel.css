@@ -671,9 +671,6 @@ body .qeel-stats + .qeel {
   margin-top: 0 !important;
 }
 
-body div.footer-container {
-  margin: 0 auto 20px !important;
-}
 
 /* ==========================================================
    06. FOOTER — STRUCTURE GÉNÉRALE
@@ -1052,6 +1049,12 @@ body .footer-container > .footer-img {
 .footer-img:hover img {
   filter: grayscale(0) brightness(.9) contrast(1);
   transform: scale(1.025);
+}
+
+/* --------- AUTRE -------------*/
+
+body div.footer-container {
+  margin: 0 auto 20px !important;
 }
 
 
