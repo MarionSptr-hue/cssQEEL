@@ -1051,39 +1051,6 @@ body .footer-container > .footer-img {
   transform: scale(1.025);
 }
 
-/* --------- AUTRE -------------*/
-
-body div.footer-container {
-  margin: 0 auto 20px !important;
-}
-
-body .qeel-stats {
-  margin-bottom: 0 !important;
-  border-radius:
-    var(--radius-normal)
-    var(--radius-normal)
-    0
-    0 !important;
-}
-
-body .qeel {
-  margin: 0 auto !important;
-  border-radius: 0 !important;
-}
-
-.qeel + br {
-  display: none !important;
-}
-
-body div.footer-container {
-  margin: 0 auto 20px !important;
-  border-radius:
-    0
-    0
-    var(--radius-normal)
-    var(--radius-normal) !important;
-}
-
 
 /* ==========================================================
    10. WIDGET MÉTÉO DE LONDRES
@@ -1791,6 +1758,56 @@ body div.footer-container {
 
 body #main-content > div.footer-container {
   margin: -21px auto 20px !important;
+
+  border-radius:
+    0
+    0
+    var(--radius-normal)
+    var(--radius-normal) !important;
+}
+
+/* --------- AUTRE -------------*/
+
+body div.footer-container {
+  margin: 0 auto 20px !important;
+}
+
+body .qeel-stats {
+  margin-bottom: 0 !important;
+  border-radius:
+    var(--radius-normal)
+    var(--radius-normal)
+    0
+    0 !important;
+}
+
+body .qeel {
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+}
+
+.qeel + br {
+  display: none !important;
+}
+
+body div.footer-container {
+  margin: 0 auto 20px !important;
+  border-radius:
+    0
+    0
+    var(--radius-normal)
+    var(--radius-normal) !important;
+}
+
+
+/* Coller le footer au QEEL */
+
+#main-content > .qeel + br {
+  display: none !important;
+}
+
+body #main-content > div.footer-container {
+  margin: 0 auto 20px !important;
 
   border-radius:
     0
