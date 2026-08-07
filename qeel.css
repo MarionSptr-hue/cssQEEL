@@ -13,6 +13,7 @@
    11. Derniers pré-liens
    12. Description « Mind the Gap »
    13. Alignement uniforme de l’en-tête
+   14. Masquer l'URL de l'avatar dark dans le profil pour switcheroo
    ========================================================== */
 
 
@@ -1694,4 +1695,26 @@ body .footer-container > .footer-img {
 .up vl,
 .up hr {
   vertical-align: middle;
+}
+
+
+
+/* ==========================================================
+   14. MASQUER L'URL DE L'AVATAR DARK DANS LE PROFI
+   ========================================================== */
+
+
+.user_field.field-avatar-mode-sombre {
+    display: none !important;
+}
+
+/* Champ dans les messages */
+.field-avatar-mode-sombre,
+
+/* Champ dans la popup : identifiant Forumactif actuel */
+.profile_field#field_id1,
+
+/* Classe ajoutée par le script */
+.profile-dark-avatar-popup-field {
+    display: none !important;
 }
