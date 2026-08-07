@@ -1624,33 +1624,18 @@ body .footer-container > .footer-img {
 }
 
 .up-img {
-  overflow: hidden;
-}
-
-.up-img {
   position: relative;
-  display: block;
-
-  width: 100%;
-  height: 150px !important;
-  min-height: 150px;
-  max-height: 150px;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
-
-  border-radius: var(--radius-normal);
-  box-sizing: border-box;
 }
 
-.up-img img,
 .up-img video {
-  display: block;
+  display: block !important;
 
-  width: 100%;
+  width: 100% !important;
   height: 100% !important;
-  margin: 0;
+  margin: 0 !important;
 
+  background: #000;
   border: 0;
   object-fit: cover;
   object-position: center;
