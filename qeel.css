@@ -1775,3 +1775,26 @@ body div.footer-container {
 .profile-dark-avatar-popup-field {
     display: none !important;
 }
+
+/* ==========================================================
+   COLLAGE DU QEEL ET DU FOOTER
+   ========================================================== */
+
+#main-content > .qeel + br {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+body #main-content > div.footer-container {
+  margin: -21px auto 20px !important;
+
+  border-radius:
+    0
+    0
+    var(--radius-normal)
+    var(--radius-normal) !important;
+}
