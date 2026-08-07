@@ -557,6 +557,14 @@
     ) center / 100% 2px no-repeat;
 }
 
+.qeel-online,
+.qeel-24h,
+.qeel-online-bloc,
+.qeel-24h-bloc,
+#last_connected {
+  background: transparent !important;
+  border-radius: 0;
+}
 
 /* Positionnement dans la grille */
 
