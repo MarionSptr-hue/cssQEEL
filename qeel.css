@@ -1637,6 +1637,11 @@ body .footer-container > .footer-img {
   padding: 0 !important;
 
   border: 0 !important;
+
+ filter:
+    brightness(.92)
+    contrast(1.06)
+    saturate(.9);
 }
 
 /*
