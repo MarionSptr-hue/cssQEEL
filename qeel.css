@@ -1,6 +1,24 @@
-/* ==================================================
-   BANDEAU STATISTIQUE — REGISTRES LONDONIENS
-   ================================================== */
+/* ==========================================================
+   SOMMAIRE
+   01. Bandeau statistique
+   02. QEEL — Structure générale
+   03. QEEL — Colonne gauche et groupes
+   04. QEEL — Dernier inscrit
+   05. QEEL — Membres connectés
+   06. Footer — Structure générale
+   07. Footer — Liens
+   08. Footer — Crédits
+   09. Footer — Image
+   10. Widget météo de Londres
+   11. Derniers pré-liens
+   12. Description « Mind the Gap »
+   13. Alignement uniforme de l’en-tête
+   ========================================================== */
+
+
+/* ==========================================================
+   01. BANDEAU STATISTIQUE — REGISTRES LONDONIENS
+   ========================================================== */
 
 .qeel-stats {
   display: grid;
@@ -21,7 +39,8 @@
 }
 
 
-/* Chaque statistique */
+/* Bloc individuel d’une statistique */
+
 .qeel-stat {
   position: relative;
   display: flex;
@@ -42,7 +61,8 @@
 }
 
 
-/* Numéro de registre */
+/* Numéro du registre */
+
 .qeel-stat::before {
   display: flex;
   flex: 0 0 25px;
@@ -75,6 +95,7 @@
 
 
 /* Mention décorative à droite */
+
 .qeel-stat::after {
   flex: 1;
   min-width: 60px;
@@ -97,6 +118,7 @@
 
 
 /* Conteneur du texte dynamique */
+
 .qeel-stat > span {
   position: relative;
   z-index: 1;
@@ -106,6 +128,7 @@
 
 
 /* Nombre de messages ou de membres */
+
 .qeel-stat s1 {
   display: block;
   margin: 0;
@@ -123,11 +146,10 @@
   white-space: nowrap;
 }
 
-/* ==================================================
-  QEEL
-   ================================================== */
 
-
+/* ==========================================================
+   02. QEEL — STRUCTURE GÉNÉRALE
+   ========================================================== */
 
 .qeel {
   --qeel-gap: 10px;
@@ -154,11 +176,13 @@
 }
 
 
-/* ==================================================
-   COLONNE GAUCHE
-   ================================================== */
+/* ==========================================================
+   03. QEEL — COLONNE GAUCHE ET GROUPES
+   ========================================================== */
 
 .qeel-left {
+  position: relative;
+
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
   grid-template-rows: 210px 32px;
@@ -167,6 +191,9 @@
   height: 252px;
   min-width: 0;
 }
+
+
+/* Grille des groupes */
 
 .qeel-groups {
   display: grid;
@@ -178,19 +205,25 @@
 .qeel-group {
   position: relative;
   display: block;
+
   width: 100px;
   height: 100px;
   overflow: hidden;
+
   border-radius: var(--radius-normal);
 }
 
 .qeel-group::before {
   position: absolute;
   inset: 0;
+
   content: "";
   background: center / cover no-repeat var(--group-image);
   filter: grayscale(100%);
 }
+
+
+/* Nom du groupe affiché au survol */
 
 .qeel-group span {
   position: absolute;
@@ -228,6 +261,9 @@
   transform: translateY(0);
 }
 
+
+/* Couleurs et images des groupes */
+
 .qeel-group.qeel-wf {
   --group-colour: #b5673f;
   --group-image: url("https://64.media.tumblr.com/093b0ef93ab8b531e219b3352862f31c/cb36f3c89f2e504a-e6/s250x400/bf579d460dd7291ffb4a0e1269efd8d4160dd898.gif");
@@ -249,9 +285,7 @@
 }
 
 
-/* ==================================================
-   DÉCORATION — PLAQUE DE COORDONNÉES LONDONIENNE
-   ================================================== */
+/* Plaque de coordonnées londoniennes */
 
 .qeel-left::after {
   grid-column: 1;
@@ -288,16 +322,14 @@
   text-transform: uppercase;
 }
 
+
 /* Petit repère géographique */
-.qeel-left {
-  position: relative;
-}
 
 .qeel-left::before {
   position: absolute;
   z-index: 2;
-  left: 9px;
   bottom: 11px;
+  left: 9px;
 
   width: 6px;
   height: 6px;
@@ -310,24 +342,30 @@
 }
 
 
-/* ==================================================
-   DERNIER INSCRIT
-   ================================================== */
+/* ==========================================================
+   04. QEEL — DERNIER INSCRIT
+   ========================================================== */
 
 .qeel-derinsc {
   grid-column: 2;
   grid-row: 1 / span 2;
+
   min-width: 0;
   min-height: 0;
 }
 
 #last_user {
   position: relative;
+
   width: 100%;
   height: 100%;
   overflow: hidden;
+
   border-radius: var(--radius-normal);
 }
+
+
+/* Avatar du dernier inscrit */
 
 #lastuser_avatar {
   position: absolute !important;
@@ -353,12 +391,16 @@
   max-height: none !important;
 
   margin: 0 !important;
+
   object-fit: cover !important;
   object-position: center;
-
   filter: grayscale(100%) brightness(.55) contrast(1.08);
+
   transition: filter .35s ease;
 }
+
+
+/* Calque placé sur l’avatar */
 
 .qeel-derinsc-bloc {
   position: absolute;
@@ -371,6 +413,7 @@
   gap: 5px;
 
   padding: 8px;
+
   color: var(--stay-white);
   background: rgba(20, 18, 30, .42);
   border-radius: inherit;
@@ -385,6 +428,7 @@
 
 .qeel-derinsc-bloc::before {
   content: "just arrived";
+
   color: var(--stay-white);
   font-family: var(--font-title);
   font-size: 8px;
@@ -393,6 +437,9 @@
   line-height: 10px;
   text-transform: uppercase;
 }
+
+
+/* Effets au survol */
 
 #last_user:hover #lastuser_avatar,
 #last_user:hover #lastuser_avatar img {
@@ -403,6 +450,9 @@
 #last_user:hover .qeel-derinsc-bloc {
   opacity: 0;
 }
+
+
+/* Pseudonyme du dernier inscrit */
 
 #newest_user a {
   color: var(--stay-white) !important;
@@ -415,15 +465,17 @@
 }
 
 
-/* ==================================================
-   COLONNE DROITE
-   ================================================== */
+/* ==========================================================
+   05. QEEL — MEMBRES CONNECTÉS
+   ========================================================== */
 
 .qeel-members {
   display: grid;
   grid-column: 2;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 21px minmax(0, 1fr) 21px minmax(0, 1fr);
+  grid-template-rows:
+    21px minmax(0, 1fr)
+    21px minmax(0, 1fr);
   gap: var(--qeel-gap);
 
   min-width: 0;
@@ -438,6 +490,9 @@
 #last_connected {
   grid-column: 1 !important;
 }
+
+
+/* Titres des listes */
 
 .qeel-online,
 .qeel-24h {
@@ -463,15 +518,17 @@
 }
 
 
-/* Ligne qui prolonge le titre */
+/* Ligne décorative prolongeant les titres */
+
 .qeel-online::after,
 .qeel-24h::after {
   flex: 1;
+
   min-width: 45px;
   height: 9px;
   content: "";
-  opacity: .85;
 
+  opacity: .85;
   background:
     radial-gradient(
       circle at 15% 50%,
@@ -499,6 +556,9 @@
     ) center / 100% 2px no-repeat;
 }
 
+
+/* Positionnement dans la grille */
+
 .qeel-online {
   grid-row: 1;
 }
@@ -513,11 +573,15 @@
 
 .qeel-24h-bloc,
 #last_connected {
-  grid-row: 4;
   position: static !important;
+  grid-row: 4;
+
   width: auto !important;
   margin: 0 !important;
 }
+
+
+/* Contenu des listes */
 
 .qeel-online-bloc,
 .qeel-24h-bloc {
@@ -548,6 +612,7 @@
 .qeel-members .separator {
   height: 1px;
   margin: 5px 0;
+
   background: linear-gradient(.07turn, var(--one), var(--two));
 }
 
@@ -569,9 +634,7 @@
 }
 
 
-/* ==================================================
-   SCROLLBARS
-   ================================================== */
+/* Scrollbars du QEEL */
 
 .qeel-online-bloc::-webkit-scrollbar,
 .qeel-24h-bloc::-webkit-scrollbar {
@@ -590,24 +653,1050 @@
 }
 
 
-/* ==================================================
-   RESPONSIVE
-   ================================================== */
+/* ==========================================================
+   06. FOOTER — STRUCTURE GÉNÉRALE
+   ========================================================== */
 
-@media (max-width: 830px) {
-  .qeel-stats,
-  .qeel {
-    max-width: 420px;
+.footer-container {
+  display: grid;
+  grid-template-columns: 215px 430px 215px;
+  grid-template-rows: repeat(3, 27px);
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+  padding: 15px 0;
+
+  background: var(--transparent-two);
+  border-radius: var(--radius-normal);
+}
+
+
+/* Correction forcée de la grille du footer */
+
+body div.footer-container {
+  position: relative !important;
+  display: grid !important;
+
+  grid-template-columns: 215px 430px 215px !important;
+  grid-template-rows: repeat(3, 27px) !important;
+  grid-auto-flow: row !important;
+
+  align-items: stretch !important;
+  justify-content: center !important;
+  align-content: center !important;
+
+  column-gap: 10px !important;
+  row-gap: 10px !important;
+
+  width: 890px !important;
+  max-width: 890px !important;
+  min-height: 131px !important;
+
+  margin: 0 auto 20px !important;
+  padding: 15px 5px !important;
+
+  float: none !important;
+  clear: both !important;
+
+  background: var(--transparent-two);
+  border-radius: var(--radius-normal);
+  box-sizing: border-box !important;
+}
+
+
+/* Placement des trois colonnes */
+
+body .footer-container > .footer-liens {
+  grid-column: 1 !important;
+  grid-row: 1 / 4 !important;
+
+  width: 215px !important;
+  height: 101px !important;
+  margin: 0 !important;
+}
+
+body .footer-container > .footer-credits {
+  grid-column: 2 !important;
+  grid-row: 1 / 4 !important;
+
+  width: 430px !important;
+  height: 101px !important;
+  margin: 0 !important;
+}
+
+body .footer-container > .footer-img {
+  grid-column: 3 !important;
+  grid-row: 1 / 4 !important;
+
+  width: 215px !important;
+  height: 101px !important;
+  margin: 0 !important;
+}
+
+
+/* ==========================================================
+   07. FOOTER — LIENS ET PLAQUES ADMINISTRATIVES
+   ========================================================== */
+
+.footer-liens {
+  z-index: 999;
+
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  grid-template-columns: 215px;
+  grid-template-rows: repeat(3, 27px);
+  gap: 10px;
+
+  width: 215px;
+  height: 101px;
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+  border-radius: var(--radius-normal);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+/* Neutralisation des anciens styles Forumactif */
+
+.footer-liens .pa-liens-a,
+.footer-a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 215px;
+  height: 27px;
+  min-height: 27px;
+  margin: 0;
+  padding: 0 35px;
+  overflow: hidden;
+
+  color: var(--textColorAccent) !important;
+  background: var(--neutral) !important;
+  border: 1px solid var(--neutralDarker);
+  border-radius: var(--radius-mini);
+  box-sizing: border-box;
+
+  font-family: var(--font);
+  font-size: 9px !important;
+  font-weight: 700;
+  letter-spacing: .7px;
+  line-height: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease;
+}
+
+
+/* Numéro de registre placé à gauche */
+
+.footer-a::before {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  content: attr(data-code);
+
+  color: var(--stay-white);
+  background: var(--gradient-one);
+  border-radius: 2px;
+
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+/* Code londonien placé à droite */
+
+.footer-a::after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  content: "LDN";
+
+  color: var(--contrastLighter);
+  font-family: monospace;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: .65;
+}
+
+
+/* Effets au survol */
+
+.footer-liens .footer-a:hover {
+  color: var(--accentClr) !important;
+  background: var(--neutralTwo) !important;
+  border-color: var(--two);
+}
+
+.footer-liens .footer-a:hover::before {
+  filter: brightness(1.08);
+}
+
+
+/* Ancien conteneur éventuel */
+
+.footer-liens-autres {
+  display: none;
+}
+
+
+/* ==========================================================
+   08. FOOTER — CRÉDITS ET FICHE D’ARCHIVES
+   ========================================================== */
+
+.footer-credits {
+  grid-column: 2;
+  grid-row: 1 / 4;
+
+  width: 430px;
+  height: 101px;
+  padding: 8px 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  color: var(--textColor);
+  background: var(--neutral);
+  border: 1px solid var(--neutralDarker);
+  border-radius: var(--radius-normal);
+  box-sizing: border-box;
+
+  font-size: var(--normal-size);
+  line-height: 15px;
+  text-align: justify;
+}
+
+
+/* Cartouche supérieur */
+
+.footer-credits-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 17px;
+  margin: 0 0 7px;
+  padding: 0 7px;
+
+  color: var(--stay-white);
+  background: var(--gradient-one);
+  border-radius: 2px;
+
+  font-family: monospace;
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 17px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* Numéro de dossier */
+
+.footer-credits-title::after {
+  content: "REF. 51/07";
+
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, .35);
+  opacity: .8;
+}
+
+
+/* Texte des crédits */
+
+.footer-credits-text {
+  font-size: var(--normal-size);
+  line-height: 15px;
+}
+
+
+/* Scrollbar des crédits */
+
+.footer-credits::-webkit-scrollbar {
+  width: 3px;
+}
+
+.footer-credits::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--one), var(--two), var(--three));
+  border-radius: 3px;
+}
+
+.footer-credits::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* ==========================================================
+   09. FOOTER — IMAGE ET PHOTOGRAPHIE URBAINE
+   ========================================================== */
+
+.footer-img {
+  position: relative;
+
+  grid-column: 3;
+  grid-row: 1 / 4;
+
+  width: 215px;
+  height: 101px;
+  overflow: hidden;
+
+  background: var(--neutral);
+  border: 1px solid var(--neutralDarker);
+  border-radius: var(--radius-normal);
+  box-sizing: border-box;
+}
+
+.footer-img img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(75%) brightness(.72) contrast(1.05);
+
+  transition: filter .35s ease, transform .35s ease;
+}
+
+
+/* Légende placée sur la photographie */
+
+.footer-img::after {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  left: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 18px;
+  padding: 2px 6px;
+  content: "LONDON · 51.5074° N";
+
+  color: var(--stay-white);
+  background: rgba(20, 18, 30, .58);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 2px;
+  backdrop-filter: blur(3px);
+
+  font-family: monospace;
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 8px;
+  text-align: center;
+  text-transform: uppercase;
+
+  pointer-events: none;
+}
+
+
+/* Retour des couleurs au survol */
+
+.footer-img:hover img {
+  filter: grayscale(0) brightness(.9) contrast(1);
+  transform: scale(1.025);
+}
+
+
+/* ==========================================================
+   10. WIDGET MÉTÉO DE LONDRES
+   ========================================================== */
+
+.up-notepad {
+  min-width: 0;
+  height: 150px;
+  max-height: 150px;
+}
+
+.london-widget {
+  width: 100%;
+  height: 150px;
+  max-height: 150px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px 10px;
+
+  color: var(--textColor);
+  background: var(--transparent-two);
+  border: var(--border);
+  border-radius: var(--radius-normal);
+
+  font-family: var(--font);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.london-widget *,
+.london-widget *::before,
+.london-widget *::after {
+  box-sizing: border-box;
+}
+
+
+/* Éléments utilisant une disposition flexible */
+
+.london-widget__head,
+.london-status > div,
+.london-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+
+/* En-tête du widget */
+
+.london-widget__head {
+  height: 15px;
+  padding-bottom: 5px;
+
+  color: var(--contrastLight);
+  border-bottom: 1px solid var(--neutralDarker);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+
+.london-widget__head i {
+  color: var(--accentClr);
+}
+
+
+/* Météo principale */
+
+.london-weather {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  height: 34px;
+  padding: 6px 0 4px;
+}
+
+.london-weather__icon {
+  width: 25px;
+
+  color: var(--accentClr);
+  font-size: 19px;
+  text-align: center;
+}
+
+.london-weather strong,
+.london-weather span {
+  display: block;
+}
+
+.london-weather strong {
+  max-width: 145px;
+  overflow: hidden;
+
+  color: var(--textColorAccent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .8px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.london-weather span {
+  margin-top: 2px;
+
+  color: var(--contrastLight);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+
+/* Données météorologiques secondaires */
+
+.london-data {
+  height: 17px;
+  padding-bottom: 5px;
+
+  color: var(--textColor);
+  border-bottom: 1px solid var(--neutralDarker);
+
+  font-size: 10px;
+  letter-spacing: .3px;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.london-data b,
+.london-status b {
+  color: var(--contrastLight);
+  font-weight: 600;
+}
+
+
+/* État du réseau londonien */
+
+.london-status {
+  padding-top: 5px;
+
+  font-size: 9px;
+  letter-spacing: .4px;
+}
+
+.london-status p {
+  margin: 0 0 3px;
+
+  color: var(--accentClr);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.london-status > div {
+  min-height: 11px;
+  padding: 1px 0;
+}
+
+.london-status b {
+  max-width: 115px;
+  overflow: hidden;
+
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* Couleurs des états */
+
+.london-status .is-good {
+  color: #719469;
+}
+
+#london-tube.is-alert {
+  color: #b56a72;
+}
+
+
+/* Heure de la dernière mise à jour */
+
+#london-updated {
+  display: block;
+  margin-top: 3px;
+
+  color: var(--contrastLighter);
+  font-size: 8px;
+  letter-spacing: .3px;
+  line-height: 1;
+  text-align: right;
+  text-transform: none;
+}
+
+
+/* Adaptation aux très petits écrans */
+
+@media screen and (max-width: 600px) {
+  .london-widget {
+    padding-right: 8px;
+    padding-left: 8px;
   }
 
-  .qeel {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto;
+  .london-data,
+  .london-status {
+    font-size: 7px;
   }
 
-  .qeel-left,
-  .qeel-members {
-    grid-column: 1;
-    height: 252px;
+  .london-weather strong {
+    max-width: 110px;
   }
+
+  .london-status b {
+    max-width: 95px;
+  }
+}
+
+
+/* ==========================================================
+   11. DERNIERS PRÉ-LIENS
+   ========================================================== */
+
+.pa-preliens {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+
+  min-width: 0;
+}
+
+.pa-preliens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  height: 216px;
+  margin-top: 10px;
+  padding-right: 3px;
+  overflow-y: auto;
+}
+
+
+/* Ligne individuelle */
+
+.pa-prelien-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  min-height: 29px;
+  padding: 4px 7px;
+
+  background: var(--neutral);
+  border-radius: var(--radius-normal);
+}
+
+
+/* Zone ou catégorie */
+
+.pa-prelien-zone {
+  flex: 0 0 82px;
+  overflow: hidden;
+
+  padding: 3px 5px;
+
+  color: var(--stay-white);
+  background: var(--gradient-one);
+  border-radius: var(--radius-mini);
+
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+/* Titre du pré-lien */
+
+.pa-prelien-title {
+  min-width: 0;
+  overflow: hidden;
+
+  color: var(--textColorAccent);
+  font-size: var(--mini-size) !important;
+  line-height: 13px !important;
+
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pa-prelien-title:hover {
+  color: var(--accentClr) !important;
+}
+
+
+/* Messages de chargement et d’erreur */
+
+.pa-preliens-loading,
+.pa-preliens-error {
+  padding: 10px;
+
+  color: var(--contrastLighter);
+  font-size: var(--mini-size);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   12. DESCRIPTION « MIND THE GAP »
+   ========================================================== */
+
+.up-desc {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 150px !important;
+  min-height: 150px;
+  max-height: 150px;
+  padding: 10px 14px !important;
+  overflow: hidden !important;
+
+  color: var(--textColor);
+  background-color: transparent;
+  background-image:
+    linear-gradient(90deg, var(--one), var(--two), var(--three));
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 3px;
+
+  border: var(--border);
+  border-radius: var(--radius-normal);
+  box-shadow: none;
+
+  font-size: 13px;
+  line-height: 14px;
+  text-align: justify;
+}
+
+
+/* Suppression des sauts et décorations hérités */
+
+.up-desc > br {
+  display: none;
+}
+
+.up-desc::before,
+.up-desc::after {
+  content: none;
+}
+
+
+/* Ligne de station */
+
+.up-titre {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 22px;
+  margin: 0 0 6px;
+
+  white-space: nowrap;
+}
+
+
+/* Mini-roundel : anneau et barre centrale */
+
+.up-titre::before {
+  flex: 0 0 22px;
+
+  width: 20px;
+  height: 20px;
+  content: "";
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 1px),
+      var(--two) calc(50% - 1px),
+      var(--two) calc(50% + 1px),
+      transparent calc(50% + 1px)
+    );
+
+  border: 4px solid var(--two);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px var(--neutral),
+    0 2px 7px rgba(0, 0, 0, .08);
+}
+
+
+/* Mini-plan de métro */
+
+.up-titre::after {
+  flex: 1;
+
+  min-width: 58px;
+  height: 24px;
+  content: "";
+
+  opacity: .85;
+  background:
+    /* Stations — ligne 1 */
+    radial-gradient(
+      circle at 12% 4px,
+      var(--one) 0 2px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle at 52% 4px,
+      var(--one) 0 2px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle at 88% 4px,
+      var(--one) 0 2px,
+      transparent 2.4px
+    ),
+
+    /* Stations — ligne 2 */
+    radial-gradient(
+      circle at 28% 12px,
+      var(--two) 0 2px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle at 68% 12px,
+      var(--two) 0 2px,
+      transparent 2.4px
+    ),
+
+    /* Stations — ligne 3 */
+    radial-gradient(
+      circle at 12% 20px,
+      var(--three) 0 2px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle at 52% 20px,
+      var(--three) 0 2px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle at 88% 20px,
+      var(--three) 0 2px,
+      transparent 2.4px
+    ),
+
+    /* Rails */
+    linear-gradient(var(--one), var(--one))
+      center 4px / 100% 1px no-repeat,
+    linear-gradient(var(--two), var(--two))
+      center 12px / 100% 1px no-repeat,
+    linear-gradient(var(--three), var(--three))
+      center 20px / 100% 1px no-repeat;
+}
+
+
+/* Titre principal */
+
+.up-titre vl {
+  display: inline-block;
+
+  color: var(--textColorAccent);
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  line-height: 18px;
+}
+
+
+/* Sous-titre de présentation */
+
+.up-desc b2 {
+  display: block;
+  margin: 0 0 6px;
+
+  color: var(--accentClr);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .45px;
+  line-height: 12px;
+  text-transform: none;
+}
+
+.up-desc i1 {
+  color: var(--textColorAccent);
+  font-size: 11px;
+  font-style: italic;
+}
+
+
+/* Neutralisation des anciens fonds du titre */
+
+.up-titre,
+.up-titre vl {
+  color: var(--textColorAccent) !important;
+  background: none !important;
+}
+
+
+/* Forçage de la visibilité du titre */
+
+.up-desc .up-titre > vl {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  color: var(--contrast) !important;
+  background: transparent !important;
+  -webkit-text-fill-color: var(--contrast);
+
+  font-family: var(--font-title) !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  line-height: 18px !important;
+
+  text-shadow: 0 1px 0 var(--contrast);
+}
+
+
+/* ==========================================================
+   13. ALIGNEMENT UNIFORME DE L’EN-TÊTE
+   ========================================================== */
+
+.up {
+  grid-template-rows: 25px 150px 30px;
+  align-items: stretch;
+}
+
+
+/* Ligne supérieure */
+
+.up-liens {
+  height: 25px;
+  align-items: stretch;
+}
+
+.up-bbc,
+.up-recensement,
+.up-questions,
+.up-balises {
+  height: 25px;
+  align-items: stretch;
+}
+
+.up-liens .iconrasu,
+.up-mini-bloc {
+  height: 25px;
+  min-height: 25px;
+}
+
+.up-mini-bloc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  line-height: 1;
+}
+
+.up-mini-bloc a,
+.up-mini-bloc s1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  line-height: 1;
+}
+
+
+/* Ligne centrale */
+
+.up-desc,
+.up-img,
+.up-notepad {
+  width: 100%;
+  height: 150px !important;
+  min-height: 150px;
+  max-height: 150px;
+  margin: 0;
+  align-self: stretch;
+}
+
+.up-img {
+  overflow: hidden;
+}
+
+.up-img img {
+  display: block;
+
+  width: 100%;
+  height: 100% !important;
+  margin: 0;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/*
+ * Cette règle passe après overflow: hidden !important.
+ * Le !important défini plus haut conserve donc la priorité.
+ */
+.up-desc {
+  overflow: auto;
+}
+
+.london-widget {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+
+/* Ligne inférieure */
+
+.up-last-line {
+  height: 30px;
+  align-items: stretch;
+}
+
+.up-discord,
+.up-topsites,
+.up-separator {
+  height: 30px;
+  margin: 0;
+
+  align-self: stretch;
+  align-items: center;
+}
+
+.up-discord > div,
+.up-topsites > div {
+  height: 30px;
+  min-height: 30px;
+  margin: 0;
+}
+
+.up-last-line a.btn {
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+
+  align-self: stretch;
+}
+
+
+/* Neutralisation des marges typographiques imprévues */
+
+.up s1,
+.up vl,
+.up hr {
+  vertical-align: middle;
 }
