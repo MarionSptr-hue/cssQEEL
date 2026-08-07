@@ -718,7 +718,7 @@ body div.footer-container {
   float: none !important;
   clear: both !important;
 
-  background: var(--transparent-two);
+  background: var(--transparent-one);
   border-radius: var(--radius-normal);
   box-sizing: border-box !important;
 }
