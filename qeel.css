@@ -477,7 +477,7 @@
   grid-template-rows:
     21px minmax(0, 1fr)
     21px minmax(0, 1fr);
-  gap: var(--qeel-gap);
+  gap: 0;
 
   min-width: 0;
   min-height: 0;
