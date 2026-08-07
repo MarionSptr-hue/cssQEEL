@@ -661,6 +661,15 @@
   background: transparent;
 }
 
+/* --------- AUTRE -------------*/
+
+body .qeel-stats {
+  margin-bottom: 0 !important;
+}
+
+body .qeel-stats + .qeel {
+  margin-top: 0 !important;
+}
 
 /* ==========================================================
    06. FOOTER — STRUCTURE GÉNÉRALE
