@@ -301,7 +301,7 @@
   content: "51.5074° N  ·  0.1278° W";
 
   color: var(--contrastLight);
-  background:
+  /* background:
     linear-gradient(
       90deg,
       transparent,
@@ -311,7 +311,7 @@
     var(--neutral);
 
   border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-mini);
+  border-radius: var(--radius-mini);*/
   box-sizing: border-box;
 
   font-family: monospace;
