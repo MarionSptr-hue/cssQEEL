@@ -1639,9 +1639,25 @@ body .footer-container > .footer-img {
   border: 0 !important;
 
  filter:
-    brightness(.92)
-    contrast(1.06)
-    saturate(.9);
+    brightness(.9)
+    contrast(1)
+    saturate(.85);
+}
+
+.up-img::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(8, 8, 12, .12) 70%,
+      rgba(8, 8, 12, .42) 100%
+    );
+
+  pointer-events: none;
 }
 
 /*
