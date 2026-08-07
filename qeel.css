@@ -671,6 +671,10 @@ body .qeel-stats + .qeel {
   margin-top: 0 !important;
 }
 
+body div.footer-container {
+  margin: 0 auto 20px !important;
+}
+
 /* ==========================================================
    06. FOOTER — STRUCTURE GÉNÉRALE
    ========================================================== */
