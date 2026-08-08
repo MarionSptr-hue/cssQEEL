@@ -2213,8 +2213,7 @@ html[data-forum-layout="columns"] {
    ========================================================= */
 
 /* =========================================================
-   SWITCH DE DISPOSITION
-   Placé entre le dark/light et les personnages
+   SWITCH DE DISPOSITION — ICÔNE SEULE
    ========================================================= */
 
 .switcheroo__squircles > .forum-layout-toggle {
@@ -2232,14 +2231,25 @@ html[data-forum-layout="columns"] {
 
     color: var(--contrastLight) !important;
 
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
     box-shadow: none !important;
 
+    appearance: none !important;
     cursor: pointer !important;
-    line-height: 1 !important;
-    vertical-align: middle !important;
 
     position: relative !important;
     inset: auto !important;
+
+    line-height: 1 !important;
+    vertical-align: middle !important;
+
+    transition: color .3s ease !important;
 }
 
 
@@ -2260,7 +2270,7 @@ html[data-forum-layout="columns"] {
 }
 
 
-/* Mode deux colonnes : lignes verticales */
+/* Mode deux colonnes : icône verticale */
 html[data-forum-layout="columns"]
 .switcheroo__squircles
 > .forum-layout-toggle
@@ -2269,7 +2279,7 @@ html[data-forum-layout="columns"]
 }
 
 
-/* Mode normal : lignes horizontales */
+/* Mode normal : icône horizontale */
 html[data-forum-layout="normal"]
 .switcheroo__squircles
 > .forum-layout-toggle
@@ -2283,6 +2293,12 @@ html[data-forum-layout="normal"]
 > .forum-layout-toggle:hover {
     color: var(--accentClr) !important;
 
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
 }
 
 
@@ -2290,9 +2306,26 @@ html[data-forum-layout="normal"]
 .switcheroo__squircles
 > .forum-layout-toggle[aria-pressed="true"] {
     color: var(--stay-white) !important;
-   
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
 }
 
+
+/* Suppression de l'outline ajouté au clic */
+.switcheroo__squircles
+> .forum-layout-toggle:focus,
+.switcheroo__squircles
+> .forum-layout-toggle:active {
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
 /* =========================================================
    MODE NORMAL
    ========================================================= */
