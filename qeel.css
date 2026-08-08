@@ -14,6 +14,7 @@
    12. Description « Mind the Gap »
    13. Alignement uniforme de l’en-tête
    14. Masquer l'URL de l'avatar dark dans le profil pour switcheroo
+   15. Disposition du forum a deux colonnes
    ========================================================== */
 
 
@@ -1826,4 +1827,149 @@ html body #main-content .footer-container {
   background: var(--qeel-background) !important;
   backdrop-filter: blur(2px) !important;
   -webkit-backdrop-filter: blur(2px) !important;
+}
+
+
+
+/* ==========================================================
+   15. DISPOSITION DU FORUM A DEUX COLONNES
+   ========================================================== */
+
+
+.category .forums {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.category .forum {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto minmax(3.2em, auto) auto auto auto;
+    gap: 12px;
+    min-width: 0;
+    height: 100%;
+    padding: 18px;
+}
+
+/* Ligne 1 : nom du forum et image nouveau/pas nouveau. */
+.forum_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 0;
+}
+
+.forum_heading .forumtitle {
+    min-width: 0;
+}
+
+.forum_heading .forum-img {
+    flex: 0 0 auto;
+    display: block;
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
+}
+
+/* Ligne 2 : description. */
+.category .forum_desc {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Ligne 3 : sujets et messages. */
+.category .forum_stats {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+
+.category .forum_stats span {
+    white-space: nowrap;
+}
+
+/* Ligne 4 : avatar et dernier message. */
+.forum_lastpost_row {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.forum_avatar {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+
+.forum_avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.forum_lastpost {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.forum_lastpost .lastpost_link {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.forum_lastpost .lastpost_meta {
+    display: block;
+    min-width: 0;
+}
+
+/* Ligne 5 : sous-forums. */
+.forum_subforums {
+    min-width: 0;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.forum_subforums:has(.subforum:empty) {
+    display: none;
+}
+
+.forum_subforums .subforum {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+/* Une colonne lorsque la largeur devient insuffisante. */
+@media (max-width: 760px) {
+    .category .forums {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .category .forum {
+        padding: 14px;
+    }
+
+    .forum_lastpost_row {
+        grid-template-columns: 42px minmax(0, 1fr);
+    }
+
+    .forum_avatar {
+        width: 42px;
+        height: 42px;
+    }
 }
