@@ -2207,7 +2207,10 @@ html[data-forum-layout="columns"] {
 }
 
 
-   
+
+
+} /* FIN DU MODE DEUX COLONNES */
+
    /* SUPPRESSION DU SAUT DE LIGNE */
 
 html[data-forum-layout="columns"]
@@ -2232,8 +2235,6 @@ html[data-forum-layout="normal"]
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
 }
-
-} /* FIN DU MODE DEUX COLONNES */
 
 /* =========================================================
    SWITCH DE DISPOSITION
