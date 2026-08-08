@@ -2101,3 +2101,71 @@ body {
     font-size: 8px;
     line-height: 14px;
 }
+
+/* Carte en demi-largeur */
+.category .forums > .forum:not(:nth-child(odd):last-child) {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+
+    grid-template-areas:
+        "heading     heading"
+        "description description"
+        "stats       lastpost"
+        "subforums   subforums";
+
+    column-gap: 10px;
+    align-items: stretch;
+}
+
+
+/* Bloc des statistiques */
+.category
+.forums
+> .forum:not(:nth-child(odd):last-child)
+> .forum_stats {
+    grid-area: stats;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    width: 76px;
+    height: 80px;
+
+    margin-top: 10px;
+    padding: 4px;
+
+    text-align: center;
+}
+
+
+/* Chaque statistique reste sur une seule ligne */
+.category
+.forums
+> .forum:not(:nth-child(odd):last-child)
+> .forum_stats span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 3px;
+
+    width: 100%;
+
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+
+/* Chiffre placé devant son libellé */
+.category
+.forums
+> .forum:not(:nth-child(odd):last-child)
+> .forum_stats strong {
+    display: inline;
+    line-height: 16px;
+}
