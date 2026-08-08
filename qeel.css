@@ -2209,10 +2209,28 @@ html[data-forum-layout="columns"] {
 
    
    /* SUPPRESSION DU SAUT DE LIGNE */
-   
+
 html[data-forum-layout="columns"]
-.category .forum_lastpost .lastpost_link + br {
-    display: none !important;
+.category .forum > .forum_lastpost_row
+.forum_lastpost > span > a.lastpost_link,
+
+html[data-forum-layout="normal"]
+.category .forum > .forum_lastpost_row
+.forum_lastpost > span > a.lastpost_link {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    line-height: 21px !important;
+    text-align: right !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
 }
 
 } /* FIN DU MODE DEUX COLONNES */
