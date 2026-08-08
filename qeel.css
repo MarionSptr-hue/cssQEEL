@@ -2321,3 +2321,37 @@ a {
     filter: grayscale(0%);
     background-position: center 45%;
 }
+
+
+/* =========================================================
+   ALTERNANCE PARMI LES CATÉGORIES AYANT UNE CASE VIDE
+
+   1re catégorie impaire : forum | image
+   2e catégorie impaire : image | forum
+   3e catégorie impaire : forum | image
+   4e catégorie impaire : image | forum
+
+   Les catégories avec un nombre pair de forums sont ignorées.
+   ========================================================= */
+
+
+/* Position normale : image à droite */
+.category
+.forums:has(> .forum:nth-child(odd):last-child)::after {
+    order: 1;
+}
+
+
+/*
+ * Parmi les catégories ayant réellement une case vide,
+ * chaque deuxième catégorie place son image à gauche.
+ */
+.category:nth-child(
+    even of .category:has(
+        > .forums > .forum:nth-child(odd):last-child
+    )
+)
+> .forums
+> .forum:nth-child(odd):last-child {
+    order: 2;
+}
