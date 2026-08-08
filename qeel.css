@@ -2222,3 +2222,84 @@ html body #main-content .footer-container {
     }
 
 }
+
+
+/* =========================================================
+   ZONE FIXE DES SOUS-FORUMS
+   ========================================================= */
+
+/*
+ * La zone garde toujours la même hauteur :
+ * - aucun sous-forum ;
+ * - un seul sous-forum ;
+ * - beaucoup de sous-forums.
+ *
+ * La hauteur des cartes ne change donc plus.
+ */
+.category .forum_details.forum_subforums {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+
+    height: 58px;
+    min-height: 58px;
+    max-height: 58px;
+
+    margin-top: 10px;
+    padding-top: 10px;
+
+    overflow: hidden;
+}
+
+
+/* Conteneur des boutons */
+.category .forum_subforums #subforum {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    width: 100%;
+    min-width: 0;
+    max-height: 47px;
+
+    gap: 5px 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RÉDUCTION AUTOMATIQUE
+   ========================================================= */
+
+/*
+ * À partir de cinq sous-forums, les boutons deviennent
+ * légèrement plus petits.
+ */
+.category
+.forum_subforums
+#subforum:has(a:nth-of-type(5))
+a {
+    margin-right: 6px;
+    padding: 1px 6px;
+
+    font-size: 9px;
+    line-height: 16px;
+}
+
+
+/*
+ * À partir de sept sous-forums, réduction supplémentaire.
+ */
+.category
+.forum_subforums
+#subforum:has(a:nth-of-type(7))
+a {
+    margin-right: 4px;
+    padding: 0 5px;
+
+    font-size: 8px;
+    line-height: 14px;
+}
