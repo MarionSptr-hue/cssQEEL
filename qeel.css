@@ -2301,3 +2301,45 @@ a {
     font-size: 8px;
     line-height: 14px;
 }
+
+
+/* Forum disposé seul sur toute la largeur */
+.category .forums > .forum:nth-child(odd):last-child {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    /* Avatar 70px + espace 10px + dernier post 200px */
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    grid-template-areas:
+        "heading     heading"
+        "description lastpost"
+        "stats       stats"
+        "subforums   subforums";
+
+    column-gap: 10px;
+    align-items: center;
+}
+
+
+/* Bloc avatar + dernier message */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forum_lastpost_row {
+    grid-area: lastpost;
+
+    width: 280px;
+}
+
+
+/* Informations du dernier message */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+.forum_lastpost {
+    flex: 0 0 200px;
+
+    width: 200px;
+}
