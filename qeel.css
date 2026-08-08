@@ -1822,64 +1822,36 @@ body {
     min-width: 970px;
 }
 
+/* =========================================================
+   INDEX — FORUMS EN DEUX COLONNES AVEC CARTES DÉCORATIVES
+   À coller après le CSS principal.
+   ========================================================= */
+
+html,
+body {
+    min-width: 970px;
+}
 
 /* =========================================================
    IMAGES PROPRES À CHAQUE CATÉGORIE
-   Remplacer chaque URL par une adresse d’image publique.
+   Remplacer chaque URL par une adresse d'image publique.
    ========================================================= */
 
-#c1 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/85/77/80/857780266e539dc89c9efe2300f59c3e.jpg");
-}
+html[data-forum-layout="columns"] {
 
-#c2 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/66/41/4a/66414a495e7d8bcb282778ba99a34966.jpg");
-}
+#c1 { --forum-filler-image: url("https://i.pinimg.com/736x/85/77/80/857780266e539dc89c9efe2300f59c3e.jpg"); }
+#c2 { --forum-filler-image: url("https://i.pinimg.com/736x/66/41/4a/66414a495e7d8bcb282778ba99a34966.jpg"); }
+#c3 { --forum-filler-image: url("https://i.pinimg.com/736x/af/c0/b4/afc0b44e06a1026ae01a80f1d44e6e34.jpg"); }
+#c4 { --forum-filler-image: url("https://i.pinimg.com/1200x/95/4f/05/954f05741e2b25d3fd169bd307d18876.jpg"); }
+#c5 { --forum-filler-image: url("https://i.pinimg.com/736x/24/f1/e0/24f1e0b5e293c7f6fcbca45becb01180.jpg"); }
+#c6 { --forum-filler-image: url("https://i.pinimg.com/736x/37/3c/ba/373cba842760333de889333e7e08255f.jpg"); }
 
-#c3 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/af/c0/b4/afc0b44e06a1026ae01a80f1d44e6e34.jpg");
-}
-
-#c4 {
-    --forum-filler-image: url("https://i.pinimg.com/1200x/95/4f/05/954f05741e2b25d3fd169bd307d18876.jpg");
-}
-
-#c5 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/24/f1/e0/24f1e0b5e293c7f6fcbca45becb01180.jpg");
-}
-
-#c6 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/37/3c/ba/373cba842760333de889333e7e08255f.jpg");
-}
-
-/* =========================================================
-   IMAGES DES CATÉGORIES — MODE SOMBRE
-   ========================================================= */
-
-[data-color-scheme="dark"] #c1 {
-    --forum-filler-image: url("https://i.pinimg.com/1200x/09/09/34/090934a491c6a0cbeae34eb78d2f3106.jpg");
-}
-
-[data-color-scheme="dark"] #c2 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/7f/40/73/7f4073f459c5e08a4a52b55a66969b87.jpg");
-}
-
-[data-color-scheme="dark"] #c3 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/3b/f2/26/3bf226f3e3557e0b9dad74d011bac865.jpg");
-}
-
-[data-color-scheme="dark"] #c4 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
-}
-
-[data-color-scheme="dark"] #c5 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
-}
-
-[data-color-scheme="dark"] #c6 {
-    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
-}
-
+&[data-color-scheme="dark"] #c1 { --forum-filler-image: url("https://i.pinimg.com/1200x/09/09/34/090934a491c6a0cbeae34eb78d2f3106.jpg"); }
+&[data-color-scheme="dark"] #c2 { --forum-filler-image: url("https://i.pinimg.com/736x/7f/40/73/7f4073f459c5e08a4a52b55a66969b87.jpg"); }
+&[data-color-scheme="dark"] #c3 { --forum-filler-image: url("https://i.pinimg.com/736x/3b/f2/26/3bf226f3e3557e0b9dad74d011bac865.jpg"); }
+&[data-color-scheme="dark"] #c4 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
+&[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
+&[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
 
 /* =========================================================
    GRILLE
@@ -1888,39 +1860,28 @@ body {
 .category .forums {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 10px;
-
     align-items: stretch;
 }
 
-
-/*
- * Toutes les cartes conservent le même format en demi-largeur,
- * y compris la dernière carte d’une catégorie impaire.
- */
+/* Toutes les cartes conservent le même format demi-largeur,
+   y compris la dernière carte d'une liste impaire. */
 .category .forums > .forum,
 .category .forums > .forum:nth-child(odd):last-child {
     grid-column: auto;
-
     display: grid;
     grid-template-columns: 76px minmax(0, 1fr);
-
     grid-template-areas:
-        "heading     heading"
+        "heading heading"
         "description description"
-        "stats       lastpost"
-        "subforums   subforums";
-
+        "stats lastpost"
+        "subforums subforums";
     column-gap: 10px;
     align-items: stretch;
-
     min-width: 0;
     height: 100%;
-
     margin-bottom: 0;
 }
-
 
 /* =========================================================
    LIGNE 1 — TITRE ET ÉTAT DU FORUM
@@ -1931,25 +1892,20 @@ body {
     min-width: 0;
 }
 
-
 .category .forumtitle-box-left {
     min-width: 0;
 }
 
-
 .category .forumtitle-box-left .forumtitle {
     min-width: 0;
-
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-
 .category .forumtitle-box-right {
     flex: 0 0 70px;
 }
-
 
 /* =========================================================
    LIGNE 2 — DESCRIPTION
@@ -1957,16 +1913,12 @@ body {
 
 .category .forum > .forum_content {
     grid-area: description;
-
     flex: 0 0 80px;
-
     width: 100%;
     min-width: 0;
     height: 80px;
-
     overflow: hidden;
 }
-
 
 .category .forum_desc {
     width: 100%;
@@ -1975,65 +1927,48 @@ body {
     max-height: 80px;
 }
 
-
 /* =========================================================
    LIGNE 3 — STATISTIQUES
    ========================================================= */
 
 .category .forum > .forum_stats {
     grid-area: stats;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-self: stretch;
-
     gap: 2px;
     float: none;
-
     width: 76px;
     min-width: 0;
     height: 80px;
-
     margin-top: 10px;
     padding: 4px;
-
     text-align: center;
-
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-
     border: 0 !important;
     border-radius: 0 !important;
-
     box-shadow: none !important;
 }
 
-
-/* Une statistique par ligne */
 .category .forum > .forum_stats span {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
     gap: 3px;
-
     width: 100%;
-
     line-height: 16px;
     white-space: nowrap;
 }
 
-
-/* Chiffre devant son libellé */
 .category .forum > .forum_stats strong {
     display: inline;
     line-height: 16px;
 }
-
 
 /* =========================================================
    LIGNE 3 — AVATAR ET DERNIER MESSAGE
@@ -2041,69 +1976,50 @@ body {
 
 .category .forum > .forum_lastpost_row {
     grid-area: lastpost;
-
     display: flex;
     align-items: stretch;
-
     gap: 10px;
-
     width: 100%;
     min-width: 0;
     height: 80px;
-
     margin-top: 10px;
 }
 
-
 .category .forum_avatar {
     flex: 0 0 70px;
-
     width: 70px;
     height: 80px;
 }
-
 
 .category .forum_lastpost {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-
     align-items: flex-end;
     justify-content: center;
-
     width: auto;
     min-width: 0;
     height: 80px;
-
     padding: 8px 10px;
-
     overflow: hidden;
 }
 
-
 .category .forum_lastpost .lastpost_link {
     display: block;
-
     width: 100%;
     max-width: 100%;
-
     overflow: hidden;
-
     text-align: right;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-
 .category .forum_lastpost .lastpost_meta {
     display: block;
-
     width: 100%;
     min-width: 0;
-
     text-align: right;
 }
-
 
 /* =========================================================
    LIGNE 4 — SOUS-FORUMS
@@ -2111,269 +2027,169 @@ body {
 
 .category .forum > .forum_details.forum_subforums {
     grid-area: subforums;
-
     display: flex;
     align-items: center;
-
     width: 100%;
     min-width: 0;
-
     height: 38px;
     min-height: 38px;
     max-height: 38px;
-
     margin-top: 6px;
     padding: 0;
-
     overflow: hidden;
 }
-
 
 .category .forum_subforums #subforum {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-
     gap: 5px 0;
-
     width: 100%;
     min-width: 0;
     max-height: 36px;
-
     overflow: hidden;
 }
 
-
-/* =========================================================
-   APPARENCE SOBRE DES SOUS-FORUMS
-   ========================================================= */
-
+/* Apparence sobre des liens. */
 .category .forum_details.forum_subforums #subforum a,
 .category .forum_details.forum_subforums #subforum a.gensmall,
 .category .forum_details.forum_subforums #subforum a:nth-child(2n) {
     position: relative !important;
-
     display: inline-flex !important;
     align-items: center !important;
-
     width: auto !important;
-
     margin: 0 12px 0 0 !important;
     padding: 1px 0 !important;
-
     color: var(--contrastLight) !important;
-
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-
     border: 0 !important;
     border-bottom: 0 !important;
     border-radius: 0 !important;
-
     outline: 0 !important;
     box-shadow: none !important;
-
     text-decoration: none !important;
-
     font-size: var(--little-size) !important;
     font-weight: 600 !important;
     line-height: 16px !important;
-
     text-transform: uppercase !important;
     white-space: nowrap !important;
-
     opacity: .78 !important;
     transform: translateY(0) !important;
-
     transition:
         color .25s ease,
         opacity .25s ease,
         transform .25s ease !important;
 }
 
-
-/* =========================================================
-   ANIMATION « LIGNE DE MÉTRO »
-   ========================================================= */
-
-/* Ligne invisible */
-.category
-.forum_details.forum_subforums
-#subforum
-a::after {
+/* Ligne de métro invisible. */
+.category .forum_details.forum_subforums #subforum a::after {
     content: "" !important;
-
     position: absolute !important;
     right: 0 !important;
     bottom: 0 !important;
     left: 0 !important;
-
     display: block !important;
-
     width: 100% !important;
     height: 1px !important;
-
     background: var(--gradient-one) !important;
-
     border: 0 !important;
     border-radius: 0 !important;
-
     opacity: 0 !important;
-
     transform: scaleX(0) !important;
     transform-origin: left center !important;
-
     transition:
         opacity .25s ease,
         transform .35s ease !important;
 }
 
-
-/* Survol */
 .category .forum_details.forum_subforums #subforum a:hover,
 .category .forum_details.forum_subforums #subforum a.gensmall:hover,
 .category .forum_details.forum_subforums #subforum a:nth-child(2n):hover {
     color: var(--accentClr) !important;
-
     background: transparent !important;
-    background-color: transparent !important;
     background-image: none !important;
-
     border: 0 !important;
     border-bottom: 0 !important;
     border-radius: 0 !important;
-
     box-shadow: none !important;
     text-decoration: none !important;
-
     opacity: 1 !important;
     transform: translateY(-1px) !important;
 }
 
-
-/* Déploiement de la ligne */
-.category
-.forum_details.forum_subforums
-#subforum
-a:hover::after {
+.category .forum_details.forum_subforums #subforum a:hover::after {
     opacity: 1 !important;
     transform: scaleX(1) !important;
 }
 
-
-/* =========================================================
-   RÉDUCTION AUTOMATIQUE DES SOUS-FORUMS
-   ========================================================= */
-
-/* À partir de cinq sous-forums */
-.category
-.forum_details.forum_subforums
-#subforum:has(a:nth-of-type(5))
-a {
+/* Réduction automatique à partir de cinq sous-forums. */
+.category .forum_details.forum_subforums #subforum:has(a:nth-of-type(5)) a {
     margin-right: 6px !important;
     padding: 1px 0 !important;
-
     font-size: 10px !important;
     line-height: 15px !important;
 }
 
-
-/* À partir de sept sous-forums */
-.category
-.forum_details.forum_subforums
-#subforum:has(a:nth-of-type(7))
-a {
+/* Réduction supplémentaire à partir de sept sous-forums. */
+.category .forum_details.forum_subforums #subforum:has(a:nth-of-type(7)) a {
     margin-right: 4px !important;
     padding: 0 !important;
-
     font-size: 9px !important;
     line-height: 14px !important;
 }
-
 
 /* =========================================================
    CARTE DÉCORATIVE POUR CHAQUE CATÉGORIE IMPAIRE
    ========================================================= */
 
-/*
- * Une carte-image est créée uniquement lorsque la catégorie
- * contient un nombre impair de forums.
- */
-.category
-.forums:has(> .forum:nth-child(odd):last-child)::after {
+.category .forums:has(> .forum:nth-child(odd):last-child)::after {
     content: "";
-
     display: block;
     align-self: stretch;
-
     width: 100%;
     min-width: 0;
     min-height: 0;
-
     background-color: var(--neutralDark);
-
     background-image:
         linear-gradient(
             rgba(23, 25, 56, .08),
             rgba(23, 25, 56, .30)
         ),
         var(--forum-filler-image);
-
-    /*
-     * L’image remplit automatiquement la carte sans être
-     * déformée. Elle peut être légèrement recadrée.
-     */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
     border-radius: var(--radius-normal);
-
     opacity: .82;
     filter: grayscale(40%);
-
     overflow: hidden;
-
     transition:
         opacity .6s ease,
         filter .6s ease,
         background-position .8s ease;
 }
 
-
-/* Animation de la carte décorative */
-.category
-.forums:has(> .forum:nth-child(odd):last-child)::after:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    background-position: center 45%;
-}
-
-
 /* =========================================================
-   ALTERNANCE DES CARTES-IMAGES
+   ALTERNANCE PARMI LES CATÉGORIES AYANT UNE CASE VIDE
 
-   1re catégorie avec une case vide : image | forum
-   2e catégorie avec une case vide : forum | image
-   3e catégorie avec une case vide : image | forum
-   4e catégorie avec une case vide : forum | image
+   1re catégorie impaire rencontrée : image | forum
+   2e catégorie impaire rencontrée : forum | image
+   3e catégorie impaire rencontrée : image | forum
+   etc.
 
-   Les catégories sans case vide sont ignorées.
+   Les catégories contenant un nombre pair de forums sont
+   ignorées dans ce comptage.
    ========================================================= */
 
-
-/* La pseudo-carte reçoit un ordre intermédiaire */
-.category
-.forums:has(> .forum:nth-child(odd):last-child)::after {
+/* Position normale : image après le dernier forum. */
+.category .forums:has(> .forum:nth-child(odd):last-child)::after {
     order: 1;
 }
 
-
-/*
- * Pour la première catégorie éligible, puis une sur deux,
- * le dernier forum passe après l’image.
- */
+/* Pour la première catégorie éligible, puis une catégorie
+   éligible sur deux, le dernier forum passe après l'image. */
 .category:nth-child(
     odd of .category:has(
         > .forums > .forum:nth-child(odd):last-child
@@ -2384,3 +2200,206 @@ a {
     order: 2;
 }
 
+.category .forums:has(> .forum:nth-child(odd):last-child)::after:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    background-position: center 45%;
+}
+
+} /* FIN DU MODE DEUX COLONNES */
+
+/* =========================================================
+   SWITCH DE DISPOSITION
+   ========================================================= */
+
+.forum-layout-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+    padding: 0 !important;
+    color: var(--contrastLight);
+    background: var(--neutralDark);
+    border: var(--border);
+    border-radius: var(--radius-normal);
+    box-shadow: none;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 18px;
+    line-height: 1;
+    transition:
+        color .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+.forum-layout-toggle:hover {
+    color: var(--accentClr);
+    background: var(--neutralDarker);
+    transform: translateY(-2px);
+}
+
+.forum-layout-toggle[aria-pressed="true"] {
+    color: var(--stay-white);
+    background: var(--gradient-one);
+}
+
+/* =========================================================
+   MODE NORMAL
+   ========================================================= */
+
+html[data-forum-layout="normal"] .category .forums {
+    display: block;
+}
+
+html[data-forum-layout="normal"] .category .forums::before,
+html[data-forum-layout="normal"] .category .forums::after {
+    display: none !important;
+    content: none !important;
+}
+
+html[data-forum-layout="normal"] .category .forums > .forum,
+html[data-forum-layout="normal"] .category .forums > .forum:nth-child(odd):last-child {
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-areas:
+        "heading heading"
+        "description lastpost"
+        "subforums stats";
+    gap: 0 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+html[data-forum-layout="normal"] .category .forums > .forum:last-child {
+    margin-bottom: 0;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forumtitle-box {
+    grid-area: heading;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_content {
+    grid-area: description;
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    margin-top: 10px;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_lastpost_row {
+    grid-area: lastpost;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    width: 280px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_lastpost_row .forum_avatar {
+    flex: 0 0 70px;
+    width: 70px;
+    height: 80px;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_lastpost_row .forum_lastpost {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 80px;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_details.forum_subforums {
+    grid-area: subforums;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 31px;
+    max-height: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    overflow: visible;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+    width: auto;
+    height: auto;
+    min-height: 31px;
+    margin-top: 10px;
+    padding: 2px 8px;
+    text-align: right;
+    background: var(--neutralDark) !important;
+    background-color: var(--neutralDark) !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_stats span {
+    display: inline;
+    width: auto;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_stats span + span::before {
+    content: " • ";
+    margin: 0 5px;
+}
+
+html[data-forum-layout="normal"] .category .forum > .forum_stats strong {
+    display: inline;
+    line-height: inherit;
+}
+
+html[data-forum-layout="normal"] .category .forum_subforums #subforum {
+    display: block;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+}
+
+html[data-forum-layout="normal"] .category .forum_subforums #subforum a {
+    display: inline-flex !important;
+    width: auto !important;
+    margin: 0 10px 0 0 !important;
+    padding: 2px 8px !important;
+    color: var(--stay-white) !important;
+    background: linear-gradient(.07turn, var(--one), var(--two)) !important;
+    border: 0 !important;
+    border-radius: var(--radius-mini) !important;
+    box-shadow: none !important;
+    font-size: var(--little-size) !important;
+    line-height: inherit !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    transform: none !important;
+}
+
+html[data-forum-layout="normal"] .category .forum_subforums #subforum a:nth-child(2n) {
+    background: linear-gradient(.07turn, var(--three), var(--one)) !important;
+}
+
+html[data-forum-layout="normal"] .category .forum_subforums #subforum a:hover {
+    color: var(--stay-white) !important;
+    background: linear-gradient(.07turn, var(--two), var(--three)) !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
+    display: none !important;
+    content: none !important;
+}
