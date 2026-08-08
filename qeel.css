@@ -2212,38 +2212,92 @@ html[data-forum-layout="columns"] {
    SWITCH DE DISPOSITION
    ========================================================= */
 
-.forum-layout-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    margin-top: 10px;
+/* =========================================================
+   SWITCH DE DISPOSITION
+   Placé entre le dark/light et les personnages
+   ========================================================= */
+
+.switcheroo__squircles > .forum-layout-toggle {
+    display: inline-flex !important;
+    flex: 0 0 35px !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 35px !important;
+    min-width: 35px !important;
+    height: 35px !important;
+
+    margin: 0 !important;
     padding: 0 !important;
-    color: var(--contrastLight);
-    background: var(--neutralDark);
-    border: var(--border);
-    border-radius: var(--radius-normal);
-    box-shadow: none;
-    cursor: pointer;
-    font-family: var(--font);
-    font-size: 18px;
-    line-height: 1;
+
+    color: var(--contrastLight) !important;
+    background: var(--neutralDark) !important;
+
+    border: var(--border) !important;
+    border-radius: var(--radius-normal) !important;
+    box-shadow: none !important;
+
+    cursor: pointer !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+
+    position: relative !important;
+    inset: auto !important;
+
     transition:
         color .3s ease,
-        background .3s ease,
-        transform .3s ease;
+        background-color .3s ease !important;
 }
 
-.forum-layout-toggle:hover {
-    color: var(--accentClr);
-    background: var(--neutralDarker);
-    transform: translateY(-2px);
+
+/* Icône Font Awesome */
+.switcheroo__squircles
+> .forum-layout-toggle
+.fa-grip-lines {
+    display: block !important;
+
+    font-size: 18px !important;
+    line-height: 1 !important;
+
+    transform: rotate(0deg) !important;
+
+    transition:
+        transform .35s ease,
+        color .3s ease !important;
 }
 
-.forum-layout-toggle[aria-pressed="true"] {
-    color: var(--stay-white);
-    background: var(--gradient-one);
+
+/* Mode deux colonnes : lignes verticales */
+html[data-forum-layout="columns"]
+.switcheroo__squircles
+> .forum-layout-toggle
+.fa-grip-lines {
+    transform: rotate(90deg) !important;
+}
+
+
+/* Mode normal : lignes horizontales */
+html[data-forum-layout="normal"]
+.switcheroo__squircles
+> .forum-layout-toggle
+.fa-grip-lines {
+    transform: rotate(0deg) !important;
+}
+
+
+/* Survol */
+.switcheroo__squircles
+> .forum-layout-toggle:hover {
+    color: var(--accentClr) !important;
+    background: var(--neutralDarker) !important;
+}
+
+
+/* Mode deux colonnes actif */
+.switcheroo__squircles
+> .forum-layout-toggle[aria-pressed="true"] {
+    color: var(--stay-white) !important;
+    background: var(--gradient-one) !important;
 }
 
 /* =========================================================
