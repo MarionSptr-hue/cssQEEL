@@ -2187,6 +2187,10 @@ body {
 }
 
 
+/* =========================================================
+   STATISTIQUES
+   ========================================================= */
+
 /* Bloc des statistiques */
 .category
 .forums
@@ -2208,10 +2212,19 @@ body {
     padding: 4px;
 
     text-align: center;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
 }
 
 
-/* Chaque statistique reste sur une seule ligne */
+/* Une statistique par ligne */
 .category
 .forums
 > .forum:not(:nth-child(odd):last-child)
@@ -2230,7 +2243,7 @@ body {
 }
 
 
-/* Chiffre placé devant son libellé */
+/* Chiffre devant son libellé */
 .category
 .forums
 > .forum:not(:nth-child(odd):last-child)
@@ -2240,12 +2253,8 @@ body {
 }
 
 
-/* Statistiques sans fond ni encadré */
-.category .forum_stats,
-.category
-.forums
-> .forum:not(:nth-child(odd):last-child)
-> .forum_stats {
+/* Retrait du fond sur les forums en pleine largeur */
+.category .forum_stats {
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
@@ -2258,13 +2267,14 @@ body {
 
 
 /* =========================================================
-   SOUS-FORUMS — SUPPRESSION FORCÉE DES ENCADRÉS
-   À conserver tout à la fin du CSS
+   SOUS-FORUMS — APPARENCE GÉNÉRALE
    ========================================================= */
 
 .category .forum_details.forum_subforums #subforum a,
 .category .forum_details.forum_subforums #subforum a.gensmall,
 .category .forum_details.forum_subforums #subforum a:nth-child(2n) {
+    position: relative !important;
+
     display: inline-flex !important;
     align-items: center !important;
 
@@ -2280,11 +2290,13 @@ body {
     background-image: none !important;
 
     border: 0 !important;
-    border-bottom: 1px solid transparent !important;
+    border-bottom: 0 !important;
     border-radius: 0 !important;
 
     outline: 0 !important;
     box-shadow: none !important;
+
+    text-decoration: none !important;
 
     font-size: var(--little-size) !important;
     font-weight: 600 !important;
@@ -2299,12 +2311,48 @@ body {
     transition:
         color .25s ease,
         opacity .25s ease,
-        transform .25s ease,
-        border-color .25s ease !important;
+        transform .25s ease !important;
 }
 
 
-/* Survol */
+/* =========================================================
+   ANIMATION « LIGNE DE MÉTRO »
+   ========================================================= */
+
+/* Ligne invisible */
+.category
+.forum_details.forum_subforums
+#subforum
+a::after {
+    content: "" !important;
+
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 1px !important;
+
+    background: var(--gradient-one) !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    opacity: 0 !important;
+
+    transform: scaleX(0) !important;
+    transform-origin: left center !important;
+
+    transition:
+        opacity .25s ease,
+        transform .35s ease !important;
+}
+
+
+/* Survol du lien */
 .category .forum_details.forum_subforums #subforum a:hover,
 .category .forum_details.forum_subforums #subforum a.gensmall:hover,
 .category .forum_details.forum_subforums #subforum a:nth-child(2n):hover {
@@ -2315,19 +2363,29 @@ body {
     background-image: none !important;
 
     border: 0 !important;
-    border-bottom: 1px solid var(--accentClr) !important;
+    border-bottom: 0 !important;
     border-radius: 0 !important;
 
     box-shadow: none !important;
+    text-decoration: none !important;
 
     opacity: 1 !important;
-    transform: translateY(-2px) !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* Déploiement de la ligne */
+.category
+.forum_details.forum_subforums
+#subforum
+a:hover::after {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
 }
 
 
 /* =========================================================
    RÉDUCTION AUTOMATIQUE DES SOUS-FORUMS
-   À placer après leur apparence générale
    ========================================================= */
 
 /* À partir de cinq sous-forums */
@@ -2353,70 +2411,4 @@ a {
 
     font-size: 9px !important;
     line-height: 14px !important;
-}
-
-
-/* =========================================================
-   ANIMATION « LIGNE DE MÉTRO » CORRIGÉE
-   ========================================================= */
-
-.category .forum_details.forum_subforums #subforum a {
-    position: relative !important;
-
-    border: 0 !important;
-    border-bottom: 0 !important;
-
-    transform: translateY(0) !important;
-
-    transition:
-        color .25s ease,
-        opacity .25s ease,
-        transform .25s ease !important;
-}
-
-
-/* Ligne placée à l’intérieur du lien */
-.category .forum_details.forum_subforums #subforum a::after {
-    content: "" !important;
-
-    position: absolute !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-
-    display: block !important;
-
-    width: 100% !important;
-    height: 1px !important;
-
-    background: var(--gradient-one) !important;
-    border: 0 !important;
-
-    opacity: 0 !important;
-
-    transform: scaleX(0) !important;
-    transform-origin: left center !important;
-
-    transition:
-        opacity .25s ease,
-        transform .35s ease !important;
-}
-
-
-/* Survol */
-.category .forum_details.forum_subforums #subforum a:hover {
-    color: var(--accentClr) !important;
-
-    border: 0 !important;
-    border-bottom: 0 !important;
-
-    opacity: 1 !important;
-    transform: translateY(-1px) !important;
-}
-
-
-/* Déploiement de la ligne */
-.category .forum_details.forum_subforums #subforum a:hover::after {
-    opacity: 1 !important;
-    transform: scaleX(1) !important;
 }
