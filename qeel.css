@@ -1852,6 +1852,34 @@ body {
     --forum-filler-image: url("https://i.pinimg.com/736x/37/3c/ba/373cba842760333de889333e7e08255f.jpg");
 }
 
+/* =========================================================
+   IMAGES DES CATÉGORIES — MODE SOMBRE
+   ========================================================= */
+
+[data-color-scheme="dark"] #c1 {
+    --forum-filler-image: url("https://i.pinimg.com/1200x/09/09/34/090934a491c6a0cbeae34eb78d2f3106.jpg");
+}
+
+[data-color-scheme="dark"] #c2 {
+    --forum-filler-image: url("https://i.pinimg.com/1200x/09/09/34/090934a491c6a0cbeae34eb78d2f3106.jpg");
+}
+
+[data-color-scheme="dark"] #c3 {
+    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
+}
+
+[data-color-scheme="dark"] #c4 {
+    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
+}
+
+[data-color-scheme="dark"] #c5 {
+    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
+}
+
+[data-color-scheme="dark"] #c6 {
+    --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg");
+}
+
 
 /* =========================================================
    GRILLE
