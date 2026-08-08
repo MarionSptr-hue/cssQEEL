@@ -2238,3 +2238,20 @@ body {
     display: inline;
     line-height: 16px;
 }
+
+
+/* Statistiques sans fond ni encadré */
+.category .forum_stats,
+.category
+.forums
+> .forum:not(:nth-child(odd):last-child)
+> .forum_stats {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+}
