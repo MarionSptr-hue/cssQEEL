@@ -2352,18 +2352,18 @@ a {
 
 
 /* =========================================================
-   ALTERNANCE PARMI LES CATÉGORIES AYANT UNE CASE VIDE
+   ALTERNANCE DES CARTES-IMAGES
 
-   1re catégorie impaire : forum | image
-   2e catégorie impaire : image | forum
-   3e catégorie impaire : forum | image
-   4e catégorie impaire : image | forum
+   1re catégorie avec une case vide : image | forum
+   2e catégorie avec une case vide : forum | image
+   3e catégorie avec une case vide : image | forum
+   4e catégorie avec une case vide : forum | image
 
-   Les catégories avec un nombre pair de forums sont ignorées.
+   Les catégories sans case vide sont ignorées.
    ========================================================= */
 
 
-/* Position normale : image à droite */
+/* La pseudo-carte reçoit un ordre intermédiaire */
 .category
 .forums:has(> .forum:nth-child(odd):last-child)::after {
     order: 1;
@@ -2371,30 +2371,16 @@ a {
 
 
 /*
- * Parmi les catégories ayant réellement une case vide,
- * chaque deuxième catégorie place son image à gauche.
+ * Pour la première catégorie éligible, puis une sur deux,
+ * le dernier forum passe après l’image.
  */
 .category:nth-child(
-    even of .category:has(
+    odd of .category:has(
         > .forums > .forum:nth-child(odd):last-child
     )
 )
 > .forums
 > .forum:nth-child(odd):last-child {
     order: 2;
-}
-
-.category
-.forums:has(> .forum:nth-child(odd):last-child)::after {
-    background-image:
-        linear-gradient(
-            rgba(23, 25, 56, .08),
-            rgba(23, 25, 56, .30)
-        ),
-        var(--forum-filler-image);
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
