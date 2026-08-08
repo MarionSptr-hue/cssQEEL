@@ -298,7 +298,7 @@
 
   width: 210px;
   height: 32px;
-  content: "51.5074° N  ·  0.1278° W";
+  content: "51,5085° N  ·  -,1255° W";
 
   color: var(--contrastLight);
   /* background:
@@ -1024,16 +1024,16 @@ body .footer-container > .footer-img {
 
   min-height: 18px;
   padding: 2px 6px;
-  content: "LONDON · 51.5074° N";
+  content: "LONDON · 51,5085° N";
 
   color: var(--stay-white);
-  background: rgba(20, 18, 30, .58);
+  /* background: rgba(20, 18, 30, .58);
   border: 1px solid rgba(255, 255, 255, .18);
   border-radius: 2px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);*/
 
   font-family: monospace;
-  font-size: 6px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 8px;
