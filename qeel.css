@@ -2115,3 +2115,110 @@ html body #main-content .footer-container {
     }
 
 }
+
+
+/* =========================================================
+   FORUM SEUL SUR UNE LIGNE
+   ========================================================= */
+
+/*
+ * Lorsqu’un forum est seul ou termine une liste impaire,
+ * il reprend l’organisation horizontale d’origine :
+ *
+ * description | avatar + dernier message
+ */
+.category .forums > .forum:nth-child(odd):last-child {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 45%);
+
+    grid-template-areas:
+        "heading     heading"
+        "description lastpost"
+        "stats       stats"
+        "subforums   subforums";
+
+    column-gap: 10px;
+    align-items: center;
+}
+
+
+/* Ligne du titre */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forumtitle-box {
+    grid-area: heading;
+}
+
+
+/* Description à gauche */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forum_content {
+    grid-area: description;
+}
+
+
+/* Statistiques sous la partie principale */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forum_stats {
+    grid-area: stats;
+}
+
+
+/* Avatar et dernier message à droite */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forum_lastpost_row {
+    grid-area: lastpost;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* Sous-forums sur toute la largeur */
+.category
+.forums
+> .forum:nth-child(odd):last-child
+> .forum_subforums {
+    grid-area: subforums;
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .category .forums {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /*
+     * Sur un écran réellement étroit, les éléments repassent
+     * verticalement pour éviter qu’ils soient écrasés.
+     */
+    .category .forums > .forum:nth-child(odd):last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        grid-column: auto;
+    }
+
+    .category
+    .forums
+    > .forum:nth-child(odd):last-child
+    > .forum_stats {
+        align-self: flex-start;
+    }
+
+}
