@@ -1974,13 +1974,6 @@ html[data-forum-layout="columns"] {
    LIGNE 3 — AVATAR ET DERNIER MESSAGE
    ========================================================= */
 
-   /* Le lien est déjà en display:block en deux colonnes :
-   on masque uniquement le saut de ligne supplémentaire. */
-html[data-forum-layout="columns"]
-.category .forum_lastpost .lastpost_link + br {
-    display: none !important;
-}
-
 .category .forum > .forum_lastpost_row {
     grid-area: lastpost;
     display: flex;
@@ -2211,6 +2204,15 @@ html[data-forum-layout="columns"]
     opacity: 1;
     filter: grayscale(0%);
     background-position: center 45%;
+}
+
+
+   
+   /* SUPPRESSION DU SAUT DE LIGNE */
+   
+html[data-forum-layout="columns"]
+.category .forum_lastpost .lastpost_link + br {
+    display: none !important;
 }
 
 } /* FIN DU MODE DEUX COLONNES */
