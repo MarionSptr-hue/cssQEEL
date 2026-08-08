@@ -2383,3 +2383,18 @@ a {
 > .forum:nth-child(odd):last-child {
     order: 2;
 }
+
+.category
+.forums:has(> .forum:nth-child(odd):last-child)::after {
+    background-image:
+        linear-gradient(
+            rgba(23, 25, 56, .08),
+            rgba(23, 25, 56, .30)
+        ),
+        var(--forum-filler-image);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
