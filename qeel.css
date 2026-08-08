@@ -2229,7 +2229,8 @@ html[data-forum-layout="columns"] {
     margin: 0 !important;
     padding: 0 !important;
 
-    color: var(--contrastLight) !important;
+    /* Couleur visible par défaut */
+    color: var(--textColor) !important;
 
     background: transparent !important;
     background-color: transparent !important;
@@ -2253,11 +2254,29 @@ html[data-forum-layout="columns"] {
 }
 
 
+/* Couleur en mode clair */
+html[data-color-scheme="light"]
+.switcheroo__squircles
+> .forum-layout-toggle {
+    color: var(--contrastDark) !important;
+}
+
+
+/* Couleur en mode sombre */
+html[data-color-scheme="dark"]
+.switcheroo__squircles
+> .forum-layout-toggle {
+    color: var(--contrastLight) !important;
+}
+
+
 /* Icône Font Awesome */
 .switcheroo__squircles
 > .forum-layout-toggle
 .fa-grip-lines {
     display: block !important;
+
+    color: inherit !important;
 
     font-size: 18px !important;
     line-height: 1 !important;
@@ -2302,10 +2321,10 @@ html[data-forum-layout="normal"]
 }
 
 
-/* Mode deux colonnes actif */
+/* Mode actif : conserve une couleur lisible */
 .switcheroo__squircles
 > .forum-layout-toggle[aria-pressed="true"] {
-    color: var(--stay-white) !important;
+    color: var(--textColor) !important;
 
     background: transparent !important;
     background-color: transparent !important;
@@ -2316,7 +2335,23 @@ html[data-forum-layout="normal"]
 }
 
 
-/* Suppression de l'outline ajouté au clic */
+/* Mode actif en thème clair */
+html[data-color-scheme="light"]
+.switcheroo__squircles
+> .forum-layout-toggle[aria-pressed="true"] {
+    color: var(--contrastDark) !important;
+}
+
+
+/* Mode actif en thème sombre */
+html[data-color-scheme="dark"]
+.switcheroo__squircles
+> .forum-layout-toggle[aria-pressed="true"] {
+    color: var(--contrastLight) !important;
+}
+
+
+/* Suppression des effets au clic */
 .switcheroo__squircles
 > .forum-layout-toggle:focus,
 .switcheroo__squircles
@@ -2325,6 +2360,14 @@ html[data-forum-layout="normal"]
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
+}
+
+
+/* Couleur de survol prioritaire, même quand le bouton est actif */
+html[data-color-scheme]
+.switcheroo__squircles
+> .forum-layout-toggle[aria-pressed="true"]:hover {
+    color: var(--accentClr) !important;
 }
 /* =========================================================
    MODE NORMAL
