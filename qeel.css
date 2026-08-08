@@ -2354,3 +2354,70 @@ a {
     font-size: 9px !important;
     line-height: 14px !important;
 }
+
+
+/* =========================================================
+   ANIMATION « LIGNE DE MÉTRO »
+   À placer après les styles des sous-forums
+   ========================================================= */
+
+.category .forum_details.forum_subforums #subforum a {
+    position: relative !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    transform: translateY(0) !important;
+
+    transition:
+        color .25s ease,
+        opacity .25s ease,
+        transform .25s ease !important;
+}
+
+
+/* Ligne invisible sous le lien */
+.category .forum_details.forum_subforums #subforum a::after {
+    content: "" !important;
+
+    position: absolute !important;
+    right: 0 !important;
+    bottom: -1px !important;
+    left: 0 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 1px !important;
+
+    background: var(--gradient-one) !important;
+    border: 0 !important;
+
+    opacity: 0 !important;
+
+    transform: scaleX(0) !important;
+    transform-origin: left center !important;
+
+    transition:
+        opacity .25s ease,
+        transform .35s ease !important;
+}
+
+
+/* Survol du lien */
+.category .forum_details.forum_subforums #subforum a:hover {
+    color: var(--accentClr) !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    opacity: 1 !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* La ligne se dessine de gauche à droite */
+.category .forum_details.forum_subforums #subforum a:hover::after {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
+}
