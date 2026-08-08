@@ -2357,8 +2357,7 @@ a {
 
 
 /* =========================================================
-   ANIMATION « LIGNE DE MÉTRO »
-   À placer après les styles des sous-forums
+   ANIMATION « LIGNE DE MÉTRO » CORRIGÉE
    ========================================================= */
 
 .category .forum_details.forum_subforums #subforum a {
@@ -2376,13 +2375,13 @@ a {
 }
 
 
-/* Ligne invisible sous le lien */
+/* Ligne placée à l’intérieur du lien */
 .category .forum_details.forum_subforums #subforum a::after {
     content: "" !important;
 
     position: absolute !important;
     right: 0 !important;
-    bottom: -1px !important;
+    bottom: 0 !important;
     left: 0 !important;
 
     display: block !important;
@@ -2404,7 +2403,7 @@ a {
 }
 
 
-/* Survol du lien */
+/* Survol */
 .category .forum_details.forum_subforums #subforum a:hover {
     color: var(--accentClr) !important;
 
@@ -2416,7 +2415,7 @@ a {
 }
 
 
-/* La ligne se dessine de gauche à droite */
+/* Déploiement de la ligne */
 .category .forum_details.forum_subforums #subforum a:hover::after {
     opacity: 1 !important;
     transform: scaleX(1) !important;
