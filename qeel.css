@@ -520,17 +520,22 @@
 }
 
 
-/* Ligne décorative prolongeant les titres */
+/* Base commune aux deux lignes décoratives */
 
 .qeel-online::after,
 .qeel-24h::after {
   flex: 1;
-
   min-width: 45px;
   height: 9px;
   content: "";
 
   opacity: .85;
+}
+
+
+/* Cornelia Street — 3 points */
+
+.qeel-online::after {
   background:
     radial-gradient(
       circle at 15% 50%,
@@ -557,6 +562,52 @@
       var(--three)
     ) center / 100% 2px no-repeat;
 }
+
+
+/* So Long, London — 5 points */
+
+.qeel-24h::after {
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      var(--neutral) 0 2px,
+      var(--one) 2.5px 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 30% 50%,
+      var(--neutral) 0 2px,
+      var(--two) 2.5px 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      var(--neutral) 0 2px,
+      var(--three) 2.5px 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 70% 50%,
+      var(--neutral) 0 2px,
+      var(--two) 2.5px 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      var(--neutral) 0 2px,
+      var(--one) 2.5px 4px,
+      transparent 4.5px
+    ),
+    linear-gradient(
+      to right,
+      var(--one),
+      var(--two),
+      var(--three)
+    ) center / 100% 2px no-repeat;
+}
+
+
+/* Fond transparent */
 
 .qeel-online,
 .qeel-24h,
