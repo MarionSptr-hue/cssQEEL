@@ -15,6 +15,7 @@
    13. Alignement uniforme de l’en-tête
    14. Masquer l'URL de l'avatar dark dans le profil pour switcheroo
    15. Disposition du forum a deux colonnes
+   15. CSS DU NOUVEAU DIRECTORY MEMBERLIST
    ========================================================== */
 
 
@@ -2598,3 +2599,72 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
     display: none !important;
     content: none !important;
 }
+
+
+/* =========================== CSS NOUVEAU DIRECTORY MEMBER LIST ============== */
+
+/* 
+.directory-toolbar {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.directory-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.directory-filter legend {
+  width: 100%;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+.directory-filter button,
+.directory-pagination button {
+  padding: .45rem .7rem;
+  border: 1px solid currentColor;
+  border-radius: .35rem;
+  cursor: pointer;
+}
+
+.directory-filter button.is-active,
+.directory-pagination button.is-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.directory-search,
+.directory-sort {
+  display: grid;
+  gap: .3rem;
+  max-width: 24rem;
+}
+
+.directory-search input,
+.directory-sort select {
+  padding: .55rem .7rem;
+}
+
+.directory-pagination {
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+  margin-top: 1.5rem;
+}
+
+.directory-member[hidden] {
+  display: none !important;
+}
+
+.directory-faceclaim {
+  display: inline-block;
+  margin-top: .35rem;
+}
+
+*/
