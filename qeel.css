@@ -2899,13 +2899,16 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
 }
 
 .directory-list .directory-summary {
-  z-index: 2;
+  z-index: 4;
+  inset: 4.25rem .75rem 7.75rem;
   align-items: center;
-  padding: 4.5rem 1rem 8.5rem;
+  padding: .75rem;
   background: rgba(13, 10, 20, .78);
   backdrop-filter: blur(3px);
   font-size: .75rem;
   line-height: 1.4;
+  border-radius: var(--radius-small, 6px);
+  pointer-events: none;
 }
 
 .directory-list .directory-member:hover .directory-avatar > img,
