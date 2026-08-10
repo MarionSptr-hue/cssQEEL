@@ -3056,7 +3056,7 @@ html[data-color-scheme="light"] .directory-sort select {
   margin: 0 !important;
   padding: 0;
   color: var(--textColor, currentColor);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -3075,7 +3075,7 @@ html[data-color-scheme="light"] .directory-sort select {
   background: transparent !important;
   color: var(--accentLight, var(--accentClr, currentColor)) !important;
   font: inherit;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.35;
   text-decoration: none !important;
   opacity: .72;
@@ -3123,7 +3123,7 @@ html[data-color-scheme="light"] .directory-sort select {
 .directory-search > span,
 .directory-sort > span {
   flex: 0 0 7.5rem;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -3138,6 +3138,7 @@ html[data-color-scheme="light"] .directory-sort select {
   border-radius: 0 !important;
   background: transparent !important;
   color: var(--textColor, currentColor) !important;
+  font-size: 12px;
 }
 
 @media (max-width: 600px) {
