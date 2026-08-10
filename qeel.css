@@ -3014,15 +3014,7 @@ html[data-color-scheme="light"] .directory-sort select {
   box-sizing: border-box;
   width: min(100%, 720px);
   margin: 1rem auto;
-  padding: 1.25rem;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--accentClr, #c97a64) 45%, transparent);
-  border-radius: var(--radius-medium, 12px);
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accentClr, #c97a64) 14%, transparent), transparent 48%),
-    var(--neutralDark, #1c1724);
-  color: var(--textColor, #d4cde0);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .16);
 }
 
 .directory-registry-heading {
@@ -3128,13 +3120,6 @@ html[data-color-scheme="light"] .directory-sort select {
 
 .directory-record-data {
   display: none !important;
-}
-
-html[data-color-scheme="light"] .directory-registry-card {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accentClr, #4b57c5) 12%, transparent), transparent 48%),
-    var(--neutral, #fffde8);
-  color: var(--textColor, #3a3430);
 }
 
 html[data-color-scheme="light"] .directory-registry-grid > div,
