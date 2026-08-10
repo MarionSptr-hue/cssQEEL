@@ -2809,4 +2809,271 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   transform: translateY(0);
 }
 
+/* Cartes verticales : avatar + pseudo au repos, informations au survol */
+.directory-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)) !important;
+  gap: 1rem !important;
+  align-items: stretch;
+}
+
+.directory-list .directory-member {
+  position: relative !important;
+  display: block !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+  aspect-ratio: 2 / 3;
+  min-height: 285px;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: var(--radius-medium, 10px);
+  isolation: isolate;
+}
+
+.directory-list .directory-avatar {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+
+.directory-list .directory-avatar > img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.directory-list .userlist_details {
+  position: absolute !important;
+  z-index: 3;
+  inset: 0;
+  display: flex !important;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  padding: .9rem !important;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 45%, rgba(8, 6, 13, .92) 100%);
+  transition: background .3s ease;
+}
+
+.directory-list .userlist_pseudo {
+  display: block !important;
+  margin-top: auto;
+  padding: .55rem .65rem;
+  text-align: center;
+  background: rgba(16, 12, 24, .82);
+  backdrop-filter: blur(4px);
+  transition: margin .3s ease, background .3s ease;
+  pointer-events: auto;
+}
+
+.directory-list .directory-profile-link {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.directory-list .userlist_infos {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  font-size: .72rem;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(.75rem);
+  transition: max-height .35s ease, margin .35s ease, opacity .25s ease, transform .35s ease;
+}
+
+.directory-list .userlist_contact {
+  display: none !important;
+}
+
+.directory-list .directory-summary {
+  z-index: 2;
+  align-items: center;
+  padding: 4.5rem 1rem 8.5rem;
+  background: rgba(13, 10, 20, .78);
+  backdrop-filter: blur(3px);
+  font-size: .75rem;
+  line-height: 1.4;
+}
+
+.directory-list .directory-member:hover .directory-avatar > img,
+.directory-list .directory-member:focus-within .directory-avatar > img {
+  transform: scale(1.04);
+  filter: brightness(.5);
+}
+
+.directory-list .directory-member:hover .userlist_details,
+.directory-list .directory-member:focus-within .userlist_details {
+  background: linear-gradient(to bottom, rgba(8, 6, 13, .76), rgba(8, 6, 13, .96));
+}
+
+.directory-list .directory-member:hover .userlist_pseudo,
+.directory-list .directory-member:focus-within .userlist_pseudo {
+  margin-top: 0;
+  background: transparent;
+}
+
+.directory-list .directory-member:hover .userlist_infos,
+.directory-list .directory-member:focus-within .userlist_infos {
+  max-height: 11rem;
+  margin-top: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.directory-list .directory-member:hover .directory-summary,
+.directory-list .directory-member:focus-within .directory-summary {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .directory-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: .65rem !important;
+  }
+
+  .directory-list .directory-member {
+    min-height: 240px;
+  }
+}
+
+/* Filtres compacts, transparents et compatibles avec les thèmes clair/sombre */
+.directory-toolbar {
+  gap: .35rem !important;
+  margin: .75rem 0 1.25rem !important;
+  color: var(--textColor, currentColor);
+}
+
+.directory-filter,
+.directory-alphabet {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .15rem .5rem;
+  min-width: 0;
+  margin: 0 !important;
+  padding: .2rem 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.directory-filter legend,
+.directory-alphabet legend {
+  flex: 0 0 7.5rem;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0;
+  color: var(--textColor, currentColor);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.directory-filter button,
+.directory-alphabet button,
+.directory-pagination button {
+  appearance: none;
+  min-width: 0;
+  margin: 0 !important;
+  padding: .1rem .12rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline-offset: 3px;
+  background: transparent !important;
+  color: var(--accentLight, var(--accentClr, currentColor)) !important;
+  font: inherit;
+  font-size: .72rem;
+  line-height: 1.35;
+  text-decoration: none !important;
+  opacity: .72;
+  cursor: pointer;
+  transition: color .18s ease, opacity .18s ease, transform .18s ease;
+}
+
+.directory-filter button:hover,
+.directory-alphabet button:hover,
+.directory-pagination button:hover,
+.directory-filter button:focus-visible,
+.directory-alphabet button:focus-visible,
+.directory-pagination button:focus-visible {
+  color: var(--textColorAccent, var(--accentClr, currentColor)) !important;
+  opacity: 1;
+}
+
+.directory-filter button.is-active,
+.directory-alphabet button.is-active,
+.directory-pagination button.is-active {
+  color: var(--accentClr, var(--textColorAccent, currentColor)) !important;
+  font-weight: 800;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.directory-filter button.is-active::after,
+.directory-alphabet button.is-active::after {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: 1px;
+  background: currentColor;
+}
+
+.directory-search,
+.directory-sort {
+  display: flex !important;
+  align-items: center;
+  gap: .65rem !important;
+  max-width: none !important;
+  padding: .2rem 0;
+}
+
+.directory-search > span,
+.directory-sort > span {
+  flex: 0 0 7.5rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.directory-search input,
+.directory-sort select {
+  width: min(100%, 24rem);
+  padding: .2rem 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--accentLight, var(--accentClr, currentColor)) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--textColor, currentColor) !important;
+}
+
+@media (max-width: 600px) {
+  .directory-filter legend,
+  .directory-alphabet legend,
+  .directory-search > span,
+  .directory-sort > span {
+    flex-basis: 100%;
+    margin-bottom: .15rem !important;
+  }
+
+  .directory-search,
+  .directory-sort {
+    flex-wrap: wrap;
+  }
+}
 
