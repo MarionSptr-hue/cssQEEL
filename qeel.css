@@ -3099,6 +3099,33 @@ html[data-color-scheme="light"] .directory-sort select {
   line-height: 1.55;
 }
 
+.directory-registry-welcome {
+  margin-top: 1rem;
+}
+
+.directory-registry-welcome > p {
+  margin: .85rem 0 0;
+  text-align: center;
+}
+
+.directory-registry-section-title {
+  margin: 1rem 0 .35rem;
+}
+
+.directory-registry-card .fiche-simple-titre,
+.directory-registry-card .fiche-st {
+  box-sizing: border-box;
+}
+
+.directory-registry-summary .fiche-st {
+  margin-bottom: .65rem;
+}
+
+.directory-registry-summary p {
+  max-height: 9rem;
+  overflow: auto;
+}
+
 .directory-record-data {
   display: none !important;
 }
@@ -3269,13 +3296,6 @@ html[data-color-scheme="light"] .directory-registry-kicker {
     flex-basis: 100%;
     margin-bottom: .15rem !important;
   }
-
-  .directory-search,
-  .directory-sort {
-    flex-wrap: wrap;
-  }
-}
-
 
   .directory-search,
   .directory-sort {
