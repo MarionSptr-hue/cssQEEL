@@ -3015,9 +3015,14 @@ html[data-color-scheme="light"] .directory-sort select {
 .directory-list .userlist_infos,
 .directory-list .directory-summary,
 .directory-list .directory-faceclaim,
-.directory-list .directory-profile-link,
-.directory-list .directory-profile-link * {
+.directory-list .directory-profile-link {
   color: #f6f1ff !important;
+}
+
+/* Les couleurs natives des groupes Forumactif sont portées par les enfants
+   .group-* du lien : ne jamais les écraser avec !important. */
+.directory-list .directory-profile-link [class*="group-"] {
+  color: inherit;
 }
 
 .directory-list .directory-summary {
@@ -3051,7 +3056,7 @@ html[data-color-scheme="light"] .directory-sort select {
   margin: 0 !important;
   padding: 0;
   color: var(--textColor, currentColor);
-  font-size: .68rem;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -3070,7 +3075,7 @@ html[data-color-scheme="light"] .directory-sort select {
   background: transparent !important;
   color: var(--accentLight, var(--accentClr, currentColor)) !important;
   font: inherit;
-  font-size: .72rem;
+  font-size: 10px;
   line-height: 1.35;
   text-decoration: none !important;
   opacity: .72;
@@ -3118,7 +3123,7 @@ html[data-color-scheme="light"] .directory-sort select {
 .directory-search > span,
 .directory-sort > span {
   flex: 0 0 7.5rem;
-  font-size: .68rem;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
