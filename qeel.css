@@ -2903,12 +2903,33 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   inset: 4.25rem .75rem 7.75rem;
   align-items: center;
   padding: .75rem;
-  background: rgba(13, 10, 20, .78);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accentClr, #c97a64) rgba(255, 255, 255, .12);
+  background: rgba(10, 8, 16, .94);
   backdrop-filter: blur(3px);
+  color: var(--contrast, #f4effa) !important;
   font-size: .75rem;
   line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .9);
   border-radius: var(--radius-small, 6px);
   pointer-events: none;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar {
+  width: 5px;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 99px;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar-thumb {
+  background: var(--accentClr, #c97a64);
+  border-radius: 99px;
 }
 
 .directory-list .directory-member:hover .directory-avatar > img,
@@ -2941,6 +2962,7 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 @media (max-width: 600px) {
@@ -3079,4 +3101,3 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
     flex-wrap: wrap;
   }
 }
-
