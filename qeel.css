@@ -3295,10 +3295,9 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .4rem;
-  min-height: 1.9rem;
+  gap: .3rem;
   margin: .35rem 0 .35rem 1rem;
-  padding: .4rem .75rem;
+  padding: .24rem .55rem;
   vertical-align: middle;
   border: 1px solid color-mix(in srgb, var(--accentClr, #a86f67) 78%, transparent);
   border-radius: var(--radius-small, 7px);
@@ -3320,12 +3319,12 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 #validationBtn.validation-button::before {
   content: "✓";
   display: inline-grid;
-  width: 1rem;
-  height: 1rem;
+  width: .85rem;
+  height: .85rem;
   place-items: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, .18);
-  font-size: .65rem;
+  font-size: .58rem;
 }
 
 #validationBtn.validation-button:hover:not(:disabled) {
@@ -3348,6 +3347,6 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 @media (max-width: 600px) {
   #validationBtn.validation-button {
     margin-left: .65rem;
-    padding-inline: .8rem;
+    padding-inline: .5rem;
   }
 }
