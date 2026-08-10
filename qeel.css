@@ -3295,17 +3295,17 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
-  min-height: 2.35rem;
+  gap: .4rem;
+  min-height: 1.9rem;
   margin: .35rem 0 .35rem 1rem;
-  padding: .55rem 1.05rem;
+  padding: .4rem .75rem;
   vertical-align: middle;
   border: 1px solid color-mix(in srgb, var(--accentClr, #a86f67) 78%, transparent);
   border-radius: var(--radius-small, 7px);
   background: var(--accentClr, #a86f67);
   color: #fff;
   font: inherit;
-  font-size: .78rem;
+  font-size: .7rem;
   font-weight: 700;
   line-height: 1;
   letter-spacing: .06em;
@@ -3320,12 +3320,12 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 #validationBtn.validation-button::before {
   content: "✓";
   display: inline-grid;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   place-items: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, .18);
-  font-size: .75rem;
+  font-size: .65rem;
 }
 
 #validationBtn.validation-button:hover:not(:disabled) {
