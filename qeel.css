@@ -2671,10 +2671,12 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
+  height: auto !important;
+  min-height: 2.75rem !important;
   margin-top: .5rem;
   border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
   border-radius: .35rem;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 .directory-form-toggle {
@@ -2806,4 +2808,5 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   visibility: visible;
   transform: translateY(0);
 }
+
 
