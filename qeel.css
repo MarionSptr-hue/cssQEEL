@@ -2603,7 +2603,6 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
 
 /* =========================== CSS NOUVEAU DIRECTORY MEMBER LIST ============== */
 
-/* 
 .directory-toolbar {
   display: grid;
   gap: 1rem;
@@ -2667,4 +2666,131 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   margin-top: .35rem;
 }
 
-*/
+/* Formulaire intÃ©grÃ© Ã  la fiche */
+.directory-form {
+  margin-top: .75rem;
+  padding: .75rem;
+}
+
+.directory-form > .fiche-simple-titre {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+}
+
+.directory-form > .fiche-simple-titre t1 {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.directory-form > .fiche-simple-titre hr {
+  flex: 1;
+  margin: 0;
+}
+
+.directory-form-intro {
+  margin: .35rem 0 0;
+  font-size: .7rem;
+  line-height: 1.3;
+  opacity: .65;
+}
+
+.directory-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .4rem;
+  margin-top: .5rem;
+}
+
+.directory-form-field {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  min-width: 0;
+  padding: .45rem .55rem;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: .35rem;
+}
+
+.directory-form-content {
+  display: grid;
+  gap: .08rem;
+  min-width: 0;
+}
+
+.directory-form-icon {
+  flex: 0 0 auto;
+  width: 1rem;
+  font-size: .8rem;
+  text-align: center;
+  opacity: .7;
+}
+
+.directory-form-field vl {
+  font-size: .62rem;
+  line-height: 1.1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+
+.directory-form-field .directory-value {
+  display: block;
+  font-size: .75rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.directory-form-field--summary {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+}
+
+.directory-form-field--summary .directory-value {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.directory-avatar {
+  position: relative;
+  overflow: hidden;
+}
+
+.directory-summary {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  overflow: auto;
+  background: color-mix(in srgb, var(--neutralDark, #171717) 90%, transparent);
+  color: var(--neutral, #fff);
+  font-size: .85rem;
+  line-height: 1.5;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(.5rem);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+
+.directory-avatar:hover .directory-summary,
+.directory-avatar:focus .directory-summary,
+.directory-avatar:focus-within .directory-summary {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+@media (max-width: 500px) {
+  .directory-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
