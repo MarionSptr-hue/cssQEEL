@@ -3009,6 +3009,125 @@ html[data-color-scheme="light"] .directory-sort select {
   color: var(--textColor, #3a3430) !important;
 }
 
+/* Carte publique publiée dans le sujet-registre */
+.directory-registry-card {
+  box-sizing: border-box;
+  width: min(100%, 720px);
+  margin: 1rem auto;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accentClr, #c97a64) 45%, transparent);
+  border-radius: var(--radius-medium, 12px);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accentClr, #c97a64) 14%, transparent), transparent 48%),
+    var(--neutralDark, #1c1724);
+  color: var(--textColor, #d4cde0);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .16);
+}
+
+.directory-registry-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accentClr, #c97a64) 32%, transparent);
+}
+
+.directory-registry-icon {
+  display: grid;
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accentClr, #c97a64);
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.directory-registry-kicker {
+  color: var(--accentLight, #8c839e);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.directory-registry-heading h2 {
+  margin: .1rem 0;
+  color: var(--textColorAccent, var(--accentClr, #c97a64));
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.directory-registry-heading p,
+.directory-registry-summary p {
+  margin: 0;
+}
+
+.directory-registry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
+.directory-registry-grid > div,
+.directory-registry-summary {
+  padding: .7rem .8rem;
+  border-radius: var(--radius-small, 7px);
+  background: color-mix(in srgb, var(--neutral, #151120) 72%, transparent);
+}
+
+.directory-registry-grid strong,
+.directory-registry-summary strong {
+  display: block;
+  margin-bottom: .2rem;
+  color: var(--accentLight, #8c839e);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.directory-registry-grid span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.directory-registry-summary {
+  margin-top: .65rem;
+  line-height: 1.55;
+}
+
+.directory-record-data {
+  display: none !important;
+}
+
+html[data-color-scheme="light"] .directory-registry-card {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accentClr, #4b57c5) 12%, transparent), transparent 48%),
+    var(--neutral, #fffde8);
+  color: var(--textColor, #3a3430);
+}
+
+html[data-color-scheme="light"] .directory-registry-grid > div,
+html[data-color-scheme="light"] .directory-registry-summary {
+  background: color-mix(in srgb, var(--accentLight, #c3c8f3) 30%, transparent);
+}
+
+html[data-color-scheme="light"] .directory-registry-heading h2,
+html[data-color-scheme="light"] .directory-registry-grid strong,
+html[data-color-scheme="light"] .directory-registry-summary strong,
+html[data-color-scheme="light"] .directory-registry-kicker {
+  color: var(--textColorAccent, #312854);
+}
+
+@media (max-width: 600px) {
+  .directory-registry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Les panneaux sont toujours sombres sur les photos : leur texte doit rester
    clair dans les deux thèmes, indépendamment de --contrast. */
 .directory-list .userlist_details,
@@ -3150,6 +3269,13 @@ html[data-color-scheme="light"] .directory-sort select {
     flex-basis: 100%;
     margin-bottom: .15rem !important;
   }
+
+  .directory-search,
+  .directory-sort {
+    flex-wrap: wrap;
+  }
+}
+
 
   .directory-search,
   .directory-sort {
