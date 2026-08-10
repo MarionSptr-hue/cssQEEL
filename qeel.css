@@ -2982,6 +2982,48 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   }
 }
 
+/* Contrastes explicites pour le thème clair */
+html[data-color-scheme="light"] .directory-filter button,
+html[data-color-scheme="light"] .directory-alphabet button,
+html[data-color-scheme="light"] .directory-pagination button {
+  color: var(--textColorAccent, #312854) !important;
+  opacity: .78;
+}
+
+html[data-color-scheme="light"] .directory-filter button:hover,
+html[data-color-scheme="light"] .directory-alphabet button:hover,
+html[data-color-scheme="light"] .directory-pagination button:hover,
+html[data-color-scheme="light"] .directory-filter button:focus-visible,
+html[data-color-scheme="light"] .directory-alphabet button:focus-visible,
+html[data-color-scheme="light"] .directory-pagination button:focus-visible,
+html[data-color-scheme="light"] .directory-filter button.is-active,
+html[data-color-scheme="light"] .directory-alphabet button.is-active,
+html[data-color-scheme="light"] .directory-pagination button.is-active {
+  color: var(--accentClr, #4b57c5) !important;
+  opacity: 1;
+}
+
+html[data-color-scheme="light"] .directory-search input,
+html[data-color-scheme="light"] .directory-sort select {
+  border-bottom-color: var(--accentClr, #4b57c5) !important;
+  color: var(--textColor, #3a3430) !important;
+}
+
+/* Les panneaux sont toujours sombres sur les photos : leur texte doit rester
+   clair dans les deux thèmes, indépendamment de --contrast. */
+.directory-list .userlist_details,
+.directory-list .userlist_infos,
+.directory-list .directory-summary,
+.directory-list .directory-faceclaim,
+.directory-list .directory-profile-link,
+.directory-list .directory-profile-link * {
+  color: #f6f1ff !important;
+}
+
+.directory-list .directory-summary {
+  scrollbar-color: var(--accentClr, #c97a64) rgba(255, 255, 255, .18);
+}
+
 /* Filtres compacts, transparents et compatibles avec les thèmes clair/sombre */
 .directory-toolbar {
   gap: .35rem !important;
