@@ -2831,6 +2831,12 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
   isolation: isolate;
 }
 
+/* Doit rester après la règle d'affichage des cartes : les filtres utilisent
+   l'attribut hidden pour retirer les membres qui ne correspondent pas. */
+.directory-list .directory-member[hidden] {
+  display: none !important;
+}
+
 .directory-list .directory-avatar {
   position: absolute !important;
   inset: 0;
