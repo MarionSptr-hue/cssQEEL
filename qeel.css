@@ -4870,7 +4870,84 @@ html[data-color-scheme="light"]
 
 }
 
+/* ====================================================
+   MON RYTHME — CHANSON DU MOMENT
+   ==================================================== */
 
+.crush-profile-music {
+  display:grid;
+  grid-template-columns:48px 1fr 30px;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:11px;
+}
+
+.crush-profile-music-cover {
+  display:block;
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:8px;
+}
+
+.crush-profile-music-content {
+  min-width:0;
+  text-align:left;
+}
+
+.crush-profile-music-content strong {
+  display:block;
+  margin-bottom:5px;
+  font-size:8px;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.crush-profile-music-title,
+.crush-profile-music-artist {
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.crush-profile-music-title {
+  font-size:10px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.crush-profile-music-artist {
+  margin-top:3px;
+  font-size:8px;
+  line-height:1.2;
+  opacity:.55;
+}
+
+.crush-profile-music-play {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fd267a;
+  font-size:18px;
+}
+
+/* Mode sombre */
+
+html[data-color-scheme="dark"]
+.crush-profile-music {
+  background:#29262d;
+}
+
+/* Mode clair */
+
+html[data-color-scheme="light"]
+.crush-profile-music {
+  background:#f4f4f5;
+}
 
 /* ====================================================
    CRUSH HOUR — NOTIFICATION DE LIKE
@@ -5085,3 +5162,7 @@ html[data-color-scheme="light"]
   }
 
 }
+
+
+
+
