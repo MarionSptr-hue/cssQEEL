@@ -3764,3 +3764,58 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   font-size:7px;
   opacity:.45;
 }
+
+
+
+/*** PREMIER POST : ÉCRAN “IT’S A MATCH”
+-------------------------------------------------- ***/
+
+body.tinder-auto-topic .tinder-auto-opening {
+  width:500px;
+  max-width:calc(100% - 30px);
+  min-height:0;
+  margin:25px auto 35px;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+
+/*
+ * On masque l’habillage de profil du post normal.
+ * Le contenu “It’s a match” reste visible.
+ */
+
+body.tinder-auto-topic
+.tinder-auto-opening > .post_head,
+
+body.tinder-auto-topic
+.tinder-auto-opening > .post_profile,
+
+body.tinder-auto-topic
+.tinder-auto-opening .post_details,
+
+body.tinder-auto-topic
+.tinder-auto-opening .signature_div {
+  display:none;
+}
+
+body.tinder-auto-topic
+.tinder-auto-opening > .post_message {
+  width:100%;
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+
+body.tinder-auto-topic
+.tinder-auto-opening .postbody.content {
+  width:100%;
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
