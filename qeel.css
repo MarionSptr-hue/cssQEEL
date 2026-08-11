@@ -3354,23 +3354,30 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 
 
 /* ====================================================
-            CSS TINDER MATCH 
-======================================================*/
+   TINDER — FORUM F25
+   ==================================================== */
 
-/*** TINDER — MODULE INDÉPENDANT
--------------------------------------------------- ***/
+/*
+ * Ce CSS n’agit sur les publications automatiques
+ * que lorsque le JavaScript ajoute .tinder-auto-topic.
+ */
 
 .tinder-app,
-.tinder-app * {
+.tinder-app *,
+body.tinder-auto-topic .tinder-auto-post,
+body.tinder-auto-topic .tinder-auto-post * {
   box-sizing:border-box;
 }
 
-/*** CONTENEUR GÉNÉRAL ***/
+
+/* ====================================================
+   ÉCRAN « IT’S A MATCH »
+   ==================================================== */
 
 .tinder-app {
   width:390px;
   max-width:100%;
-  margin:25px auto;
+  margin:0 auto;
   overflow:hidden;
   position:relative;
   color:var(--textColor, inherit);
@@ -3381,67 +3388,12 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   font-family:var(--font);
 }
 
-/*** BARRE SUPÉRIEURE ***/
-
-.tinder-header {
-  min-height:58px;
-  display:grid;
-  grid-template-columns:45px 1fr 45px;
-  align-items:center;
-  padding:7px 12px;
-  background:var(--neutralDarker);
-  border-bottom:var(--border);
-}
-
-.tinder-header-back,
-.tinder-header-action {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fd5068;
-  font-size:19px;
-}
-
-.tinder-header-profile {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-width:0;
-}
-
-.tinder-header-profile img {
-  width:38px;
-  height:38px;
-  flex-shrink:0;
-  object-fit:cover;
-  object-position:center;
-  border-radius:50%;
-}
-
-.tinder-header-name {
-  min-width:0;
-  font-size:12px;
-  font-weight:700;
-  line-height:1.2;
-  text-align:left;
-}
-
-.tinder-header-name span {
-  display:block;
-  margin-top:2px;
-  color:#228b22;
-  font-size:9px;
-  font-weight:500;
-}
-
-/*** ÉCRAN DU MATCH ***/
-
 .tinder-match {
-  min-height:480px;
-  padding:55px 25px 35px;
-  text-align:center;
+  height:auto;
+  min-height:0;
+  padding:30px 22px 25px;
   color:#fff;
+  text-align:center;
   background:
     linear-gradient(
       150deg,
@@ -3454,34 +3406,35 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 }
 
 .tinder-match-title {
-  margin-bottom:6px;
+  margin:0 0 12px;
   font-size:37px;
   font-weight:800;
   font-style:italic;
-  letter-spacing:-2px;
   line-height:1;
+  letter-spacing:-2px;
   transform:rotate(-5deg);
   text-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
 .tinder-match-subtitle {
-  margin:18px 0 35px;
+  margin:0 0 22px;
   font-size:11px;
   line-height:1.5;
   opacity:.9;
 }
 
 .tinder-match-profiles {
-  height:165px;
+  height:145px;
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
+  margin:0;
 }
 
 .tinder-match-profile {
-  width:145px;
-  height:145px;
+  width:125px;
+  height:125px;
   overflow:hidden;
   position:absolute;
   background:var(--neutralDark);
@@ -3491,16 +3444,17 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 }
 
 .tinder-match-profile:first-child {
-  margin-left:-100px;
+  margin-left:-90px;
   transform:rotate(-8deg);
 }
 
 .tinder-match-profile:last-child {
-  margin-left:100px;
+  margin-left:90px;
   transform:rotate(8deg);
 }
 
 .tinder-match-profile img {
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -3509,8 +3463,8 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 }
 
 .tinder-match-heart {
-  width:45px;
-  height:45px;
+  width:42px;
+  height:42px;
   position:relative;
   z-index:2;
   display:flex;
@@ -3520,14 +3474,14 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   background:#fff;
   border-radius:50%;
   box-shadow:0 5px 15px rgba(0,0,0,.18);
-  font-size:18px;
+  font-size:17px;
 }
 
 .tinder-match-button {
   display:block;
   width:85%;
-  margin:34px auto 0;
-  padding:12px 15px;
+  margin:22px auto 0;
+  padding:11px 15px;
   color:#fd5068;
   background:#fff;
   border-radius:30px;
@@ -3538,293 +3492,15 @@ html[data-color-scheme="light"] .directory-registry-kicker {
 }
 
 .tinder-match-note {
-  margin-top:14px;
+  margin:10px 0 0;
   font-size:9px;
   opacity:.8;
 }
 
-/*** CONVERSATION ***/
 
-.tinder-chat {
-  min-height:450px;
-  padding:22px 17px 15px;
-  background:var(--neutral);
-}
-
-.tinder-chat-date {
-  margin:5px 0 23px;
-  color:var(--textColor, inherit);
-  font-size:8px;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  opacity:.55;
-}
-
-.tinder-message-row {
-  display:flex;
-  align-items:flex-end;
-  gap:7px;
-  margin:8px 0;
-}
-
-.tinder-message-row.is-me {
-  justify-content:flex-end;
-}
-
-.tinder-message-avatar {
-  width:27px;
-  height:27px;
-  flex-shrink:0;
-  object-fit:cover;
-  object-position:center;
-  border-radius:50%;
-}
-
-.tinder-message {
-  max-width:74%;
-  padding:10px 13px;
-  background:var(--neutralDark);
-  border:var(--border);
-  border-radius:17px 17px 17px 4px;
-  font-size:11px;
-  line-height:1.45;
-  text-align:left;
-}
-
-.tinder-message-row.is-me .tinder-message {
-  color:#fff;
-  background:linear-gradient(135deg, #fd5068, #ff6036);
-  border-color:transparent;
-  border-radius:17px 17px 4px 17px;
-}
-
-.tinder-message img {
-  display:block;
-  width:100%;
-  max-width:220px;
-  margin:0 0 7px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:11px;
-}
-
-.tinder-message-time {
-  margin:3px 7px 12px;
-  font-size:7px;
-  opacity:.5;
-}
-
-.tinder-message-time.is-me {
-  text-align:right;
-}
-
-/*** ZONE DE SAISIE DÉCORATIVE ***/
-
-.tinder-input {
-  display:grid;
-  grid-template-columns:31px 1fr 31px;
-  align-items:center;
-  gap:7px;
-  margin-top:22px;
-  padding-top:12px;
-  border-top:var(--border);
-  color:#fd5068;
-  text-align:center;
-}
-
-.tinder-input-field {
-  padding:9px 13px;
-  color:var(--textColor, inherit);
-  background:var(--neutralDark);
-  border:var(--border);
-  border-radius:20px;
-  font-size:9px;
-  text-align:left;
-  opacity:.65;
-}
-
-
-/*** TINDER — UN MESSAGE PAR PUBLICATION
--------------------------------------------------- ***/
-
-.tinder-msg,
-.tinder-msg * {
-  box-sizing:border-box;
-}
-
-.tinder-msg {
-  width:390px;
-  max-width:100%;
-  margin:0 auto;
-  padding:12px 18px;
-  display:flex;
-  align-items:flex-end;
-  gap:8px;
-  font-family:var(--font);
-}
-
-/*** MESSAGE À GAUCHE ***/
-
-.tinder-msg.tinder-left {
-  justify-content:flex-start;
-}
-
-.tinder-left .tinder-msg-avatar {
-  order:1;
-}
-
-.tinder-left .tinder-msg-content {
-  order:2;
-  align-items:flex-start;
-}
-
-.tinder-left .tinder-msg-bubble {
-  color:var(--textColor, inherit);
-  background:var(--neutralDark);
-  border:var(--border);
-  border-radius:18px 18px 18px 4px;
-}
-
-/*** MESSAGE À DROITE ***/
-
-.tinder-msg.tinder-right {
-  justify-content:flex-end;
-}
-
-.tinder-right .tinder-msg-avatar {
-  order:2;
-}
-
-.tinder-right .tinder-msg-content {
-  order:1;
-  align-items:flex-end;
-}
-
-.tinder-right .tinder-msg-bubble {
-  color:#fff;
-  background:linear-gradient(135deg, #fd5068, #ff6036);
-  border:1px solid transparent;
-  border-radius:18px 18px 4px 18px;
-}
-
-/*** AVATAR ***/
-
-.tinder-msg-avatar {
-  width:32px;
-  height:32px;
-  flex-shrink:0;
-  object-fit:cover;
-  object-position:center;
-  border:var(--border);
-  border-radius:50%;
-}
-
-/*** CONTENU DU MESSAGE ***/
-
-.tinder-msg-content {
-  max-width:75%;
-  display:flex;
-  flex-direction:column;
-}
-
-.tinder-msg-author {
-  margin:0 7px 4px;
-  color:var(--textColor, inherit);
-  font-size:8px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-  opacity:.65;
-}
-
-.tinder-msg-bubble {
-  padding:11px 14px;
-  font-size:11px;
-  line-height:1.5;
-  text-align:left;
-  overflow-wrap:anywhere;
-  box-shadow:0 3px 10px rgba(0,0,0,.06);
-}
-
-.tinder-msg-bubble img {
-  display:block;
-  width:100%;
-  max-width:220px;
-  height:auto;
-  margin:0 0 8px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:11px;
-}
-
-.tinder-msg-time {
-  margin:4px 7px 0;
-  color:var(--textColor, inherit);
-  font-size:7px;
-  opacity:.45;
-}
-
-
-
-/*** PREMIER POST : ÉCRAN “IT’S A MATCH”
--------------------------------------------------- ***/
-
-body.tinder-auto-topic .tinder-auto-opening {
-  width:500px;
-  max-width:calc(100% - 30px);
-  min-height:0;
-  margin:25px auto 35px;
-  padding:0;
-  background:transparent;
-  border:0;
-  box-shadow:none;
-}
-
-/*
- * On masque l’habillage de profil du post normal.
- * Le contenu “It’s a match” reste visible.
- */
-
-body.tinder-auto-topic
-.tinder-auto-opening > .post_head,
-
-body.tinder-auto-topic
-.tinder-auto-opening > .post_profile,
-
-body.tinder-auto-topic
-.tinder-auto-opening .post_details,
-
-body.tinder-auto-topic
-.tinder-auto-opening .signature_div {
-  display:none;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening > .post_message {
-  width:100%;
-  margin:0;
-  padding:0;
-  background:transparent;
-  border:0;
-  box-shadow:none;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .postbody.content {
-  width:100%;
-  margin:0;
-  padding:0;
-  background:transparent;
-  border:0;
-  box-shadow:none;
-}
-
-
-/*** CORRECTIONS TINDER F25
--------------------------------------------------- ***/
-
-/*** PREMIER POST : IT’S A MATCH ***/
+/* ====================================================
+   PREMIER POST — OUVERTURE DU MATCH
+   ==================================================== */
 
 body.tinder-auto-topic .tinder-auto-opening {
   display:block !important;
@@ -3839,23 +3515,28 @@ body.tinder-auto-topic .tinder-auto-opening {
   box-shadow:none !important;
 }
 
+/* Masque le grand profil Forumactif */
+
 body.tinder-auto-topic
 .tinder-auto-opening > .post_head,
 
 body.tinder-auto-topic
-.tinder-auto-opening > .post_profile,
-
-body.tinder-auto-topic
-.tinder-auto-opening .post_details,
-
-body.tinder-auto-topic
-.tinder-auto-opening .signature_div {
+.tinder-auto-opening > .post_profile {
   display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
 }
+
+/* Conteneur du premier message */
 
 body.tinder-auto-topic
 .tinder-auto-opening > .post_message {
-  display:block !important;
+  display:flex !important;
+  flex-direction:column !important;
   width:100% !important;
   max-width:none !important;
   min-height:0 !important;
@@ -3870,67 +3551,33 @@ body.tinder-auto-topic
 
 body.tinder-auto-topic
 .tinder-auto-opening .postbody.content {
+  order:1 !important;
   display:block !important;
   width:100% !important;
   min-height:0 !important;
   height:auto !important;
   margin:0 !important;
   padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
-/*** PANNEAU DU MATCH PLUS COMPACT ***/
+/* Position des outils sous l’écran du match */
 
 body.tinder-auto-topic
-.tinder-auto-opening .tinder-app {
-  width:390px;
-  max-width:100%;
-  min-height:0 !important;
-  height:auto !important;
-  margin:0 auto !important;
+.tinder-auto-opening .post_details {
+  order:2 !important;
+  align-self:center !important;
+  width:390px !important;
+  max-width:100% !important;
+  margin:5px auto 0 !important;
 }
 
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match {
-  min-height:0 !important;
-  height:auto !important;
-  padding:30px 22px 25px !important;
-}
 
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-title {
-  margin:0 0 12px !important;
-  line-height:1 !important;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-subtitle {
-  margin:0 0 22px !important;
-  line-height:1.5 !important;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-profiles {
-  height:145px !important;
-  margin:0 !important;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-profile {
-  width:125px !important;
-  height:125px !important;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-button {
-  margin:22px auto 0 !important;
-}
-
-body.tinder-auto-topic
-.tinder-auto-opening .tinder-match-note {
-  margin:10px 0 0 !important;
-}
-
-/*** RÉPONSES : SUPPRESSION DE LA GRILLE DU PROFIL ***/
+/* ====================================================
+   PUBLICATIONS DE LA CONVERSATION
+   ==================================================== */
 
 body.tinder-auto-topic .tinder-auto-post {
   display:flex !important;
@@ -3950,9 +3597,7 @@ body.tinder-auto-topic .tinder-auto-post {
   box-shadow:none !important;
 }
 
-/*
- * Masque totalement le grand profil et son avatar.
- */
+/* Masque le profil et son grand avatar */
 
 body.tinder-auto-topic
 .tinder-auto-post > .post_head,
@@ -3968,7 +3613,10 @@ body.tinder-auto-topic
   overflow:hidden !important;
 }
 
-/*** PETIT AVATAR ROND UNIQUEMENT ***/
+
+/* ====================================================
+   PETIT AVATAR ROND
+   ==================================================== */
 
 body.tinder-auto-topic
 .tinder-auto-post > .tinder-auto-avatar {
@@ -3977,15 +3625,19 @@ body.tinder-auto-topic
   height:34px !important;
   min-width:34px !important;
   flex:0 0 34px !important;
-  margin:0 0 17px !important;
+  margin:0 0 20px !important;
   padding:0 !important;
   object-fit:cover !important;
   object-position:center !important;
+  background:var(--neutralDark) !important;
   border:var(--border) !important;
   border-radius:50% !important;
 }
 
-/*** CONTENEUR DE LA BULLE ***/
+
+/* ====================================================
+   CONTENEUR DU MESSAGE
+   ==================================================== */
 
 body.tinder-auto-topic
 .tinder-auto-post > .post_message {
@@ -4005,14 +3657,13 @@ body.tinder-auto-topic
   box-shadow:none !important;
 }
 
-body.tinder-auto-topic
-.tinder-auto-left {
-  justify-content:flex-start !important;
-}
 
-body.tinder-auto-topic
-.tinder-auto-right {
-  justify-content:flex-end !important;
+/* ====================================================
+   POSITION GAUCHE
+   ==================================================== */
+
+body.tinder-auto-topic .tinder-auto-left {
+  justify-content:flex-start !important;
 }
 
 body.tinder-auto-topic
@@ -4026,6 +3677,15 @@ body.tinder-auto-topic
   align-items:flex-start !important;
 }
 
+
+/* ====================================================
+   POSITION DROITE
+   ==================================================== */
+
+body.tinder-auto-topic .tinder-auto-right {
+  justify-content:flex-end !important;
+}
+
 body.tinder-auto-topic
 .tinder-auto-right > .tinder-auto-avatar {
   order:2 !important;
@@ -4037,10 +3697,49 @@ body.tinder-auto-topic
   align-items:flex-end !important;
 }
 
-/*** BULLE DE TEXTE ***/
+
+/* ====================================================
+   INFORMATIONS DU MESSAGE
+   ==================================================== */
+
+body.tinder-auto-topic
+.tinder-auto-post .tinder-auto-infos {
+  order:1 !important;
+  display:flex !important;
+  align-items:center !important;
+  width:auto !important;
+  margin:0 7px 4px !important;
+  gap:6px !important;
+  font-size:8px !important;
+  line-height:1.2 !important;
+}
+
+body.tinder-auto-topic
+.tinder-auto-post .tinder-auto-author {
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  opacity:.7;
+}
+
+body.tinder-auto-topic
+.tinder-auto-post .tinder-auto-date {
+  opacity:.45;
+}
+
+body.tinder-auto-topic
+.tinder-auto-right .tinder-auto-infos {
+  flex-direction:row-reverse !important;
+}
+
+
+/* ====================================================
+   BULLES
+   ==================================================== */
 
 body.tinder-auto-topic
 .tinder-auto-post .postbody.content {
+  order:2 !important;
   display:block !important;
   width:auto !important;
   max-width:100% !important;
@@ -4050,9 +3749,14 @@ body.tinder-auto-topic
   padding:10px 14px !important;
   float:none !important;
   position:static !important;
+  font-size:11px !important;
   line-height:1.5 !important;
+  text-align:left !important;
   overflow-wrap:anywhere;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
 }
+
+/* Bulle gauche */
 
 body.tinder-auto-topic
 .tinder-auto-left .postbody.content {
@@ -4061,6 +3765,8 @@ body.tinder-auto-topic
   border:var(--border) !important;
   border-radius:18px 18px 18px 5px !important;
 }
+
+/* Bulle droite */
 
 body.tinder-auto-topic
 .tinder-auto-right .postbody.content {
@@ -4074,34 +3780,231 @@ body.tinder-auto-topic
   border-radius:18px 18px 5px 18px !important;
 }
 
-/*** INFORMATIONS COMPACTES ***/
+/* Paragraphes */
 
 body.tinder-auto-topic
-.tinder-auto-post .tinder-auto-infos {
+.tinder-auto-post .postbody.content p:first-child {
+  margin-top:0 !important;
+}
+
+body.tinder-auto-topic
+.tinder-auto-post .postbody.content p:last-child {
+  margin-bottom:0 !important;
+}
+
+/* Images envoyées */
+
+body.tinder-auto-topic
+.tinder-auto-post .postbody.content img {
+  display:block;
+  max-width:100% !important;
+  height:auto !important;
+  margin:5px 0 !important;
+  object-fit:cover;
+  object-position:center;
+  border-radius:11px;
+}
+
+
+/* ====================================================
+   MODIFIER, SUPPRIMER, CITER ET AIMER
+   ==================================================== */
+
+body.tinder-auto-topic
+.tinder-auto-opening .post_details,
+
+body.tinder-auto-topic
+.tinder-auto-post .post_details {
   display:flex !important;
+  min-height:16px !important;
+  height:auto !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+
+/*
+ * Dans les réponses, les outils arrivent après la bulle.
+ */
+
+body.tinder-auto-topic
+.tinder-auto-post .post_details {
+  order:3 !important;
   width:auto !important;
-  margin:0 7px 4px !important;
-  gap:6px !important;
+  margin:4px 7px 0 !important;
+}
+
+/* Alignement selon le côté */
+
+body.tinder-auto-topic
+.tinder-auto-left .post_details {
+  align-self:flex-start !important;
 }
 
 body.tinder-auto-topic
-.tinder-auto-right .tinder-auto-infos {
-  flex-direction:row-reverse !important;
+.tinder-auto-right .post_details {
+  align-self:flex-end !important;
 }
 
-/*** MASQUAGE DES ÉLÉMENTS NORMAUX DU POST ***/
+/*
+ * La date originale est masquée :
+ * elle est déjà copiée dans .tinder-auto-infos.
+ */
 
 body.tinder-auto-topic
-.tinder-auto-post .post_details,
+.tinder-auto-post .post_details > .post_date,
+
+body.tinder-auto-topic
+.tinder-auto-opening .post_details > .post_date {
+  display:none !important;
+}
+
+/* Conteneur des outils */
+
+body.tinder-auto-topic .post_manage {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:5px !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+  position:static !important;
+  opacity:.55;
+  transition:var(--transi);
+}
+
+body.tinder-auto-topic
+.tinder-auto-opening:hover .post_manage,
+
+body.tinder-auto-topic
+.tinder-auto-post:hover .post_manage {
+  opacity:1;
+}
+
+
+/* ====================================================
+   BOUTONS CITER, MODIFIER ET SUPPRIMER
+   ==================================================== */
+
+body.tinder-auto-topic .profile-icons {
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  list-style:none !important;
+}
+
+body.tinder-auto-topic .profile-icons li {
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+}
+
+body.tinder-auto-topic .profile-icons a {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+body.tinder-auto-topic .profile-icons img {
+  display:block !important;
+  width:auto !important;
+  max-width:16px !important;
+  height:14px !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  opacity:.75;
+  transition:var(--transi);
+}
+
+body.tinder-auto-topic
+.profile-icons a:hover img {
+  opacity:1;
+}
+
+
+/* ====================================================
+   BOUTON J’AIME
+   ==================================================== */
+
+body.tinder-auto-topic .like_button {
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 0 0 5px !important;
+  padding:0 !important;
+}
+
+body.tinder-auto-topic
+.like_button .rep-button {
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:2px 7px !important;
+  color:inherit;
+  background:transparent !important;
+  border:var(--border) !important;
+  border-radius:10px !important;
+  font-size:8px !important;
+  line-height:1.2 !important;
+  opacity:.75;
+  cursor:pointer;
+  transition:var(--transi);
+}
+
+body.tinder-auto-topic
+.like_button .rep-button:hover {
+  color:#fd5068 !important;
+  border-color:#fd5068 !important;
+  opacity:1;
+}
+
+
+/* ====================================================
+   SIGNATURES
+   ==================================================== */
+
+body.tinder-auto-topic
+.tinder-auto-opening .signature_div,
 
 body.tinder-auto-topic
 .tinder-auto-post .signature_div {
   display:none !important;
 }
 
-/*** MOBILE ***/
+
+/* ====================================================
+   VERSION MOBILE
+   ==================================================== */
 
 @media (max-width:600px) {
+
+  .tinder-app {
+    width:100%;
+  }
+
+  body.tinder-auto-topic .tinder-auto-opening {
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  body.tinder-auto-topic
+  .tinder-auto-opening .post_details {
+    width:100% !important;
+    padding:0 8px !important;
+  }
+
   body.tinder-auto-topic .tinder-auto-post {
     width:100% !important;
     max-width:100% !important;
@@ -4113,4 +4016,9 @@ body.tinder-auto-topic
   .tinder-auto-post > .post_message {
     max-width:80% !important;
   }
+
+  body.tinder-auto-topic .post_manage {
+    opacity:1;
+  }
+
 }
