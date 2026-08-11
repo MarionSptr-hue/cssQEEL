@@ -3379,22 +3379,61 @@ body.tinder-auto-topic .tinder-auto-post * {
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Barre supérieure Tinder */
 
-.tinder-app::before {
-  content:"♥  tinder";
-  height:48px;
+/* ====================================================
+   IDENTITÉ CRUSH HOUR
+   ==================================================== */
+
+.tinder-brand {
+  min-height:58px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:9px 15px 8px;
+}
+
+.tinder-brand-name {
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:6px;
   color:#fd267a;
-  font-size:21px;
+  font-size:20px;
   font-weight:800;
   line-height:1;
-  letter-spacing:-1px;
+  letter-spacing:-.8px;
   text-transform:lowercase;
 }
 
+.tinder-brand-name i {
+  font-size:15px;
+  transform:rotate(-8deg);
+}
+
+.tinder-brand-tagline {
+  margin-top:5px;
+  font-size:7px;
+  font-weight:600;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  opacity:.5;
+}
+
+/* Mode sombre */
+
+html[data-color-scheme="dark"] .tinder-brand {
+  background:#17151b;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Mode clair */
+
+html[data-color-scheme="light"] .tinder-brand {
+  background:#fff;
+  border-bottom:1px solid #ededee;
+}
 
 /* ====================================================
    ÉCRAN « IT’S A MATCH »
@@ -3528,10 +3567,6 @@ html[data-color-scheme="dark"] .tinder-app {
   box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
 
-html[data-color-scheme="dark"] .tinder-app::before {
-  background:#17151b;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
 
 html[data-color-scheme="dark"] .tinder-match {
   color:#f5f5f7;
@@ -3569,10 +3604,6 @@ html[data-color-scheme="light"] .tinder-app {
   box-shadow:0 8px 24px rgba(20,20,25,.09);
 }
 
-html[data-color-scheme="light"] .tinder-app::before {
-  background:#fff;
-  border-bottom:1px solid #ededee;
-}
 
 html[data-color-scheme="light"] .tinder-match {
   color:#242429;
