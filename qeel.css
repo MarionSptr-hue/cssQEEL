@@ -5635,47 +5635,21 @@ body.spotted-topic
 
 
 /* ====================================================
-   OUTILS ET BOUTON « J’AI VU ÇA »
+   OUTILS SOUS LES POSTS — VERSION PLUS LISIBLE
    ==================================================== */
-
-body.spotted-topic
-.spotted-opening .post_details,
-
-body.spotted-topic
-.spotted-reply .post_details {
-  display:flex !important;
-  min-height:16px !important;
-  height:auto !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-}
-
-body.spotted-topic
-.spotted-reply .post_details {
-  order:3 !important;
-  align-self:flex-end !important;
-  width:auto !important;
-  margin:4px 7px 0 !important;
-}
-
-body.spotted-topic
-.post_details > .post_date {
-  display:none !important;
-}
 
 body.spotted-topic .post_manage {
   display:flex !important;
   align-items:center !important;
   justify-content:flex-end !important;
-  gap:5px !important;
+  gap:7px !important;
   width:auto !important;
   height:auto !important;
   margin:0 !important;
   padding:0 !important;
   float:none !important;
   position:static !important;
-  opacity:.55;
+  opacity:.8;
   transition:var(--transi);
 }
 
@@ -5689,28 +5663,35 @@ body.spotted-topic
 
 
 /* ====================================================
-   MODIFIER, SUPPRIMER ET CITER
+   CITER, MODIFIER ET SUPPRIMER
    ==================================================== */
 
 body.spotted-topic .profile-icons {
   display:flex !important;
   align-items:center !important;
-  gap:5px !important;
+  gap:6px !important;
   margin:0 !important;
   padding:0 !important;
   list-style:none !important;
 }
 
 body.spotted-topic .profile-icons li {
-  display:block !important;
-  width:auto !important;
-  height:auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:28px !important;
+  height:28px !important;
   margin:0 !important;
   padding:0 !important;
   float:none !important;
+  background:var(--neutralDark) !important;
+  border:var(--border) !important;
+  border-radius:4px !important;
 }
 
 body.spotted-topic .profile-icons a {
+  width:100% !important;
+  height:100% !important;
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
@@ -5719,49 +5700,105 @@ body.spotted-topic .profile-icons a {
 body.spotted-topic .profile-icons img {
   display:block !important;
   width:auto !important;
-  max-width:16px !important;
-  height:14px !important;
+  max-width:18px !important;
+  height:16px !important;
   margin:0 !important;
   padding:0 !important;
   object-fit:contain !important;
+  opacity:.8;
+}
+
+body.spotted-topic
+.profile-icons li:hover {
+  border-color:var(--spotted-accent) !important;
+}
+
+body.spotted-topic
+.profile-icons li:hover img {
+  opacity:1;
 }
 
 
 /* ====================================================
-   BOUTON DE RÉACTION
+   BOUTON « J’AI VU ÇA »
    ==================================================== */
 
 body.spotted-topic .like_button {
   display:block !important;
   width:auto !important;
   height:auto !important;
-  margin:0 0 0 5px !important;
+  margin:0 0 0 3px !important;
   padding:0 !important;
 }
 
 body.spotted-topic
 .like_button .rep-button {
   width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
+  min-width:90px !important;
+  min-height:28px !important;
   margin:0 !important;
-  padding:4px 8px !important;
+  padding:6px 12px !important;
   color:var(--textColor, inherit) !important;
-  background:transparent !important;
+  background:var(--neutralDark) !important;
   border:1px solid var(--spotted-accent) !important;
-  border-radius:3px !important;
-  font-size:8px !important;
-  font-weight:700 !important;
+  border-radius:4px !important;
+  font-size:10px !important;
+  font-weight:800 !important;
   line-height:1.2 !important;
+  text-transform:uppercase;
+  letter-spacing:.5px;
   cursor:pointer;
 }
 
 body.spotted-topic
 .like_button .rep-button:hover {
-  color:var(--spotted-accent) !important;
-  background:transparent !important;
+  color:var(--neutralDarker) !important;
+  background:var(--spotted-accent) !important;
 }
 
+
+/* Compteur de réactions */
+
+body.spotted-topic
+.like_button .rep-nb:not(:empty) {
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-width:17px;
+  height:17px;
+  margin-left:6px;
+  padding:0 4px;
+  color:var(--neutralDarker);
+  background:var(--spotted-accent);
+  border-radius:9px;
+  font-size:8px;
+}
+
+
+/* ====================================================
+   MODE LIGHT
+   ==================================================== */
+
+html[data-color-scheme="light"]
+body.spotted-topic
+.profile-icons li {
+  background:#f4f4f5 !important;
+}
+
+html[data-color-scheme="light"]
+body.spotted-topic
+.like_button .rep-button {
+  color:#564000 !important;
+  background:#fff !important;
+  border-color:#805d00 !important;
+}
+
+html[data-color-scheme="light"]
+body.spotted-topic
+.like_button .rep-button:hover {
+  color:#fff !important;
+  background:#805d00 !important;
+}
 
 /* ====================================================
    SIGNATURES
@@ -5809,6 +5846,29 @@ body.spotted-topic
   background:#805d00 !important;
 }
 
+/* ====================================================
+   COULEURS SPOTTED — DARK ET LIGHT
+   ==================================================== */
+
+/* Mode sombre : jaune signalétique */
+
+html[data-color-scheme="dark"]
+body.spotted-topic,
+
+html[data-color-scheme="dark"]
+.spotted-card {
+  --spotted-accent:#e4b63f;
+}
+
+/* Mode clair : moutarde foncé pour la lisibilité */
+
+html[data-color-scheme="light"]
+body.spotted-topic,
+
+html[data-color-scheme="light"]
+.spotted-card {
+  --spotted-accent:#805d00;
+}
 
 /* ====================================================
    VERSION MOBILE
