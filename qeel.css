@@ -3643,3 +3643,124 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   text-align:left;
   opacity:.65;
 }
+
+
+/*** TINDER — UN MESSAGE PAR PUBLICATION
+-------------------------------------------------- ***/
+
+.tinder-msg,
+.tinder-msg * {
+  box-sizing:border-box;
+}
+
+.tinder-msg {
+  width:390px;
+  max-width:100%;
+  margin:0 auto;
+  padding:12px 18px;
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+  font-family:var(--font);
+}
+
+/*** MESSAGE À GAUCHE ***/
+
+.tinder-msg.tinder-left {
+  justify-content:flex-start;
+}
+
+.tinder-left .tinder-msg-avatar {
+  order:1;
+}
+
+.tinder-left .tinder-msg-content {
+  order:2;
+  align-items:flex-start;
+}
+
+.tinder-left .tinder-msg-bubble {
+  color:var(--textColor, inherit);
+  background:var(--neutralDark);
+  border:var(--border);
+  border-radius:18px 18px 18px 4px;
+}
+
+/*** MESSAGE À DROITE ***/
+
+.tinder-msg.tinder-right {
+  justify-content:flex-end;
+}
+
+.tinder-right .tinder-msg-avatar {
+  order:2;
+}
+
+.tinder-right .tinder-msg-content {
+  order:1;
+  align-items:flex-end;
+}
+
+.tinder-right .tinder-msg-bubble {
+  color:#fff;
+  background:linear-gradient(135deg, #fd5068, #ff6036);
+  border:1px solid transparent;
+  border-radius:18px 18px 4px 18px;
+}
+
+/*** AVATAR ***/
+
+.tinder-msg-avatar {
+  width:32px;
+  height:32px;
+  flex-shrink:0;
+  object-fit:cover;
+  object-position:center;
+  border:var(--border);
+  border-radius:50%;
+}
+
+/*** CONTENU DU MESSAGE ***/
+
+.tinder-msg-content {
+  max-width:75%;
+  display:flex;
+  flex-direction:column;
+}
+
+.tinder-msg-author {
+  margin:0 7px 4px;
+  color:var(--textColor, inherit);
+  font-size:8px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  opacity:.65;
+}
+
+.tinder-msg-bubble {
+  padding:11px 14px;
+  font-size:11px;
+  line-height:1.5;
+  text-align:left;
+  overflow-wrap:anywhere;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.tinder-msg-bubble img {
+  display:block;
+  width:100%;
+  max-width:220px;
+  height:auto;
+  margin:0 0 8px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:11px;
+}
+
+.tinder-msg-time {
+  margin:4px 7px 0;
+  color:var(--textColor, inherit);
+  font-size:7px;
+  opacity:.45;
+}
