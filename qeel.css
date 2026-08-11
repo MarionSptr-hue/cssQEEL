@@ -5205,6 +5205,11 @@ html[data-color-scheme="light"]
 
 /* ============= SPOTTED LONDON CSS =========*/
 
+Remplace entièrement l’ancien CSS Spotted London par celui-ci :
+/* ====================================================
+   SPOTTED LONDON — FORUM F26
+   ==================================================== */
+
 body.spotted-topic,
 .spotted-card {
   --spotted-accent:#e4b63f;
@@ -5221,10 +5226,13 @@ body.spotted-topic .spotted-reply * {
   display:none !important;
 }
 
-/* Carte d'ouverture */
+
+/* ====================================================
+   CARTE D’OUVERTURE
+   ==================================================== */
 
 .spotted-card {
-  width:520px;
+  width:440px;
   max-width:100%;
   margin:0 auto;
   overflow:hidden;
@@ -5236,13 +5244,18 @@ body.spotted-topic .spotted-reply * {
   font-family:var(--font);
 }
 
+
+/* ====================================================
+   EN-TÊTE
+   ==================================================== */
+
 .spotted-card-header {
-  min-height:64px;
+  min-height:56px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  padding:13px 16px;
+  padding:10px 14px;
   background:var(--neutralDarker);
   border-bottom:var(--border);
 }
@@ -5281,32 +5294,38 @@ body.spotted-topic .spotted-reply * {
   display:block;
   margin-top:5px;
   color:var(--textColor, inherit);
-  font-size:7px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:3.2px;
-  opacity:.5;
+  opacity:.75;
 }
 
 .spotted-card-tagline {
+  max-width:125px;
   flex-shrink:0;
-  font-size:7px;
+  font-size:9px;
   font-weight:700;
   line-height:1.3;
   text-align:right;
   text-transform:uppercase;
   letter-spacing:.8px;
-  opacity:.45;
+  opacity:.7;
 }
+
+
+/* ====================================================
+   CATÉGORIE, LIEU ET HEURE
+   ==================================================== */
 
 .spotted-card-meta {
   display:flex;
   flex-wrap:wrap;
   align-items:center;
   gap:7px 13px;
-  padding:11px 16px;
+  padding:9px 14px;
   background:var(--neutralDark);
   border-bottom:var(--border);
-  font-size:8px;
+  font-size:9px;
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:.7px;
@@ -5317,11 +5336,12 @@ body.spotted-topic .spotted-reply * {
   color:var(--neutralDarker);
   background:var(--spotted-accent);
   border-radius:3px;
+  font-size:9px;
 }
 
 .spotted-card-place,
 .spotted-card-time {
-  opacity:.65;
+  opacity:.8;
 }
 
 .spotted-card-place::before {
@@ -5330,12 +5350,17 @@ body.spotted-topic .spotted-reply * {
   color:var(--spotted-accent);
 }
 
+
+/* ====================================================
+   CONTENU DU SPOTTED
+   ==================================================== */
+
 .spotted-card-body {
-  padding:22px 20px 20px;
+  padding:16px 16px 15px;
 }
 
 .spotted-card-kicker {
-  margin-bottom:12px;
+  margin-bottom:9px;
   color:var(--spotted-accent);
   font-family:Arial Narrow, Arial, sans-serif;
   font-size:9px;
@@ -5346,28 +5371,40 @@ body.spotted-topic .spotted-reply * {
 
 .spotted-card-message {
   font-size:inherit;
-  line-height:1.65;
+  line-height:1.5;
   text-align:left;
 }
+
+
+/* ====================================================
+   IMAGE FACULTATIVE
+   ==================================================== */
 
 .spotted-card-picture {
   display:block !important;
   width:100% !important;
   max-width:100% !important;
-  height:225px !important;
-  margin:18px 0 0 !important;
+  height:160px !important;
+  margin:13px 0 0 !important;
+  padding:0 !important;
   object-fit:cover !important;
   object-position:center !important;
+  border:0 !important;
   border-radius:4px !important;
 }
+
+
+/* ====================================================
+   PIED DE LA CARTE
+   ==================================================== */
 
 .spotted-card-footer {
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  margin-top:18px;
-  padding-top:15px;
+  margin-top:13px;
+  padding-top:11px;
   border-top:var(--border);
 }
 
@@ -5376,24 +5413,30 @@ body.spotted-topic .spotted-reply * {
   color:var(--spotted-accent);
   border:1px solid var(--spotted-accent);
   border-radius:3px;
-  font-size:8px;
+  font-size:9px;
   font-weight:800;
+  line-height:1.2;
   text-transform:uppercase;
   letter-spacing:.7px;
 }
 
 .spotted-card-anonymous {
-  font-size:7px;
+  font-size:8px;
+  font-weight:600;
+  line-height:1.2;
   text-transform:uppercase;
   letter-spacing:.8px;
-  opacity:.4;
+  opacity:.7;
 }
 
-/* Premier post Forumactif */
+
+/* ====================================================
+   PREMIER POST FORUMACTIF
+   ==================================================== */
 
 body.spotted-topic .spotted-opening {
   display:block !important;
-  width:560px !important;
+  width:480px !important;
   max-width:calc(100% - 30px) !important;
   min-height:0 !important;
   height:auto !important;
@@ -5404,12 +5447,22 @@ body.spotted-topic .spotted-opening {
   box-shadow:none !important;
 }
 
-body.spotted-topic .spotted-opening > .post_head,
-body.spotted-topic .spotted-opening > .post_profile {
+body.spotted-topic
+.spotted-opening > .post_head,
+
+body.spotted-topic
+.spotted-opening > .post_profile {
   display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
 }
 
-body.spotted-topic .spotted-opening > .post_message {
+body.spotted-topic
+.spotted-opening > .post_message {
   display:flex !important;
   flex-direction:column !important;
   width:100% !important;
@@ -5423,10 +5476,12 @@ body.spotted-topic .spotted-opening > .post_message {
   box-shadow:none !important;
 }
 
-body.spotted-topic .spotted-opening .postbody.content {
+body.spotted-topic
+.spotted-opening .postbody.content {
   order:1 !important;
   width:100% !important;
   min-height:0 !important;
+  height:auto !important;
   margin:0 !important;
   padding:0 !important;
   background:transparent !important;
@@ -5434,15 +5489,19 @@ body.spotted-topic .spotted-opening .postbody.content {
   box-shadow:none !important;
 }
 
-body.spotted-topic .spotted-opening .post_details {
+body.spotted-topic
+.spotted-opening .post_details {
   order:2 !important;
   align-self:center !important;
-  width:520px !important;
+  width:440px !important;
   max-width:100% !important;
   margin:5px auto 0 !important;
 }
 
-/* Réponses anonymes */
+
+/* ====================================================
+   RÉPONSES ANONYMES
+   ==================================================== */
 
 body.spotted-topic .spotted-reply {
   display:block !important;
@@ -5457,22 +5516,38 @@ body.spotted-topic .spotted-reply {
   box-shadow:none !important;
 }
 
-body.spotted-topic .spotted-reply > .post_head,
-body.spotted-topic .spotted-reply > .post_profile {
+body.spotted-topic
+.spotted-reply > .post_head,
+
+body.spotted-topic
+.spotted-reply > .post_profile {
   display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
 }
 
-body.spotted-topic .spotted-reply > .post_message {
+body.spotted-topic
+.spotted-reply > .post_message {
   display:flex !important;
   flex-direction:column !important;
   width:100% !important;
   min-height:0 !important;
+  height:auto !important;
   margin:0 !important;
   padding:0 !important;
   background:transparent !important;
   border:0 !important;
   box-shadow:none !important;
 }
+
+
+/* ====================================================
+   IDENTITÉ ANONYME
+   ==================================================== */
 
 .spotted-reply-meta {
   order:1;
@@ -5518,15 +5593,22 @@ body.spotted-topic .spotted-reply > .post_message {
 }
 
 .spotted-reply-date {
-  font-size:7px;
-  opacity:.4;
+  font-size:8px;
+  opacity:.6;
 }
 
-body.spotted-topic .spotted-reply .postbody.content {
+
+/* ====================================================
+   CONTENU DES RÉPONSES
+   ==================================================== */
+
+body.spotted-topic
+.spotted-reply .postbody.content {
   order:2 !important;
   display:block !important;
   width:100% !important;
   min-height:0 !important;
+  height:auto !important;
   margin:0 !important;
   padding:14px 15px !important;
   color:var(--textColor, inherit) !important;
@@ -5541,7 +5623,8 @@ body.spotted-topic .spotted-reply .postbody.content {
   overflow-wrap:anywhere;
 }
 
-body.spotted-topic .spotted-reply .postbody.content img {
+body.spotted-topic
+.spotted-reply .postbody.content img {
   display:block !important;
   max-width:100% !important;
   height:auto !important;
@@ -5550,10 +5633,16 @@ body.spotted-topic .spotted-reply .postbody.content img {
   border-radius:4px !important;
 }
 
-/* Outils et like */
 
-body.spotted-topic .spotted-opening .post_details,
-body.spotted-topic .spotted-reply .post_details {
+/* ====================================================
+   OUTILS ET BOUTON « J’AI VU ÇA »
+   ==================================================== */
+
+body.spotted-topic
+.spotted-opening .post_details,
+
+body.spotted-topic
+.spotted-reply .post_details {
   display:flex !important;
   min-height:16px !important;
   height:auto !important;
@@ -5562,14 +5651,16 @@ body.spotted-topic .spotted-reply .post_details {
   border:0 !important;
 }
 
-body.spotted-topic .spotted-reply .post_details {
+body.spotted-topic
+.spotted-reply .post_details {
   order:3 !important;
   align-self:flex-end !important;
   width:auto !important;
   margin:4px 7px 0 !important;
 }
 
-body.spotted-topic .post_details > .post_date {
+body.spotted-topic
+.post_details > .post_date {
   display:none !important;
 }
 
@@ -5588,10 +5679,18 @@ body.spotted-topic .post_manage {
   transition:var(--transi);
 }
 
-body.spotted-topic .spotted-opening:hover .post_manage,
-body.spotted-topic .spotted-reply:hover .post_manage {
+body.spotted-topic
+.spotted-opening:hover .post_manage,
+
+body.spotted-topic
+.spotted-reply:hover .post_manage {
   opacity:1;
 }
+
+
+/* ====================================================
+   MODIFIER, SUPPRIMER ET CITER
+   ==================================================== */
 
 body.spotted-topic .profile-icons {
   display:flex !important;
@@ -5611,67 +5710,142 @@ body.spotted-topic .profile-icons li {
   float:none !important;
 }
 
+body.spotted-topic .profile-icons a {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
 body.spotted-topic .profile-icons img {
   display:block !important;
   width:auto !important;
   max-width:16px !important;
   height:14px !important;
   margin:0 !important;
+  padding:0 !important;
   object-fit:contain !important;
 }
+
+
+/* ====================================================
+   BOUTON DE RÉACTION
+   ==================================================== */
 
 body.spotted-topic .like_button {
   display:block !important;
   width:auto !important;
+  height:auto !important;
   margin:0 0 0 5px !important;
   padding:0 !important;
 }
 
-body.spotted-topic .like_button .rep-button {
+body.spotted-topic
+.like_button .rep-button {
   width:auto !important;
   min-width:0 !important;
   height:auto !important;
   margin:0 !important;
-  padding:3px 7px !important;
-  color:inherit;
+  padding:4px 8px !important;
+  color:var(--textColor, inherit) !important;
   background:transparent !important;
-  border:var(--border) !important;
+  border:1px solid var(--spotted-accent) !important;
   border-radius:3px !important;
   font-size:8px !important;
+  font-weight:700 !important;
   line-height:1.2 !important;
   cursor:pointer;
 }
 
-body.spotted-topic .like_button .rep-button:hover {
+body.spotted-topic
+.like_button .rep-button:hover {
   color:var(--spotted-accent) !important;
-  border-color:var(--spotted-accent) !important;
+  background:transparent !important;
 }
+
+
+/* ====================================================
+   SIGNATURES
+   ==================================================== */
 
 body.spotted-topic .signature_div {
   display:none !important;
 }
 
+
+/* ====================================================
+   CONTRASTE DU MODE LIGHT
+   ==================================================== */
+
+html[data-color-scheme="light"]
+body.spotted-topic,
+
+html[data-color-scheme="light"]
+.spotted-card {
+  --spotted-accent:#805d00;
+}
+
+html[data-color-scheme="light"]
+.spotted-card-logo-mark,
+
+html[data-color-scheme="light"]
+.spotted-card-category,
+
+html[data-color-scheme="light"]
+.spotted-op-badge {
+  color:#fff;
+}
+
+html[data-color-scheme="light"]
+body.spotted-topic
+.like_button .rep-button {
+  color:#564000 !important;
+  border-color:#805d00 !important;
+}
+
+html[data-color-scheme="light"]
+body.spotted-topic
+.like_button .rep-button:hover {
+  color:#fff !important;
+  background:#805d00 !important;
+}
+
+
+/* ====================================================
+   VERSION MOBILE
+   ==================================================== */
+
 @media (max-width:600px) {
+
   .spotted-card,
-  body.spotted-topic .spotted-opening,
-  body.spotted-topic .spotted-reply {
+
+  body.spotted-topic
+  .spotted-opening,
+
+  body.spotted-topic
+  .spotted-reply {
     width:100% !important;
     max-width:100% !important;
   }
 
   .spotted-card-header {
-    align-items:flex-start;
+    gap:10px;
   }
 
   .spotted-card-tagline {
-    display:none;
+    max-width:105px;
+    font-size:8px;
+  }
+
+  .spotted-card-meta {
+    gap:6px 9px;
   }
 
   .spotted-card-picture {
-    height:190px !important;
+    height:145px !important;
   }
 
   body.spotted-topic .post_manage {
     opacity:1;
   }
+
 }
