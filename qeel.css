@@ -17,6 +17,7 @@
    15. Disposition du forum a deux colonnes
    15. CSS DU NOUVEAU DIRECTORY MEMBERLIST
    16. Tinder CSS
+   17. SPOTTED LONDON CSS
    ========================================================== */
 
 
@@ -5200,3 +5201,477 @@ html[data-color-scheme="light"]
     transform .2s ease;
 }
 
+
+
+/* ============= SPOTTED LONDON CSS =========*/
+
+body.spotted-topic,
+.spotted-card {
+  --spotted-accent:#e4b63f;
+}
+
+.spotted-card,
+.spotted-card *,
+body.spotted-topic .spotted-reply,
+body.spotted-topic .spotted-reply * {
+  box-sizing:border-box;
+}
+
+.spotted-card br {
+  display:none !important;
+}
+
+/* Carte d'ouverture */
+
+.spotted-card {
+  width:520px;
+  max-width:100%;
+  margin:0 auto;
+  overflow:hidden;
+  color:var(--textColor, inherit);
+  background:var(--neutral);
+  border:var(--border);
+  border-radius:6px;
+  box-shadow:var(--shadow);
+  font-family:var(--font);
+}
+
+.spotted-card-header {
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:13px 16px;
+  background:var(--neutralDarker);
+  border-bottom:var(--border);
+}
+
+.spotted-card-logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.spotted-card-logo-mark {
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 28px;
+  color:var(--neutralDarker);
+  background:var(--spotted-accent);
+  border-radius:50%;
+  font-size:11px;
+}
+
+.spotted-card-logo-name {
+  color:var(--spotted-accent);
+  font-family:Arial Narrow, Arial, sans-serif;
+  font-size:17px;
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+.spotted-card-logo-city {
+  display:block;
+  margin-top:5px;
+  color:var(--textColor, inherit);
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:3.2px;
+  opacity:.5;
+}
+
+.spotted-card-tagline {
+  flex-shrink:0;
+  font-size:7px;
+  font-weight:700;
+  line-height:1.3;
+  text-align:right;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  opacity:.45;
+}
+
+.spotted-card-meta {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px 13px;
+  padding:11px 16px;
+  background:var(--neutralDark);
+  border-bottom:var(--border);
+  font-size:8px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.spotted-card-category {
+  padding:5px 8px;
+  color:var(--neutralDarker);
+  background:var(--spotted-accent);
+  border-radius:3px;
+}
+
+.spotted-card-place,
+.spotted-card-time {
+  opacity:.65;
+}
+
+.spotted-card-place::before {
+  content:"●";
+  margin-right:6px;
+  color:var(--spotted-accent);
+}
+
+.spotted-card-body {
+  padding:22px 20px 20px;
+}
+
+.spotted-card-kicker {
+  margin-bottom:12px;
+  color:var(--spotted-accent);
+  font-family:Arial Narrow, Arial, sans-serif;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.spotted-card-message {
+  font-size:inherit;
+  line-height:1.65;
+  text-align:left;
+}
+
+.spotted-card-picture {
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:225px !important;
+  margin:18px 0 0 !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  border-radius:4px !important;
+}
+
+.spotted-card-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:18px;
+  padding-top:15px;
+  border-top:var(--border);
+}
+
+.spotted-card-status {
+  padding:6px 9px;
+  color:var(--spotted-accent);
+  border:1px solid var(--spotted-accent);
+  border-radius:3px;
+  font-size:8px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.spotted-card-anonymous {
+  font-size:7px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  opacity:.4;
+}
+
+/* Premier post Forumactif */
+
+body.spotted-topic .spotted-opening {
+  display:block !important;
+  width:560px !important;
+  max-width:calc(100% - 30px) !important;
+  min-height:0 !important;
+  height:auto !important;
+  margin:22px auto 30px !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+body.spotted-topic .spotted-opening > .post_head,
+body.spotted-topic .spotted-opening > .post_profile {
+  display:none !important;
+}
+
+body.spotted-topic .spotted-opening > .post_message {
+  display:flex !important;
+  flex-direction:column !important;
+  width:100% !important;
+  max-width:none !important;
+  min-height:0 !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+body.spotted-topic .spotted-opening .postbody.content {
+  order:1 !important;
+  width:100% !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+body.spotted-topic .spotted-opening .post_details {
+  order:2 !important;
+  align-self:center !important;
+  width:520px !important;
+  max-width:100% !important;
+  margin:5px auto 0 !important;
+}
+
+/* Réponses anonymes */
+
+body.spotted-topic .spotted-reply {
+  display:block !important;
+  width:560px !important;
+  max-width:calc(100% - 30px) !important;
+  min-height:0 !important;
+  height:auto !important;
+  margin:7px auto !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+body.spotted-topic .spotted-reply > .post_head,
+body.spotted-topic .spotted-reply > .post_profile {
+  display:none !important;
+}
+
+body.spotted-topic .spotted-reply > .post_message {
+  display:flex !important;
+  flex-direction:column !important;
+  width:100% !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+.spotted-reply-meta {
+  order:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 11px;
+  background:var(--neutralDarker);
+  border:var(--border);
+  border-bottom:0;
+  border-radius:5px 5px 0 0;
+}
+
+.spotted-reply-author {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--spotted-accent);
+  font-family:Arial Narrow, Arial, sans-serif;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.spotted-reply-author::before {
+  content:"";
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
+  background:var(--spotted-accent);
+  border-radius:50%;
+}
+
+.spotted-op-badge {
+  padding:3px 5px;
+  color:var(--neutralDarker);
+  background:var(--spotted-accent);
+  border-radius:2px;
+  font-size:6px;
+  letter-spacing:.6px;
+}
+
+.spotted-reply-date {
+  font-size:7px;
+  opacity:.4;
+}
+
+body.spotted-topic .spotted-reply .postbody.content {
+  order:2 !important;
+  display:block !important;
+  width:100% !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:14px 15px !important;
+  color:var(--textColor, inherit) !important;
+  background:var(--neutralDark) !important;
+  border:var(--border) !important;
+  border-left:3px solid var(--spotted-accent) !important;
+  border-radius:0 0 5px 5px !important;
+  font-size:inherit !important;
+  line-height:1.55 !important;
+  text-align:left !important;
+  box-shadow:none !important;
+  overflow-wrap:anywhere;
+}
+
+body.spotted-topic .spotted-reply .postbody.content img {
+  display:block !important;
+  max-width:100% !important;
+  height:auto !important;
+  margin:8px 0 !important;
+  object-fit:cover !important;
+  border-radius:4px !important;
+}
+
+/* Outils et like */
+
+body.spotted-topic .spotted-opening .post_details,
+body.spotted-topic .spotted-reply .post_details {
+  display:flex !important;
+  min-height:16px !important;
+  height:auto !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+
+body.spotted-topic .spotted-reply .post_details {
+  order:3 !important;
+  align-self:flex-end !important;
+  width:auto !important;
+  margin:4px 7px 0 !important;
+}
+
+body.spotted-topic .post_details > .post_date {
+  display:none !important;
+}
+
+body.spotted-topic .post_manage {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:5px !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+  position:static !important;
+  opacity:.55;
+  transition:var(--transi);
+}
+
+body.spotted-topic .spotted-opening:hover .post_manage,
+body.spotted-topic .spotted-reply:hover .post_manage {
+  opacity:1;
+}
+
+body.spotted-topic .profile-icons {
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  margin:0 !important;
+  padding:0 !important;
+  list-style:none !important;
+}
+
+body.spotted-topic .profile-icons li {
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+}
+
+body.spotted-topic .profile-icons img {
+  display:block !important;
+  width:auto !important;
+  max-width:16px !important;
+  height:14px !important;
+  margin:0 !important;
+  object-fit:contain !important;
+}
+
+body.spotted-topic .like_button {
+  display:block !important;
+  width:auto !important;
+  margin:0 0 0 5px !important;
+  padding:0 !important;
+}
+
+body.spotted-topic .like_button .rep-button {
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:3px 7px !important;
+  color:inherit;
+  background:transparent !important;
+  border:var(--border) !important;
+  border-radius:3px !important;
+  font-size:8px !important;
+  line-height:1.2 !important;
+  cursor:pointer;
+}
+
+body.spotted-topic .like_button .rep-button:hover {
+  color:var(--spotted-accent) !important;
+  border-color:var(--spotted-accent) !important;
+}
+
+body.spotted-topic .signature_div {
+  display:none !important;
+}
+
+@media (max-width:600px) {
+  .spotted-card,
+  body.spotted-topic .spotted-opening,
+  body.spotted-topic .spotted-reply {
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .spotted-card-header {
+    align-items:flex-start;
+  }
+
+  .spotted-card-tagline {
+    display:none;
+  }
+
+  .spotted-card-picture {
+    height:190px !important;
+  }
+
+  body.spotted-topic .post_manage {
+    opacity:1;
+  }
+}
