@@ -4187,3 +4187,643 @@ body.tinder-auto-topic
   }
 
 }
+
+
+/* ====================================================
+   CRUSH HOUR — FAUSSE PAGE DE PROFIL
+   ==================================================== */
+
+.crush-profile,
+.crush-profile * {
+  box-sizing:border-box;
+}
+
+/*
+ * Forumactif ajoute parfois des <br> entre les balises
+ * lorsqu’un code HTML est publié dans un message.
+ */
+
+.crush-profile br {
+  display:none;
+}
+
+
+/* ====================================================
+   APPLICATION
+   ==================================================== */
+
+.crush-profile {
+  width:390px;
+  max-width:100%;
+  margin:25px auto;
+  overflow:hidden;
+  position:relative;
+  font-family:Arial, Helvetica, sans-serif;
+  border-radius:22px;
+}
+
+
+/* ====================================================
+   BARRE SUPÉRIEURE
+   ==================================================== */
+
+.crush-profile-header {
+  height:58px;
+  display:grid;
+  grid-template-columns:40px 1fr 40px;
+  align-items:center;
+  padding:7px 12px;
+}
+
+.crush-profile-back,
+.crush-profile-menu {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.crush-profile-back {
+  color:#fd267a;
+}
+
+.crush-profile-menu {
+  opacity:.55;
+}
+
+.crush-profile-brand {
+  text-align:center;
+}
+
+.crush-profile-brand-name {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  color:#fd267a;
+  font-size:17px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.7px;
+  text-transform:lowercase;
+}
+
+.crush-profile-brand-name i {
+  font-size:12px;
+  transform:rotate(-8deg);
+}
+
+.crush-profile-tagline {
+  margin-top:4px;
+  font-size:6px;
+  font-weight:600;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  opacity:.45;
+}
+
+
+/* ====================================================
+   PHOTOGRAPHIE PRINCIPALE
+   ==================================================== */
+
+.crush-profile-photo {
+  height:450px;
+  overflow:hidden;
+  position:relative;
+  background:#222;
+}
+
+.crush-profile-photo > img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Dégradé réservé à la lisibilité des informations */
+
+.crush-profile-photo::after {
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  z-index:1;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0,0,0,.25) 35%,
+    rgba(0,0,0,.88) 100%
+  );
+  pointer-events:none;
+}
+
+
+/* ====================================================
+   INDICATEUR DE PHOTOS
+   ==================================================== */
+
+.crush-profile-progress {
+  position:absolute;
+  top:10px;
+  right:10px;
+  left:10px;
+  z-index:3;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:4px;
+}
+
+.crush-profile-progress span {
+  height:3px;
+  background:rgba(255,255,255,.4);
+  border-radius:5px;
+  box-shadow:0 1px 2px rgba(0,0,0,.18);
+}
+
+.crush-profile-progress span.is-active {
+  background:#fff;
+}
+
+
+/* ====================================================
+   IDENTITÉ SUR LA PHOTO
+   ==================================================== */
+
+.crush-profile-identity {
+  position:absolute;
+  right:20px;
+  bottom:18px;
+  left:20px;
+  z-index:3;
+  color:#fff;
+  text-align:left;
+}
+
+.crush-profile-name-line {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+}
+
+.crush-profile-name {
+  font-size:27px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:-.8px;
+}
+
+.crush-profile-age {
+  font-size:22px;
+  font-weight:400;
+}
+
+.crush-profile-verified {
+  width:17px;
+  height:17px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:#fff;
+  background:#1786ff;
+  border-radius:50%;
+  font-size:8px;
+}
+
+.crush-profile-job,
+.crush-profile-location {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:7px;
+  font-size:10px;
+  line-height:1.3;
+}
+
+.crush-profile-job {
+  opacity:.95;
+}
+
+.crush-profile-location {
+  opacity:.8;
+}
+
+.crush-profile-job i,
+.crush-profile-location i {
+  width:12px;
+  flex-shrink:0;
+  text-align:center;
+}
+
+
+/* ====================================================
+   CONTENU DU PROFIL
+   ==================================================== */
+
+.crush-profile-content {
+  padding:21px 21px 105px;
+}
+
+.crush-profile-section + .crush-profile-section {
+  margin-top:23px;
+  padding-top:20px;
+  border-top:1px solid;
+}
+
+.crush-profile-section-title {
+  margin-bottom:10px;
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+
+/* ====================================================
+   BIOGRAPHIE
+   ==================================================== */
+
+.crush-profile-bio {
+  font-size:inherit;
+  line-height:1.6;
+}
+
+.crush-profile-bio p {
+  margin:0 0 10px;
+}
+
+.crush-profile-bio p:last-child {
+  margin-bottom:0;
+}
+
+
+/* ====================================================
+   TYPE DE RENCONTRE RECHERCHÉ
+   ==================================================== */
+
+.crush-profile-looking {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:12px;
+  border-radius:12px;
+}
+
+.crush-profile-looking-icon {
+  width:31px;
+  height:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 31px;
+  color:#fff;
+  background:#fd267a;
+  border-radius:50%;
+  font-size:12px;
+}
+
+.crush-profile-looking-text {
+  font-size:10px;
+  line-height:1.5;
+}
+
+.crush-profile-looking-text strong {
+  display:block;
+  margin-bottom:2px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+
+/* ====================================================
+   CENTRES D’INTÉRÊT LIBRES
+   ==================================================== */
+
+.crush-profile-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.crush-profile-tag {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 12px;
+  border:1px solid;
+  border-radius:20px;
+  font-size:9px;
+  font-weight:600;
+  line-height:1.2;
+}
+
+/*
+ * Centre d’intérêt partagé entre les deux profils.
+ */
+
+.crush-profile-tag.is-common {
+  color:#fd267a;
+  border-color:#fd267a;
+}
+
+/*
+ * Emoji facultatif : aucune icône n’est obligatoire.
+ */
+
+.crush-profile-tag-emoji {
+  margin-right:5px;
+  font-size:10px;
+  line-height:1;
+}
+
+
+/* ====================================================
+   MUSIQUE
+   ==================================================== */
+
+.crush-profile-anthem {
+  display:grid;
+  grid-template-columns:48px 1fr 32px;
+  align-items:center;
+  gap:11px;
+  padding:10px;
+  border-radius:12px;
+}
+
+.crush-profile-anthem-cover {
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:7px;
+}
+
+.crush-profile-anthem-info {
+  min-width:0;
+}
+
+.crush-profile-anthem-title {
+  overflow:hidden;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.3;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.crush-profile-anthem-artist {
+  margin-top:3px;
+  font-size:8px;
+  opacity:.55;
+}
+
+.crush-profile-anthem-play {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fd267a;
+  font-size:17px;
+}
+
+
+/* ====================================================
+   GALERIE SUPPLÉMENTAIRE
+   ==================================================== */
+
+.crush-profile-gallery {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+}
+
+.crush-profile-gallery img {
+  display:block;
+  width:100%;
+  height:185px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:10px;
+}
+
+
+/* ====================================================
+   ACTIONS DU PROFIL
+   ==================================================== */
+
+.crush-profile-actions {
+  width:390px;
+  max-width:100%;
+  height:89px;
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  border-top:1px solid;
+}
+
+.crush-profile-action {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  background:transparent;
+  border:2px solid;
+  border-radius:50%;
+  cursor:pointer;
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.crush-profile-action:hover {
+  transform:translateY(-2px);
+}
+
+.crush-profile-action.is-rewind {
+  width:43px;
+  height:43px;
+  color:#f4b400;
+  font-size:14px;
+}
+
+.crush-profile-action.is-nope {
+  width:55px;
+  height:55px;
+  color:#fd267a;
+  font-size:22px;
+}
+
+.crush-profile-action.is-super {
+  width:43px;
+  height:43px;
+  color:#1786ff;
+  font-size:15px;
+}
+
+.crush-profile-action.is-like {
+  width:55px;
+  height:55px;
+  color:#20c997;
+  font-size:20px;
+}
+
+
+/* ====================================================
+   MODE DARK
+   ==================================================== */
+
+html[data-color-scheme="dark"] .crush-profile {
+  color:#f3f3f5;
+  background:#1d1a20;
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-header {
+  background:#17151b;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-section + .crush-profile-section {
+  border-color:rgba(255,255,255,.08);
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-section-title {
+  color:#aaa7ae;
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-looking,
+
+html[data-color-scheme="dark"]
+.crush-profile-anthem {
+  background:#29262d;
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-tag {
+  color:#e2dfe5;
+  border-color:#4a464e;
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-tag.is-common {
+  color:#fd267a;
+  border-color:#fd267a;
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-actions {
+  background:rgba(23,21,27,.97);
+  border-color:rgba(255,255,255,.08);
+}
+
+html[data-color-scheme="dark"]
+.crush-profile-action {
+  border-color:currentColor;
+}
+
+
+/* ====================================================
+   MODE LIGHT
+   ==================================================== */
+
+html[data-color-scheme="light"] .crush-profile {
+  color:#242429;
+  background:#fff;
+  border:1px solid #e6e6e8;
+  box-shadow:0 8px 24px rgba(20,20,25,.09);
+}
+
+html[data-color-scheme="light"]
+.crush-profile-header {
+  background:#fff;
+  border-bottom:1px solid #ededee;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-section + .crush-profile-section {
+  border-color:#ededee;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-section-title {
+  color:#73737a;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-looking,
+
+html[data-color-scheme="light"]
+.crush-profile-anthem {
+  background:#f4f4f5;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-tag {
+  color:#36363b;
+  border-color:#d8d8dc;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-tag.is-common {
+  color:#fd267a;
+  border-color:#fd267a;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-actions {
+  background:rgba(255,255,255,.97);
+  border-color:#ededee;
+}
+
+html[data-color-scheme="light"]
+.crush-profile-action {
+  border-color:currentColor;
+}
+
+
+/* ====================================================
+   VERSION MOBILE
+   ==================================================== */
+
+@media (max-width:600px) {
+
+  .crush-profile {
+    width:100%;
+    border-radius:18px;
+  }
+
+  .crush-profile-photo {
+    height:420px;
+  }
+
+  .crush-profile-content {
+    padding-right:16px;
+    padding-left:16px;
+  }
+
+  .crush-profile-actions {
+    width:100%;
+    gap:12px;
+  }
+
+  .crush-profile-gallery img {
+    height:165px;
+  }
+
+}
