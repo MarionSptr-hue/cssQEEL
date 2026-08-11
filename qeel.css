@@ -5182,5 +5182,21 @@ html[data-color-scheme="light"]
 }
 
 
+.crush-profile-music-play,
+.crush-profile-music-play:link,
+.crush-profile-music-play:visited {
+  color:#fd267a !important;
+  text-decoration:none !important;
+}
 
+.crush-profile-music-play:hover {
+  color:#e91e63 !important;
+  transform:scale(1.1);
+}
+
+.crush-profile-music-play {
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
 
