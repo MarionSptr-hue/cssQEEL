@@ -4869,3 +4869,195 @@ html[data-color-scheme="light"]
   }
 
 }
+
+
+
+/* ====================================================
+   CRUSH HOUR — NOTIFICATION DE LIKE
+   ==================================================== */
+
+.crush-like,
+.crush-like * {
+  box-sizing:border-box;
+}
+
+.crush-like br {
+  display:none !important;
+}
+
+
+/* ====================================================
+   CONTENEUR
+   ==================================================== */
+
+.crush-like {
+  width:360px;
+  max-width:100%;
+  display:grid;
+  grid-template-columns:52px 1fr;
+  align-items:center;
+  gap:12px;
+  margin:20px auto;
+  padding:13px 14px;
+  position:relative;
+  overflow:hidden;
+  font-family:Arial, Helvetica, sans-serif;
+  border-radius:16px;
+}
+
+
+/* ====================================================
+   AVATAR
+   ==================================================== */
+
+.crush-like-avatar {
+  width:52px;
+  height:52px;
+  position:relative;
+}
+
+.crush-like-avatar > img {
+  display:block;
+  width:52px;
+  height:52px;
+  object-fit:cover;
+  object-position:center;
+  border:2px solid #fff;
+  border-radius:50%;
+}
+
+.crush-like-heart {
+  width:20px;
+  height:20px;
+  position:absolute;
+  right:-2px;
+  bottom:-1px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  background:#fd267a;
+  border:2px solid;
+  border-radius:50%;
+  font-size:8px;
+}
+
+
+/* ====================================================
+   CONTENU
+   ==================================================== */
+
+.crush-like-content {
+  min-width:0;
+  text-align:left;
+}
+
+.crush-like-brand {
+  margin-bottom:4px;
+  color:#fd267a;
+  font-size:7px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.crush-like-message {
+  font-size:inherit;
+  line-height:1.35;
+}
+
+.crush-like-name {
+  font-weight:800;
+}
+
+.crush-like-time {
+  margin-top:4px;
+  font-size:7px;
+  line-height:1;
+  opacity:.45;
+}
+
+
+/* ====================================================
+   BOUTON
+   ==================================================== */
+
+.crush-like-button {
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  width:100%;
+  margin-top:1px;
+  padding:9px 13px;
+  color:#fff;
+  background:#fd267a;
+  border-radius:20px;
+  font-size:8px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  cursor:pointer;
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.crush-like-button:hover {
+  background:#e91e63;
+  transform:translateY(-1px);
+}
+
+.crush-like-button i {
+  font-size:8px;
+}
+
+
+/* ====================================================
+   MODE DARK
+   ==================================================== */
+
+html[data-color-scheme="dark"] .crush-like {
+  color:#f3f3f5;
+  background:#1d1a20;
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+
+html[data-color-scheme="dark"]
+.crush-like-heart {
+  border-color:#1d1a20;
+}
+
+
+/* ====================================================
+   MODE LIGHT
+   ==================================================== */
+
+html[data-color-scheme="light"] .crush-like {
+  color:#242429;
+  background:#fff;
+  border:1px solid #e6e6e8;
+  box-shadow:0 6px 18px rgba(20,20,25,.08);
+}
+
+html[data-color-scheme="light"]
+.crush-like-heart {
+  border-color:#fff;
+}
+
+
+/* ====================================================
+   MOBILE
+   ==================================================== */
+
+@media (max-width:600px) {
+
+  .crush-like {
+    width:100%;
+  }
+
+}
