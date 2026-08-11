@@ -16,6 +16,7 @@
    14. Masquer l'URL de l'avatar dark dans le profil pour switcheroo
    15. Disposition du forum a deux colonnes
    15. CSS DU NOUVEAU DIRECTORY MEMBERLIST
+   16. Tinder CSS
    ========================================================== */
 
 
@@ -3349,4 +3350,296 @@ html[data-color-scheme="light"] .directory-registry-kicker {
     margin-left: .65rem;
     padding-inline: .5rem;
   }
+}
+
+
+/* ====================================================
+            CSS TINDER MATCH 
+======================================================*/
+
+/*** TINDER — MODULE INDÉPENDANT
+-------------------------------------------------- ***/
+
+.tinder-app,
+.tinder-app * {
+  box-sizing:border-box;
+}
+
+/*** CONTENEUR GÉNÉRAL ***/
+
+.tinder-app {
+  width:390px;
+  max-width:100%;
+  margin:25px auto;
+  overflow:hidden;
+  position:relative;
+  color:var(--textColor, inherit);
+  background:var(--neutral);
+  border:var(--border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  font-family:var(--font);
+}
+
+/*** BARRE SUPÉRIEURE ***/
+
+.tinder-header {
+  min-height:58px;
+  display:grid;
+  grid-template-columns:45px 1fr 45px;
+  align-items:center;
+  padding:7px 12px;
+  background:var(--neutralDarker);
+  border-bottom:var(--border);
+}
+
+.tinder-header-back,
+.tinder-header-action {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fd5068;
+  font-size:19px;
+}
+
+.tinder-header-profile {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-width:0;
+}
+
+.tinder-header-profile img {
+  width:38px;
+  height:38px;
+  flex-shrink:0;
+  object-fit:cover;
+  object-position:center;
+  border-radius:50%;
+}
+
+.tinder-header-name {
+  min-width:0;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.2;
+  text-align:left;
+}
+
+.tinder-header-name span {
+  display:block;
+  margin-top:2px;
+  color:#228b22;
+  font-size:9px;
+  font-weight:500;
+}
+
+/*** ÉCRAN DU MATCH ***/
+
+.tinder-match {
+  min-height:480px;
+  padding:55px 25px 35px;
+  text-align:center;
+  color:#fff;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(253,80,104,.92),
+      rgba(255,96,54,.87)
+    ),
+    var(--back);
+  background-position:center;
+  background-size:cover;
+}
+
+.tinder-match-title {
+  margin-bottom:6px;
+  font-size:37px;
+  font-weight:800;
+  font-style:italic;
+  letter-spacing:-2px;
+  line-height:1;
+  transform:rotate(-5deg);
+  text-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.tinder-match-subtitle {
+  margin:18px 0 35px;
+  font-size:11px;
+  line-height:1.5;
+  opacity:.9;
+}
+
+.tinder-match-profiles {
+  height:165px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.tinder-match-profile {
+  width:145px;
+  height:145px;
+  overflow:hidden;
+  position:absolute;
+  background:var(--neutralDark);
+  border:5px solid rgba(255,255,255,.92);
+  border-radius:50%;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.tinder-match-profile:first-child {
+  margin-left:-100px;
+  transform:rotate(-8deg);
+}
+
+.tinder-match-profile:last-child {
+  margin-left:100px;
+  transform:rotate(8deg);
+}
+
+.tinder-match-profile img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:grayscale(.15);
+}
+
+.tinder-match-heart {
+  width:45px;
+  height:45px;
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fd5068;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,.18);
+  font-size:18px;
+}
+
+.tinder-match-button {
+  display:block;
+  width:85%;
+  margin:34px auto 0;
+  padding:12px 15px;
+  color:#fd5068;
+  background:#fff;
+  border-radius:30px;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.tinder-match-note {
+  margin-top:14px;
+  font-size:9px;
+  opacity:.8;
+}
+
+/*** CONVERSATION ***/
+
+.tinder-chat {
+  min-height:450px;
+  padding:22px 17px 15px;
+  background:var(--neutral);
+}
+
+.tinder-chat-date {
+  margin:5px 0 23px;
+  color:var(--textColor, inherit);
+  font-size:8px;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  opacity:.55;
+}
+
+.tinder-message-row {
+  display:flex;
+  align-items:flex-end;
+  gap:7px;
+  margin:8px 0;
+}
+
+.tinder-message-row.is-me {
+  justify-content:flex-end;
+}
+
+.tinder-message-avatar {
+  width:27px;
+  height:27px;
+  flex-shrink:0;
+  object-fit:cover;
+  object-position:center;
+  border-radius:50%;
+}
+
+.tinder-message {
+  max-width:74%;
+  padding:10px 13px;
+  background:var(--neutralDark);
+  border:var(--border);
+  border-radius:17px 17px 17px 4px;
+  font-size:11px;
+  line-height:1.45;
+  text-align:left;
+}
+
+.tinder-message-row.is-me .tinder-message {
+  color:#fff;
+  background:linear-gradient(135deg, #fd5068, #ff6036);
+  border-color:transparent;
+  border-radius:17px 17px 4px 17px;
+}
+
+.tinder-message img {
+  display:block;
+  width:100%;
+  max-width:220px;
+  margin:0 0 7px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:11px;
+}
+
+.tinder-message-time {
+  margin:3px 7px 12px;
+  font-size:7px;
+  opacity:.5;
+}
+
+.tinder-message-time.is-me {
+  text-align:right;
+}
+
+/*** ZONE DE SAISIE DÉCORATIVE ***/
+
+.tinder-input {
+  display:grid;
+  grid-template-columns:31px 1fr 31px;
+  align-items:center;
+  gap:7px;
+  margin-top:22px;
+  padding-top:12px;
+  border-top:var(--border);
+  color:#fd5068;
+  text-align:center;
+}
+
+.tinder-input-field {
+  padding:9px 13px;
+  color:var(--textColor, inherit);
+  background:var(--neutralDark);
+  border:var(--border);
+  border-radius:20px;
+  font-size:9px;
+  text-align:left;
+  opacity:.65;
 }
