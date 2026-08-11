@@ -5205,10 +5205,8 @@ html[data-color-scheme="light"]
 
 /* ============= SPOTTED LONDON CSS =========*/
 
-Remplace entièrement l’ancien CSS Spotted London par celui-ci :
-/* ====================================================
-   SPOTTED LONDON — FORUM F26
-   ==================================================== */
+
+/*
 
 body.spotted-topic,
 .spotted-card {
@@ -5226,11 +5224,11 @@ body.spotted-topic .spotted-reply * {
   display:none !important;
 }
 
-
+*/
 /* ====================================================
    CARTE D’OUVERTURE
    ==================================================== */
-
+/*
 .spotted-card {
   width:440px;
   max-width:100%;
@@ -5248,7 +5246,7 @@ body.spotted-topic .spotted-reply * {
 /* ====================================================
    EN-TÊTE
    ==================================================== */
-
+/*
 .spotted-card-header {
   min-height:56px;
   display:flex;
@@ -5316,7 +5314,7 @@ body.spotted-topic .spotted-reply * {
 /* ====================================================
    CATÉGORIE, LIEU ET HEURE
    ==================================================== */
-
+/*
 .spotted-card-meta {
   display:flex;
   flex-wrap:wrap;
@@ -5601,7 +5599,7 @@ body.spotted-topic
 /* ====================================================
    CONTENU DES RÉPONSES
    ==================================================== */
-
+/*
 body.spotted-topic
 .spotted-reply .postbody.content {
   order:2 !important;
@@ -5633,11 +5631,11 @@ body.spotted-topic
   border-radius:4px !important;
 }
 
-
+*/
 /* ====================================================
    OUTILS SOUS LES POSTS — VERSION PLUS LISIBLE
    ==================================================== */
-
+/*
 body.spotted-topic .post_manage {
   display:flex !important;
   align-items:center !important;
@@ -5660,7 +5658,7 @@ body.spotted-topic
 .spotted-reply:hover .post_manage {
   opacity:1;
 }
-
+*/
 
 /* ====================================================
    CITER, MODIFIER ET SUPPRIMER
@@ -5722,7 +5720,7 @@ body.spotted-topic
 /* ====================================================
    BOUTON « J’AI VU ÇA »
    ==================================================== */
-
+/*
 body.spotted-topic .like_button {
   display:block !important;
   width:auto !important;
@@ -5756,10 +5754,11 @@ body.spotted-topic
   background:var(--spotted-accent) !important;
 }
 
+*/
 
 /* Compteur de réactions */
 
-body.spotted-topic
+/* body.spotted-topic
 .like_button .rep-nb:not(:empty) {
   display:inline-flex !important;
   align-items:center;
@@ -5774,7 +5773,7 @@ body.spotted-topic
   font-size:8px;
 }
 
-
+*/
 /* ====================================================
    MODE LIGHT
    ==================================================== */
@@ -5852,6 +5851,7 @@ body.spotted-topic
 
 /* Mode sombre : jaune signalétique */
 
+/*
 html[data-color-scheme="dark"]
 body.spotted-topic,
 
@@ -5860,20 +5860,23 @@ html[data-color-scheme="dark"]
   --spotted-accent:#e4b63f;
 }
 
+*/
+
 /* Mode clair : moutarde foncé pour la lisibilité */
 
-html[data-color-scheme="light"]
+/* html[data-color-scheme="light"]
 body.spotted-topic,
 
 html[data-color-scheme="light"]
 .spotted-card {
   --spotted-accent:#805d00;
 }
+*/
 
 /* ====================================================
    VERSION MOBILE
    ==================================================== */
-
+/*
 @media (max-width:600px) {
 
   .spotted-card,
@@ -5909,3 +5912,5 @@ html[data-color-scheme="light"]
   }
 
 }
+
+*/
