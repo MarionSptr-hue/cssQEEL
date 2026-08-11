@@ -4827,3 +4827,208 @@ html[data-color-scheme="light"]
   }
 
 }
+
+
+/* ====================================================
+   CRUSH HOUR — CORRECTIONS COMPACTES
+   ==================================================== */
+
+/*
+ * Force la disparition des retours ajoutés par Forumactif.
+ */
+
+.crush-profile br {
+  display:none !important;
+}
+
+/* Application */
+
+.crush-profile {
+  width:360px;
+  border-radius:18px;
+}
+
+/* En-tête */
+
+.crush-profile-header {
+  height:50px;
+  grid-template-columns:34px 1fr 34px;
+  padding:6px 10px;
+}
+
+.crush-profile-brand-name {
+  font-size:15px;
+}
+
+.crush-profile-tagline {
+  margin-top:3px;
+  font-size:6px;
+}
+
+/* Photo principale */
+
+.crush-profile-photo {
+  height:325px;
+}
+
+.crush-profile-progress {
+  top:8px;
+  right:8px;
+  left:8px;
+}
+
+.crush-profile-identity {
+  right:16px;
+  bottom:14px;
+  left:16px;
+}
+
+.crush-profile-name {
+  font-size:23px;
+}
+
+.crush-profile-age {
+  font-size:19px;
+}
+
+.crush-profile-job,
+.crush-profile-location {
+  margin-top:5px;
+  font-size:9px;
+}
+
+/* Contenu */
+
+.crush-profile-content {
+  padding:17px 16px 82px;
+}
+
+.crush-profile-section + .crush-profile-section {
+  margin-top:16px;
+  padding-top:16px;
+}
+
+.crush-profile-section-title {
+  margin-bottom:9px;
+  font-size:9px;
+}
+
+.crush-profile-bio {
+  line-height:1.5;
+  text-align:left;
+}
+
+/* Recherche */
+
+.crush-profile-looking {
+  gap:9px;
+  padding:10px;
+}
+
+.crush-profile-looking-icon {
+  width:27px;
+  height:27px;
+  flex-basis:27px;
+  font-size:10px;
+}
+
+.crush-profile-looking-text {
+  font-size:9px;
+  line-height:1.45;
+}
+
+/* Centres d’intérêt */
+
+.crush-profile-tags {
+  gap:6px;
+}
+
+.crush-profile-tag {
+  padding:6px 10px;
+  font-size:8px;
+}
+
+/* Musique */
+
+.crush-profile-anthem {
+  grid-template-columns:42px 1fr 26px;
+  gap:9px;
+  padding:9px;
+}
+
+.crush-profile-anthem-cover {
+  width:42px;
+  height:42px;
+}
+
+.crush-profile-anthem-title {
+  font-size:9px;
+}
+
+.crush-profile-anthem-artist {
+  font-size:7px;
+}
+
+.crush-profile-anthem-play {
+  font-size:15px;
+}
+
+/* Galerie */
+
+.crush-profile-gallery {
+  gap:6px;
+}
+
+.crush-profile-gallery img {
+  height:135px;
+}
+
+/* Actions */
+
+.crush-profile-actions {
+  width:360px;
+  height:70px;
+  gap:13px;
+}
+
+.crush-profile-action.is-rewind,
+.crush-profile-action.is-super {
+  width:36px;
+  height:36px;
+}
+
+.crush-profile-action.is-nope,
+.crush-profile-action.is-like {
+  width:46px;
+  height:46px;
+}
+
+.crush-profile-action.is-nope {
+  font-size:18px;
+}
+
+.crush-profile-action.is-like {
+  font-size:16px;
+}
+
+
+/* ====================================================
+   MOBILE
+   ==================================================== */
+
+@media (max-width:600px) {
+
+  .crush-profile,
+  .crush-profile-actions {
+    width:100%;
+  }
+
+  .crush-profile-photo {
+    height:315px;
+  }
+
+  .crush-profile-gallery img {
+    height:125px;
+  }
+
+}
