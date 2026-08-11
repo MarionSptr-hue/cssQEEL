@@ -4271,7 +4271,7 @@ body.tinder-auto-topic
 
 .crush-profile-tagline {
   margin-top:3px;
-  font-size:6px;
+  font-size:10px;
   font-weight:600;
   line-height:1;
   text-transform:uppercase;
@@ -4303,7 +4303,7 @@ body.tinder-auto-topic
   justify-content:center;
   position:relative;
   color:inherit;
-  font-size:8px;
+  font-size:10px;
   font-weight:700;
   line-height:1;
   text-transform:uppercase;
@@ -4638,7 +4638,7 @@ label[for="crush-tab-photos"]::after {
 .crush-profile-music-content strong {
   display:block;
   margin:0 0 6px;
-  font-size:8px;
+  font-size:10px;
   line-height:1;
   text-transform:uppercase;
   letter-spacing:.7px;
@@ -4656,14 +4656,14 @@ label[for="crush-tab-photos"]::after {
 }
 
 .crush-profile-music-title {
-  font-size:10px !important;
+  font-size:12px !important;
   font-weight:700 !important;
   line-height:1.3 !important;
 }
 
 .crush-profile-music-artist {
   margin-top:5px !important;
-  font-size:8px !important;
+  font-size:10px !important;
   line-height:1.3 !important;
   opacity:.55;
 }
