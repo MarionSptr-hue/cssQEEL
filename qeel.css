@@ -5232,6 +5232,10 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__drawer-content .profile_field {
+    display: grid !important;
+    grid-template-columns: 115px minmax(0, 1fr) !important;
+    column-gap: 8px !important;
+    align-items: start;
     min-width: 0;
     min-height: 0 !important;
     height: auto !important;
@@ -5242,7 +5246,7 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__drawer-content .profile_field > label {
     display: block;
-    margin-bottom: 4px;
+    margin: 0;
     color: var(--accentClr, #df829b);
     font-size: 11px;
     font-weight: 700;
