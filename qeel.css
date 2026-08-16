@@ -4934,8 +4934,21 @@ html[data-color-scheme="light"]
 #wombat.cj-profile {
     width: 820px;
     max-width: none;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     padding: 16px;
     box-sizing: border-box;
+}
+
+#wombat.cj-profile .user_profile,
+#wombat.cj-profile .profile_infos,
+#wombat.cj-profile .cj-profile__layout,
+#wombat.cj-profile .cj-profile__sidebar,
+#wombat.cj-profile .cj-profile__main {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none;
 }
 
 #wombat .cj-profile__header {
@@ -4987,7 +5000,7 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__avatar img {
-    height: 330px;
+    height: 285px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -5042,7 +5055,7 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__drawer-content {
     display: none;
-    max-height: 285px;
+    max-height: 210px;
     overflow-y: auto;
     padding: 13px;
     border-top: 0;
@@ -5102,4 +5115,3 @@ html[data-color-scheme="light"]
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
-
