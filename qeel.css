@@ -4932,16 +4932,14 @@ html[data-color-scheme="light"]
 
 /* NOUVEAU PROFIL A VOLETS */
 
-/* Concrete Jungle — profil complet desktop à volets */
-
 #wombat.cj-profile {
     width: 100% !important;
     max-width: 100% !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
     padding: 16px;
     box-sizing: border-box;
 }
@@ -4951,7 +4949,6 @@ html[data-color-scheme="light"]
 #wombat.cj-profile .cj-profile__layout,
 #wombat.cj-profile .cj-profile__sidebar,
 #wombat.cj-profile .cj-profile__main {
-    height: auto !important;
     min-height: 0 !important;
     max-height: none;
 }
@@ -4961,9 +4958,9 @@ html[data-color-scheme="light"]
     min-height: 388px !important;
     max-height: 388px !important;
     padding: 14px !important;
-    box-sizing: border-box !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
+    box-sizing: border-box !important;
     scrollbar-gutter: stable;
 }
 
@@ -4983,7 +4980,9 @@ html[data-color-scheme="light"]
     margin-bottom: 14px;
 }
 
-#wombat .cj-profile__name { margin: 0; }
+#wombat .cj-profile__name {
+    margin: 0;
+}
 
 #wombat .cj-profile__rank {
     margin-top: 4px;
@@ -5009,7 +5008,7 @@ html[data-color-scheme="light"]
 #wombat .cj-profile__drawer-toggle,
 #wombat .cj-profile__drawer-content {
     background: var(--neutralDark, #141019);
-    border: 1px solid var(--border, rgba(255,255,255,.08));
+    border: var(--border, 1px solid rgba(255,255,255,.08));
 }
 
 #wombat .cj-profile__sidebar {
@@ -5056,7 +5055,6 @@ html[data-color-scheme="light"]
     height: 340px;
     max-width: none !important;
     max-height: none !important;
-    aspect-ratio: auto;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -5068,9 +5066,9 @@ html[data-color-scheme="light"]
     display: grid;
     grid-auto-rows: max-content;
     gap: 5px;
+    align-content: start;
     margin: 0;
     padding: 14px 12px;
-    align-content: start;
     overflow-x: hidden;
     overflow-y: auto;
     box-sizing: border-box;
@@ -5096,30 +5094,21 @@ html[data-color-scheme="light"]
     grid-template-columns: minmax(0, 1fr);
     gap: 2px;
     align-items: start;
-    font-size: 12px;
-    line-height: 1.4;
     min-height: 0 !important;
     height: auto !important;
     max-height: none !important;
     margin: 0 !important;
     padding: 5px 0 !important;
     overflow: visible !important;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 #wombat .cj-profile__quick label {
     color: var(--accentClr, #df829b);
-    font-weight: 700;
     font-size: 11px;
+    font-weight: 700;
     line-height: 1.35;
-}
-
-#wombat .cj-profile__main {
-    display: grid;
-    gap: 7px;
-    align-content: start;
-    min-width: 0;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 #wombat .cj-profile__quick field,
@@ -5127,9 +5116,9 @@ html[data-color-scheme="light"]
     display: block;
     width: 100%;
     min-width: 0;
+    overflow-wrap: anywhere;
     font-size: 12px;
     line-height: 1.4;
-    overflow-wrap: anywhere;
 }
 
 #wombat .cj-profile__quick .cj-profile__post-links {
@@ -5145,81 +5134,29 @@ html[data-color-scheme="light"]
 #wombat .cj-profile__quick .cj-profile__post-links a {
     display: block;
     width: 100%;
-    line-height: 1.35;
     overflow-wrap: anywhere;
+    line-height: 1.35;
 }
 
-#wombat .cj-profile__contacts {
-    padding: 12px 13px;
-}
-
-#wombat .cj-profile__contacts .profile_contact {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 8px !important;
-    width: 100%;
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link {
-    display: block !important;
-    width: 100%;
-    min-height: 0;
-    padding: 9px 11px !important;
-    box-sizing: border-box;
-    border-radius: 7px;
-    background: var(--neutral, rgba(255,255,255,.04));
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link > label {
-    display: block;
-    margin: 0;
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link > label a {
-    display: block;
-    width: 100%;
-    color: var(--textColorAccent, var(--accentClr));
-    text-decoration: none;
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link > label a:hover {
-    color: var(--textColor, currentColor);
-    text-decoration: underline;
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link > .field_uneditable,
-#wombat .cj-profile__contacts .cj-profile__contact-link > .field_editable {
-    display: none !important;
-}
-
-#wombat .cj-profile__contacts .cj-profile__contact-link.is-empty {
-    opacity: .45;
-}
-
-#wombat .cj-profile__contact {
-    display: flex;
-    align-items: center;
-    min-height: 28px;
-}
-
-#wombat .cj-profile__contact img {
-    display: block;
-    max-width: 28px;
-    max-height: 28px;
+#wombat .cj-profile__main {
+    display: grid;
+    gap: 7px;
+    align-content: start;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #wombat .cj-profile__drawer-toggle {
-    width: 100%;
-    min-height: 42px;
-    padding: 10px 13px;
-    border-radius: 10px;
-    color: inherit;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    font: inherit;
-    text-align: left;
+    justify-content: space-between;
+    min-height: 42px;
+    padding: 9px 13px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: var(--textColor, inherit);
+    list-style: none;
     cursor: pointer;
 }
 
@@ -5229,11 +5166,10 @@ html[data-color-scheme="light"]
     gap: 10px;
 }
 
-#wombat .cj-profile__drawer-toggle > span > .fa-solid {
-    width: 18px;
+#wombat .cj-profile__drawer-toggle .fa-solid {
+    width: 16px;
     color: var(--accentClr, #df829b);
     text-align: center;
-    flex: 0 0 18px;
 }
 
 #wombat .cj-profile__drawer-toggle::-webkit-details-marker {
@@ -5253,8 +5189,8 @@ html[data-color-scheme="light"]
 #wombat .cj-profile__drawer-content {
     display: none;
     max-height: none;
-    overflow: visible;
     padding: 13px;
+    overflow: visible;
     border-top: 0;
     border-radius: 0 0 10px 10px;
 }
@@ -5265,41 +5201,92 @@ html[data-color-scheme="light"]
     gap: 14px;
 }
 
-#wombat .cj-profile__drawer-content .profile_field {
-    grid-column: 1 / -1;
-}
-
-#wombat .cj-profile__drawer-content .profile_field {
+/* Alignement commun des champs, sur page complète comme dans la popup AJAX. */
+#wombat .cj-profile__drawer-content:not([data-cj-zone="contact"]) .profile_field,
+#wombat.cj-profile [data-cj-zone]:not([data-cj-zone="quick"]):not([data-cj-zone="contact"]):not([data-cj-zone="source"]) > .profile_field {
     display: grid !important;
     grid-template-columns: 95px minmax(0, 1fr) !important;
     column-gap: 6px !important;
-    align-items: start;
+    align-items: start !important;
     min-width: 0;
     min-height: 0 !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
     line-height: 1.5;
 }
 
-#wombat .cj-profile__drawer-content .profile_field > label {
-    display: block;
-    margin: 0;
+#wombat .cj-profile__drawer-content:not([data-cj-zone="contact"]) .profile_field > label {
+    display: block !important;
+    width: 95px !important;
+    min-width: 95px !important;
+    max-width: 95px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
     color: var(--accentClr, #df829b);
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: .04em;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
-/* Contraste renforcé des intitulés de champs dans le thème sombre. */
-html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content .profile_field > label {
+html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-zone="contact"]) .profile_field > label {
     color: var(--textColorAccent, var(--textColor)) !important;
 }
 
-#wombat .cj-profile__drawer-content field {
-    display: block;
+#wombat .cj-profile__drawer-content:not([data-cj-zone="contact"]) .profile_field > field {
+    display: block !important;
+    grid-column: 2 !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow-wrap: anywhere;
+}
+
+/* Dernier volet : liste indépendante, sans colonne intitulé/valeur. */
+#wombat .cj-profile__contacts {
+    padding: 12px 13px;
+}
+
+#wombat .cj-profile__contacts .profile_contact {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+    width: 100%;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link {
+    display: block !important;
+    width: 100%;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 9px 11px !important;
+    box-sizing: border-box;
+    border-radius: 7px;
+    background: var(--neutral, rgba(255,255,255,.04));
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > a,
+#wombat .cj-profile__contacts .cj-profile__contact-link > span {
+    display: block !important;
+    width: 100%;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > a {
+    color: var(--textColorAccent, var(--accentClr));
+    text-decoration: none;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > a:hover {
+    color: var(--textColor, currentColor);
+    text-decoration: underline;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link.is-empty {
+    opacity: .45;
 }
 
 #wombat .cj-profile__post-links {
@@ -5316,13 +5303,10 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content .profile_fiel
 }
 
 #wombat .cj-profile__admin {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
+    margin-top: 10px;
+    text-align: center;
 }
 
-/* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
 
 
 /* mini-profil des messages à cinq onglets */
