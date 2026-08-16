@@ -4932,8 +4932,8 @@ html[data-color-scheme="light"]
 /* NOUVEAU PROFIL A VOLETS */
 
 #wombat.cj-profile {
-    width: 960px !important;
-    max-width: calc(100vw - 48px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin-right: auto !important;
     margin-left: auto !important;
     height: auto !important;
@@ -4995,7 +4995,7 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__layout {
     display: grid;
-    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-columns: 260px minmax(0, 1fr);
     gap: 8px;
     align-items: start;
 }
@@ -5019,10 +5019,10 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__avatar img {
-    height: 258px;
+    height: 340px;
     max-width: none !important;
     max-height: none !important;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
     object-fit: cover;
     border-radius: 8px;
 }
