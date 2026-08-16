@@ -5027,7 +5027,7 @@ html[data-color-scheme="light"]
     border-radius: 5px;
     color: var(--stay-white, #fff);
     background: color-mix(in srgb, var(--neutralDarker, #141019) 82%, transparent);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: .04em;
     line-height: 1.3;
