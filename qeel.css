@@ -1,28 +1,51 @@
 /* ==========================================================
-   SOMMAIRE
-   01. Bandeau statistique
-   02. QEEL — Structure générale
-   03. QEEL — Colonne gauche et groupes
-   04. QEEL — Dernier inscrit
-   05. QEEL — Membres connectés
-   06. Footer — Structure générale
-   07. Footer — Liens
-   08. Footer — Crédits
-   09. Footer — Image
-   10. Widget météo de Londres
-   11. Derniers pré-liens
-   12. Description « Mind the Gap »
-   13. Alignement uniforme de l’en-tête
-   14. Masquer l'URL de l'avatar dark dans le profil pour switcheroo
-   15. Disposition du forum a deux colonnes
-   15. CSS DU NOUVEAU DIRECTORY MEMBERLIST
-   16. Tinder CSS
+   SOMMAIRE — MOTS-CLÉS POUR CTRL + F
+
+   QEEL
+   - BANDEAU STATISTIQUE
+   - QEEL — STRUCTURE GÉNÉRALE
+   - QEEL — GROUPES
+   - QEEL — DERNIER INSCRIT
+   - QEEL — MEMBRES CONNECTÉS
+
+   FOOTER
+   - FOOTER — STRUCTURE GÉNÉRALE
+   - FOOTER — LIENS
+   - FOOTER — CRÉDITS
+   - FOOTER — IMAGE
+
+   ACCUEIL ET FORUM
+   - WIDGET MÉTÉO
+   - DERNIERS PRÉ-LIENS
+   - MIND THE GAP
+   - ALIGNEMENT UNIFORME DE L’EN-TÊTE
+   - AVATAR DARK
+   - COLLAGE DU QEEL ET DU FOOTER
+   - FORUMS EN DEUX COLONNES
+   - SWITCH DE DISPOSITION
+
+   ANNUAIRE
+   - DIRECTORY MEMBER LIST
+   - FORMULAIRE INTÉGRÉ
+   - CARTES VERTICALES
+   - FILTRES COMPACTS
+
+   CRUSH HOUR / TINDER
+   - TINDER — FORUM F25
+   - ÉCRAN « IT’S A MATCH »
+   - OUVERTURE DU MATCH
+   - PUBLICATIONS DE LA CONVERSATION
+   - PROFIL À ONGLETS
+   - NOTIFICATION DE LIKE
+
+   RESPONSIVE ET THÈMES
+   - MODE DARK
+   - MODE LIGHT
+   - VERSION MOBILE
    ========================================================== */
 
 
-/* ==========================================================
-   01. BANDEAU STATISTIQUE — REGISTRES LONDONIENS
-   ========================================================== */
+/* BANDEAU STATISTIQUE — REGISTRES LONDONIENS */
 
 .qeel-stats {
   display: grid;
@@ -41,7 +64,6 @@
   backdrop-filter: blur(2px);
   box-sizing: border-box;
 }
-
 
 /* Bloc individuel d’une statistique */
 
@@ -63,7 +85,6 @@
   border-radius: var(--radius-mini);
   box-sizing: border-box;
 }
-
 
 /* Numéro du registre */
 
@@ -97,7 +118,6 @@
   content: "02";
 }
 
-
 /* Mention décorative à droite */
 
 .qeel-stat::after {
@@ -120,7 +140,6 @@
   white-space: nowrap;
 }
 
-
 /* Conteneur du texte dynamique */
 
 .qeel-stat > span {
@@ -129,7 +148,6 @@
   flex: 0 1 auto;
   min-width: 0;
 }
-
 
 /* Nombre de messages ou de membres */
 
@@ -150,10 +168,7 @@
   white-space: nowrap;
 }
 
-
-/* ==========================================================
-   02. QEEL — STRUCTURE GÉNÉRALE
-   ========================================================== */
+/* QEEL — STRUCTURE GÉNÉRALE */
 
 .qeel {
   --qeel-gap: 10px;
@@ -179,10 +194,7 @@
   display: none !important;
 }
 
-
-/* ==========================================================
-   03. QEEL — COLONNE GAUCHE ET GROUPES
-   ========================================================== */
+/* QEEL — COLONNE GAUCHE ET GROUPES */
 
 .qeel-left {
   position: relative;
@@ -195,7 +207,6 @@
   height: 252px;
   min-width: 0;
 }
-
 
 /* Grille des groupes */
 
@@ -225,7 +236,6 @@
   background: center / cover no-repeat var(--group-image);
   filter: grayscale(100%);
 }
-
 
 /* Nom du groupe affiché au survol */
 
@@ -265,7 +275,6 @@
   transform: translateY(0);
 }
 
-
 /* Couleurs et images des groupes */
 
 .qeel-group.qeel-wf {
@@ -287,7 +296,6 @@
   --group-colour: #9d4651;
   --group-image: url("https://64.media.tumblr.com/02ab95a2fc760bc9fab1eeb0431f800b/cb36f3c89f2e504a-5b/s250x400/2f029fe6360ee33d2575a84ffabddc17c429b594.gif");
 }
-
 
 /* Plaque de coordonnées londoniennes */
 
@@ -326,7 +334,6 @@
   text-transform: uppercase;
 }
 
-
 /* Petit repère géographique */
 
 .qeel-left::before {
@@ -345,10 +352,7 @@
   box-shadow: 0 0 0 1px var(--three);
 }
 
-
-/* ==========================================================
-   04. QEEL — DERNIER INSCRIT
-   ========================================================== */
+/* QEEL — DERNIER INSCRIT */
 
 .qeel-derinsc {
   grid-column: 2;
@@ -367,7 +371,6 @@
 
   border-radius: var(--radius-normal);
 }
-
 
 /* Avatar du dernier inscrit */
 
@@ -402,7 +405,6 @@
 
   transition: filter .35s ease;
 }
-
 
 /* Calque placé sur l’avatar */
 
@@ -442,7 +444,6 @@
   text-transform: uppercase;
 }
 
-
 /* Effets au survol */
 
 #last_user:hover #lastuser_avatar,
@@ -454,7 +455,6 @@
 #last_user:hover .qeel-derinsc-bloc {
   opacity: 0;
 }
-
 
 /* Pseudonyme du dernier inscrit */
 
@@ -468,10 +468,7 @@
   text-transform: uppercase;
 }
 
-
-/* ==========================================================
-   05. QEEL — MEMBRES CONNECTÉS
-   ========================================================== */
+/* QEEL — MEMBRES CONNECTÉS */
 
 .qeel-members {
   display: grid;
@@ -494,7 +491,6 @@
 #last_connected {
   grid-column: 1 !important;
 }
-
 
 /* Titres des listes */
 
@@ -521,7 +517,6 @@
   white-space: nowrap;
 }
 
-
 /* Base commune aux deux lignes décoratives */
 
 .qeel-online::after,
@@ -533,7 +528,6 @@
 
   opacity: .85;
 }
-
 
 /* Cornelia Street — 3 points */
 
@@ -564,7 +558,6 @@
       var(--three)
     ) center / 100% 2px no-repeat;
 }
-
 
 /* So Long, London — 4 points espacés irrégulièrement */
 
@@ -636,7 +629,6 @@
   margin: 0 !important;
 }
 
-
 /* Contenu des listes */
 
 .qeel-online-bloc,
@@ -689,7 +681,6 @@
   white-space: normal;
 }
 
-
 /* Scrollbars du QEEL */
 
 .qeel-online-bloc::-webkit-scrollbar,
@@ -708,7 +699,7 @@
   background: transparent;
 }
 
-/* --------- AUTRE -------------*/
+/* AUTRE */
 
 body .qeel-stats {
   margin-bottom: 0 !important;
@@ -718,10 +709,7 @@ body .qeel-stats + .qeel {
   margin-top: 0 !important;
 }
 
-
-/* ==========================================================
-   06. FOOTER — STRUCTURE GÉNÉRALE
-   ========================================================== */
+/* FOOTER — STRUCTURE GÉNÉRALE */
 
 .footer-container {
   display: grid;
@@ -736,7 +724,6 @@ body .qeel-stats + .qeel {
   background: var(--transparent-two);
   border-radius: var(--radius-normal);
 }
-
 
 /* Correction forcée de la grille du footer */
 
@@ -770,7 +757,6 @@ body div.footer-container {
   box-sizing: border-box !important;
 }
 
-
 /* Placement des trois colonnes */
 
 body .footer-container > .footer-liens {
@@ -800,10 +786,7 @@ body .footer-container > .footer-img {
   margin: 0 !important;
 }
 
-
-/* ==========================================================
-   07. FOOTER — LIENS ET PLAQUES ADMINISTRATIVES
-   ========================================================== */
+/* FOOTER — LIENS ET PLAQUES ADMINISTRATIVES */
 
 .footer-liens {
   z-index: 999;
@@ -825,7 +808,6 @@ body .footer-container > .footer-img {
   box-sizing: border-box;
   text-align: center;
 }
-
 
 /* Neutralisation des anciens styles Forumactif */
 
@@ -867,7 +849,6 @@ body .footer-container > .footer-img {
     border-color .3s ease;
 }
 
-
 /* Numéro de registre placé à gauche */
 
 .footer-a::before {
@@ -893,7 +874,6 @@ body .footer-container > .footer-img {
   letter-spacing: 1px;
 }
 
-
 /* Code londonien placé à droite */
 
 .footer-a::after {
@@ -914,7 +894,6 @@ body .footer-container > .footer-img {
   opacity: .65;
 }
 
-
 /* Effets au survol */
 
 .footer-liens .footer-a:hover {
@@ -927,17 +906,13 @@ body .footer-container > .footer-img {
   filter: brightness(1.08);
 }
 
-
 /* Ancien conteneur éventuel */
 
 .footer-liens-autres {
   display: none;
 }
 
-
-/* ==========================================================
-   08. FOOTER — CRÉDITS ET FICHE D’ARCHIVES
-   ========================================================== */
+/* FOOTER — CRÉDITS ET FICHE D’ARCHIVES */
 
 .footer-credits {
   grid-column: 2;
@@ -959,7 +934,6 @@ body .footer-container > .footer-img {
   line-height: 15px;
   text-align: justify;
 }
-
 
 /* Cartouche supérieur */
 
@@ -985,7 +959,6 @@ body .footer-container > .footer-img {
   text-transform: uppercase;
 }
 
-
 /* Numéro de dossier */
 
 .footer-credits-title::after {
@@ -996,14 +969,12 @@ body .footer-container > .footer-img {
   opacity: .8;
 }
 
-
 /* Texte des crédits */
 
 .footer-credits-text {
   font-size: var(--normal-size);
   line-height: 15px;
 }
-
 
 /* Scrollbar des crédits */
 
@@ -1020,10 +991,7 @@ body .footer-container > .footer-img {
   background: transparent;
 }
 
-
-/* ==========================================================
-   09. FOOTER — IMAGE ET PHOTOGRAPHIE URBAINE
-   ========================================================== */
+/* FOOTER — IMAGE ET PHOTOGRAPHIE URBAINE */
 
 .footer-img {
   position: relative;
@@ -1055,7 +1023,6 @@ body .footer-container > .footer-img {
 
   transition: filter .35s ease, transform .35s ease;
 }
-
 
 /* Légende placée sur la photographie */
 
@@ -1090,7 +1057,6 @@ body .footer-container > .footer-img {
   pointer-events: none;
 }
 
-
 /* Retour des couleurs au survol */
 
 .footer-img:hover img {
@@ -1098,10 +1064,7 @@ body .footer-container > .footer-img {
   transform: scale(1.025);
 }
 
-
-/* ==========================================================
-   10. WIDGET MÉTÉO DE LONDRES
-   ========================================================== */
+/* WIDGET MÉTÉO DE LONDRES */
 
 .up-notepad {
   min-width: 0;
@@ -1133,7 +1096,6 @@ body .footer-container > .footer-img {
   box-sizing: border-box;
 }
 
-
 /* Éléments utilisant une disposition flexible */
 
 .london-widget__head,
@@ -1144,7 +1106,6 @@ body .footer-container > .footer-img {
   justify-content: space-between;
   gap: 6px;
 }
-
 
 /* En-tête du widget */
 
@@ -1163,7 +1124,6 @@ body .footer-container > .footer-img {
 .london-widget__head i {
   color: var(--accentClr);
 }
-
 
 /* Météo principale */
 
@@ -1211,7 +1171,6 @@ body .footer-container > .footer-img {
   letter-spacing: 0;
 }
 
-
 /* Données météorologiques secondaires */
 
 .london-data {
@@ -1232,7 +1191,6 @@ body .footer-container > .footer-img {
   color: var(--contrastLight);
   font-weight: 600;
 }
-
 
 /* État du réseau londonien */
 
@@ -1266,7 +1224,6 @@ body .footer-container > .footer-img {
   white-space: nowrap;
 }
 
-
 /* Couleurs des états */
 
 .london-status .is-good {
@@ -1276,7 +1233,6 @@ body .footer-container > .footer-img {
 #london-tube.is-alert {
   color: #b56a72;
 }
-
 
 /* Heure de la dernière mise à jour */
 
@@ -1292,14 +1248,9 @@ body .footer-container > .footer-img {
   text-transform: none;
 }
 
-
 /* Adaptation aux très petits écrans */
 
-
-
-/* ==========================================================
-   11. DERNIERS PRÉ-LIENS
-   ========================================================== */
+/* DERNIERS PRÉ-LIENS */
 
 .pa-preliens {
   grid-column: 1 / span 2;
@@ -1319,7 +1270,6 @@ body .footer-container > .footer-img {
   overflow-y: auto;
 }
 
-
 /* Ligne individuelle */
 
 .pa-prelien-row {
@@ -1333,7 +1283,6 @@ body .footer-container > .footer-img {
   background: var(--neutral);
   border-radius: var(--radius-normal);
 }
-
 
 /* Zone ou catégorie */
 
@@ -1357,7 +1306,6 @@ body .footer-container > .footer-img {
   white-space: nowrap;
 }
 
-
 /* Titre du pré-lien */
 
 .pa-prelien-title {
@@ -1377,7 +1325,6 @@ body .footer-container > .footer-img {
   color: var(--accentClr) !important;
 }
 
-
 /* Messages de chargement et d’erreur */
 
 .pa-preliens-loading,
@@ -1390,10 +1337,7 @@ body .footer-container > .footer-img {
   text-transform: uppercase;
 }
 
-
-/* ==========================================================
-   12. DESCRIPTION « MIND THE GAP »
-   ========================================================== */
+/* DESCRIPTION « MIND THE GAP » */
 
 .up-desc {
   position: relative;
@@ -1418,7 +1362,6 @@ body .footer-container > .footer-img {
   text-align: justify;
 }
 
-
 /* Suppression des sauts et décorations hérités */
 
 .up-desc > br {
@@ -1429,7 +1372,6 @@ body .footer-container > .footer-img {
 .up-desc::after {
   content: none;
 }
-
 
 /* Ligne de station */
 
@@ -1443,7 +1385,6 @@ body .footer-container > .footer-img {
 
   white-space: nowrap;
 }
-
 
 /* Mini-roundel : anneau et barre centrale */
 
@@ -1469,7 +1410,6 @@ body .footer-container > .footer-img {
     0 0 0 1px var(--neutral),
     0 2px 7px rgba(0, 0, 0, .08);
 }
-
 
 /* Mini-plan de métro */
 
@@ -1537,7 +1477,6 @@ body .footer-container > .footer-img {
       center 20px / 100% 1px no-repeat;
 }
 
-
 /* Titre principal */
 
 .up-titre vl {
@@ -1550,7 +1489,6 @@ body .footer-container > .footer-img {
   letter-spacing: 1.5px;
   line-height: 18px;
 }
-
 
 /* Sous-titre de présentation */
 
@@ -1572,7 +1510,6 @@ body .footer-container > .footer-img {
   font-style: italic;
 }
 
-
 /* Neutralisation des anciens fonds du titre */
 
 .up-titre,
@@ -1580,7 +1517,6 @@ body .footer-container > .footer-img {
   color: var(--textColorAccent) !important;
   background: none !important;
 }
-
 
 /* Forçage de la visibilité du titre */
 
@@ -1602,16 +1538,12 @@ body .footer-container > .footer-img {
   text-shadow: 0 1px 0 var(--contrast);
 }
 
-
-/* ==========================================================
-   13. ALIGNEMENT UNIFORME DE L’EN-TÊTE
-   ========================================================== */
+/* ALIGNEMENT UNIFORME DE L’EN-TÊTE */
 
 .up {
   grid-template-rows: 25px 150px 30px;
   align-items: stretch;
 }
-
 
 /* Ligne supérieure */
 
@@ -1654,7 +1586,6 @@ body .footer-container > .footer-img {
   height: 100%;
   line-height: 1;
 }
-
 
 /* Ligne centrale */
 
@@ -1706,7 +1637,6 @@ body .footer-container > .footer-img {
   margin: 0;
 }
 
-
 /* Ligne inférieure */
 
 .up-last-line {
@@ -1740,7 +1670,6 @@ body .footer-container > .footer-img {
   align-self: stretch;
 }
 
-
 /* Neutralisation des marges typographiques imprévues */
 
 .up s1,
@@ -1749,12 +1678,7 @@ body .footer-container > .footer-img {
   vertical-align: middle;
 }
 
-
-
-/* ==========================================================
-   14. MASQUER L'URL DE L'AVATAR DARK DANS LE PROFI
-   ========================================================== */
-
+/* MASQUER L'URL DE L'AVATAR DARK DANS LE PROFI */
 
 .user_field.field-avatar-mode-sombre {
     display: none !important;
@@ -1771,9 +1695,7 @@ body .footer-container > .footer-img {
     display: none !important;
 }
 
-/* ==========================================================
-   COLLAGE DU QEEL ET DU FOOTER
-   ========================================================== */
+/* COLLAGE DU QEEL ET DU FOOTER */
 
 #main-content > .qeel + br {
   display: none !important;
@@ -1794,7 +1716,7 @@ body #main-content > div.footer-container {
     var(--radius-normal) !important;
 }
 
-/* --------- AUTRE -------------*/
+/* AUTRE */
 
 :root {
   --qeel-background: var(--transparent-one);
@@ -1831,7 +1753,6 @@ body div.footer-container {
     var(--radius-normal) !important;
 }
 
-
 /* Coller le footer au QEEL */
 
 #main-content > .qeel + br {
@@ -1856,32 +1777,21 @@ html body #main-content .footer-container {
   -webkit-backdrop-filter: blur(2px) !important;
 }
 
-
-
-/* =========================================================
-   INDEX — FORUMS EN DEUX COLONNES AVEC CARTES DÉCORATIVES
-   À coller après le CSS principal.
-   ========================================================= */
+/* INDEX — FORUMS EN DEUX COLONNES AVEC CARTES DÉCORATIVES À coller après le CSS principal. */
 
 html,
 body {
     min-width: 970px;
 }
 
-/* =========================================================
-   INDEX — FORUMS EN DEUX COLONNES AVEC CARTES DÉCORATIVES
-   À coller après le CSS principal.
-   ========================================================= */
+/* INDEX — FORUMS EN DEUX COLONNES AVEC CARTES DÉCORATIVES À coller après le CSS principal. */
 
 html,
 body {
     min-width: 970px;
 }
 
-/* =========================================================
-   IMAGES PROPRES À CHAQUE CATÉGORIE
-   Remplacer chaque URL par une adresse d'image publique.
-   ========================================================= */
+/* IMAGES PROPRES À CHAQUE CATÉGORIE Remplacer chaque URL par une adresse d'image publique. */
 
 html[data-forum-layout="columns"] {
 
@@ -1899,9 +1809,7 @@ html[data-forum-layout="columns"] {
 &[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
 &[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
 
-/* =========================================================
-   GRILLE
-   ========================================================= */
+/* GRILLE */
 
 .category .forums {
     display: grid;
@@ -1929,9 +1837,7 @@ html[data-forum-layout="columns"] {
     margin-bottom: 0;
 }
 
-/* =========================================================
-   LIGNE 1 — TITRE ET ÉTAT DU FORUM
-   ========================================================= */
+/* LIGNE 1 — TITRE ET ÉTAT DU FORUM */
 
 .category .forum > .forumtitle-box {
     grid-area: heading;
@@ -1953,9 +1859,7 @@ html[data-forum-layout="columns"] {
     flex: 0 0 70px;
 }
 
-/* =========================================================
-   LIGNE 2 — DESCRIPTION
-   ========================================================= */
+/* LIGNE 2 — DESCRIPTION */
 
 .category .forum > .forum_content {
     grid-area: description;
@@ -1973,9 +1877,7 @@ html[data-forum-layout="columns"] {
     max-height: 80px;
 }
 
-/* =========================================================
-   LIGNE 3 — STATISTIQUES
-   ========================================================= */
+/* LIGNE 3 — STATISTIQUES */
 
 .category .forum > .forum_stats {
     grid-area: stats;
@@ -2016,9 +1918,7 @@ html[data-forum-layout="columns"] {
     line-height: 16px;
 }
 
-/* =========================================================
-   LIGNE 3 — AVATAR ET DERNIER MESSAGE
-   ========================================================= */
+/* LIGNE 3 — AVATAR ET DERNIER MESSAGE */
 
 .category .forum > .forum_lastpost_row {
     grid-area: lastpost;
@@ -2067,9 +1967,7 @@ html[data-forum-layout="columns"] {
     text-align: right;
 }
 
-/* =========================================================
-   LIGNE 4 — SOUS-FORUMS
-   ========================================================= */
+/* LIGNE 4 — SOUS-FORUMS */
 
 .category .forum > .forum_details.forum_subforums {
     grid-area: subforums;
@@ -2186,9 +2084,7 @@ html[data-forum-layout="columns"] {
     line-height: 14px !important;
 }
 
-/* =========================================================
-   CARTE DÉCORATIVE POUR CHAQUE CATÉGORIE IMPAIRE
-   ========================================================= */
+/* CARTE DÉCORATIVE POUR CHAQUE CATÉGORIE IMPAIRE */
 
 .category .forums:has(> .forum:nth-child(odd):last-child)::after {
     content: "";
@@ -2217,17 +2113,7 @@ html[data-forum-layout="columns"] {
         background-position .8s ease;
 }
 
-/* =========================================================
-   ALTERNANCE PARMI LES CATÉGORIES AYANT UNE CASE VIDE
-
-   1re catégorie impaire rencontrée : image | forum
-   2e catégorie impaire rencontrée : forum | image
-   3e catégorie impaire rencontrée : image | forum
-   etc.
-
-   Les catégories contenant un nombre pair de forums sont
-   ignorées dans ce comptage.
-   ========================================================= */
+/* ALTERNANCE PARMI LES CATÉGORIES AYANT UNE CASE VIDE 1re catégorie impaire rencontrée : image | forum 2e catégorie impaire rencontrée : forum | image 3e catégorie impaire rencontrée : image | forum etc. Les catégories contenant un nombre pair de forums sont ignorées dans ce comptage. */
 
 /* Position normale : image après le dernier forum. */
 .category .forums:has(> .forum:nth-child(odd):last-child)::after {
@@ -2251,9 +2137,6 @@ html[data-forum-layout="columns"] {
     filter: grayscale(0%);
     background-position: center 45%;
 }
-
-
-
 
 } /* FIN DU MODE DEUX COLONNES */
 
@@ -2282,13 +2165,9 @@ html[data-forum-layout="normal"]
     white-space: nowrap !important;
 }
 
-/* =========================================================
-   SWITCH DE DISPOSITION
-   ========================================================= */
+/* SWITCH DE DISPOSITION */
 
-/* =========================================================
-   SWITCH DE DISPOSITION — ICÔNE SEULE
-   ========================================================= */
+/* SWITCH DE DISPOSITION — ICÔNE SEULE */
 
 .switcheroo__squircles > .forum-layout-toggle {
     display: inline-flex !important;
@@ -2327,7 +2206,6 @@ html[data-forum-layout="normal"]
     transition: color .3s ease !important;
 }
 
-
 /* Couleur en mode clair */
 html[data-color-scheme="light"]
 .switcheroo__squircles
@@ -2335,14 +2213,12 @@ html[data-color-scheme="light"]
     color: var(--contrastDark) !important;
 }
 
-
 /* Couleur en mode sombre */
 html[data-color-scheme="dark"]
 .switcheroo__squircles
 > .forum-layout-toggle {
     color: var(--contrastLight) !important;
 }
-
 
 /* Icône Font Awesome */
 .switcheroo__squircles
@@ -2362,7 +2238,6 @@ html[data-color-scheme="dark"]
         color .3s ease !important;
 }
 
-
 /* Mode deux colonnes : icône verticale */
 html[data-forum-layout="columns"]
 .switcheroo__squircles
@@ -2371,7 +2246,6 @@ html[data-forum-layout="columns"]
     transform: rotate(90deg) !important;
 }
 
-
 /* Mode normal : icône horizontale */
 html[data-forum-layout="normal"]
 .switcheroo__squircles
@@ -2379,7 +2253,6 @@ html[data-forum-layout="normal"]
 .fa-grip-lines {
     transform: rotate(0deg) !important;
 }
-
 
 /* Survol */
 .switcheroo__squircles
@@ -2394,7 +2267,6 @@ html[data-forum-layout="normal"]
     box-shadow: none !important;
 }
 
-
 /* Mode actif : conserve une couleur lisible */
 .switcheroo__squircles
 > .forum-layout-toggle[aria-pressed="true"] {
@@ -2408,7 +2280,6 @@ html[data-forum-layout="normal"]
     box-shadow: none !important;
 }
 
-
 /* Mode actif en thème clair */
 html[data-color-scheme="light"]
 .switcheroo__squircles
@@ -2416,14 +2287,12 @@ html[data-color-scheme="light"]
     color: var(--contrastDark) !important;
 }
 
-
 /* Mode actif en thème sombre */
 html[data-color-scheme="dark"]
 .switcheroo__squircles
 > .forum-layout-toggle[aria-pressed="true"] {
     color: var(--contrastLight) !important;
 }
-
 
 /* Suppression des effets au clic */
 .switcheroo__squircles
@@ -2436,16 +2305,13 @@ html[data-color-scheme="dark"]
     box-shadow: none !important;
 }
 
-
 /* Couleur de survol prioritaire, même quand le bouton est actif */
 html[data-color-scheme]
 .switcheroo__squircles
 > .forum-layout-toggle[aria-pressed="true"]:hover {
     color: var(--accentClr) !important;
 }
-/* =========================================================
-   MODE NORMAL
-   ========================================================= */
+/* MODE NORMAL */
 
 html[data-forum-layout="normal"] .category .forums {
     display: block;
@@ -2600,7 +2466,6 @@ html[data-forum-layout="normal"] .category .forum_subforums #subforum a::after {
     display: none !important;
     content: none !important;
 }
-
 
 /* =========================== CSS NOUVEAU DIRECTORY MEMBER LIST ============== */
 
@@ -3289,7 +3154,6 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   }
 }
 
-
 /* Bouton administrateur de validation des fiches */
 #validationBtn.validation-button {
   box-sizing: border-box;
@@ -3352,299 +3216,277 @@ html[data-color-scheme="light"] .directory-registry-kicker {
   }
 }
 
-
-/* ====================================================
-   TINDER — FORUM F25
-   ==================================================== */
+/* TINDER — FORUM F25 */
 
 .tinder-app,
 .tinder-app *,
 body.tinder-auto-topic .tinder-auto-post,
 body.tinder-auto-topic .tinder-auto-post * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
-
-/* ====================================================
-   APPLICATION TINDER
-   ==================================================== */
+/* APPLICATION TINDER */
 
 .tinder-app {
-  width:390px;
-  max-width:100%;
-  margin:0 auto;
-  overflow:hidden;
-  position:relative;
-  border-radius:22px;
-  font-family:Arial, Helvetica, sans-serif;
+  width: 390px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 22px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* ====================================================
-   IDENTITÉ CRUSH HOUR
-   ==================================================== */
+/* IDENTITÉ CRUSH HOUR */
 
 .tinder-brand {
-  min-height:58px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:9px 15px 8px;
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px 8px;
 }
 
 .tinder-brand-name {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  color:#fd267a;
-  font-size:20px;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:-.8px;
-  text-transform:lowercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fd267a;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.8px;
+  text-transform: lowercase;
 }
 
 .tinder-brand-name i {
-  font-size:15px;
-  transform:rotate(-8deg);
+  font-size: 15px;
+  transform: rotate(-8deg);
 }
 
 .tinder-brand-tagline {
-  margin-top:5px;
-  font-size:7px;
-  font-weight:600;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:1.4px;
-  opacity:.5;
+  margin-top: 5px;
+  font-size: 7px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  opacity: .5;
 }
 
 /* Mode sombre */
 
 html[data-color-scheme="dark"] .tinder-brand {
-  background:#17151b;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background: #17151b;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 /* Mode clair */
 
 html[data-color-scheme="light"] .tinder-brand {
-  background:#fff;
-  border-bottom:1px solid #ededee;
+  background: #fff;
+  border-bottom: 1px solid #ededee;
 }
 
-/* ====================================================
-   ÉCRAN « IT’S A MATCH »
-   ==================================================== */
+/* ÉCRAN « IT’S A MATCH » */
 
 .tinder-match {
-  height:auto;
-  min-height:0;
-  padding:32px 22px 25px;
-  text-align:center;
+  height: auto;
+  min-height: 0;
+  padding: 32px 22px 25px;
+  text-align: center;
 }
 
 .tinder-match-title {
-  width:max-content;
-  max-width:100%;
-  margin:0 auto 13px;
-  color:#fd267a;
-  font-size:36px;
-  font-weight:900;
-  font-style:italic;
-  line-height:1;
-  letter-spacing:-2px;
-  transform:rotate(-4deg);
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 13px;
+  color: #fd267a;
+  font-size: 36px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -2px;
+  transform: rotate(-4deg);
 }
 
 .tinder-match-subtitle {
-  max-width:285px;
-  margin:0 auto 26px;
-  font-size:11px;
-  font-weight:400;
-  line-height:1.55;
+  max-width: 285px;
+  margin: 0 auto 26px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .tinder-match-profiles {
-  height:145px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0;
+  height: 145px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .tinder-match-profile {
-  width:125px;
-  height:125px;
-  overflow:hidden;
-  position:absolute;
-  background:#eee;
-  border:4px solid #fff;
-  border-radius:50%;
-  box-shadow:0 5px 14px rgba(0,0,0,.13);
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+  position: absolute;
+  background: #eee;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 14px rgba(0,0,0,.13);
 }
 
 .tinder-match-profile:first-child {
-  margin-left:-88px;
-  transform:rotate(-7deg);
+  margin-left: -88px;
+  transform: rotate(-7deg);
 }
 
 .tinder-match-profile:last-child {
-  margin-left:88px;
-  transform:rotate(7deg);
+  margin-left: 88px;
+  transform: rotate(7deg);
 }
 
 .tinder-match-profile img {
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
 }
 
 /* Cœur entre les profils */
 
 .tinder-match-heart {
-  width:43px;
-  height:43px;
-  position:relative;
-  z-index:2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  background:#fd267a;
-  border:3px solid #fff;
-  border-radius:50%;
-  box-shadow:0 3px 9px rgba(0,0,0,.14);
-  font-size:16px;
-  transform:rotate(-7deg);
+  width: 43px;
+  height: 43px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #fd267a;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 9px rgba(0,0,0,.14);
+  font-size: 16px;
+  transform: rotate(-7deg);
 }
 
 /* Bouton principal */
 
 .tinder-match-button {
-  display:block;
-  width:88%;
-  margin:25px auto 0;
-  padding:12px 18px;
-  color:#fff;
-  background:#fd267a;
-  border:0;
-  border-radius:30px;
-  font-size:10px;
-  font-weight:800;
-  line-height:1.2;
-  text-transform:uppercase;
-  letter-spacing:.8px;
+  display: block;
+  width: 88%;
+  margin: 25px auto 0;
+  padding: 12px 18px;
+  color: #fff;
+  background: #fd267a;
+  border: 0;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .8px;
 }
 
 .tinder-match-button:hover {
-  background:#e91e63;
+  background: #e91e63;
 }
 
 .tinder-match-note {
-  margin:13px 0 0;
-  font-size:9px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.6px;
+  margin: 13px 0 0;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .6px;
 }
 
-
-/* ====================================================
-   ÉCRAN DU MATCH — MODE DARK
-   ==================================================== */
+/* ÉCRAN DU MATCH — MODE DARK */
 
 html[data-color-scheme="dark"] .tinder-app {
-  color:#f5f5f7;
-  background:#17151b;
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  color: #f5f5f7;
+  background: #17151b;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 8px 24px rgba(0,0,0,.22);
 }
 
-
 html[data-color-scheme="dark"] .tinder-match {
-  color:#f5f5f7;
-  background:#1d1a20;
+  color: #f5f5f7;
+  background: #1d1a20;
 }
 
 html[data-color-scheme="dark"] .tinder-match-title {
-  color:#fd267a;
+  color: #fd267a;
 }
 
 html[data-color-scheme="dark"] .tinder-match-subtitle {
-  color:#aaa7ae;
+  color: #aaa7ae;
 }
 
 html[data-color-scheme="dark"] .tinder-match-note {
-  color:#77737c;
+  color: #77737c;
 }
 
 html[data-color-scheme="dark"] .tinder-match-profile {
-  border-color:#1d1a20;
+  border-color: #1d1a20;
   box-shadow:
     0 0 0 2px #fd267a,
     0 5px 14px rgba(0,0,0,.22);
 }
 
-
-/* ====================================================
-   ÉCRAN DU MATCH — MODE LIGHT
-   ==================================================== */
+/* ÉCRAN DU MATCH — MODE LIGHT */
 
 html[data-color-scheme="light"] .tinder-app {
-  color:#242429;
-  background:#fff;
-  border:1px solid #e6e6e8;
-  box-shadow:0 8px 24px rgba(20,20,25,.09);
+  color: #242429;
+  background: #fff;
+  border: 1px solid #e6e6e8;
+  box-shadow: 0 8px 24px rgba(20,20,25,.09);
 }
 
-
 html[data-color-scheme="light"] .tinder-match {
-  color:#242429;
-  background:#fafafa;
+  color: #242429;
+  background: #fafafa;
 }
 
 html[data-color-scheme="light"] .tinder-match-title {
-  color:#fd267a;
+  color: #fd267a;
 }
 
 html[data-color-scheme="light"] .tinder-match-subtitle {
-  color:#55555b;
+  color: #55555b;
 }
 
 html[data-color-scheme="light"] .tinder-match-note {
-  color:#8b8b91;
+  color: #8b8b91;
 }
 
 html[data-color-scheme="light"] .tinder-match-profile {
-  border-color:#fafafa;
+  border-color: #fafafa;
   box-shadow:
     0 0 0 2px #fd267a,
     0 5px 14px rgba(0,0,0,.1);
 }
 
-
-/* ====================================================
-   PREMIER POST — OUVERTURE DU MATCH
-   ==================================================== */
+/* PREMIER POST — OUVERTURE DU MATCH */
 
 body.tinder-auto-topic .tinder-auto-opening {
-  display:block !important;
-  width:430px !important;
-  max-width:calc(100% - 30px) !important;
-  min-height:0 !important;
-  height:auto !important;
-  margin:20px auto 30px !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
+  display: block !important;
+  width: 430px !important;
+  max-width: calc(100% - 30px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 20px auto 30px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Masque le profil Forumactif */
@@ -3654,79 +3496,76 @@ body.tinder-auto-topic
 
 body.tinder-auto-topic
 .tinder-auto-opening > .post_profile {
-  display:none !important;
-  width:0 !important;
-  height:0 !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  overflow:hidden !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Conteneur de l’ouverture */
 
 body.tinder-auto-topic
 .tinder-auto-opening > .post_message {
-  display:flex !important;
-  flex-direction:column !important;
-  width:100% !important;
-  max-width:none !important;
-  min-height:0 !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  position:static !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-opening .postbody.content {
-  order:1 !important;
-  display:block !important;
-  width:100% !important;
-  min-height:0 !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
+  order: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Outils sous l’ouverture */
 
 body.tinder-auto-topic
 .tinder-auto-opening .post_details {
-  order:2 !important;
-  align-self:center !important;
-  width:390px !important;
-  max-width:100% !important;
-  margin:5px auto 0 !important;
+  order: 2 !important;
+  align-self: center !important;
+  width: 390px !important;
+  max-width: 100% !important;
+  margin: 5px auto 0 !important;
 }
 
-
-/* ====================================================
-   PUBLICATIONS DE LA CONVERSATION
-   ==================================================== */
+/* PUBLICATIONS DE LA CONVERSATION */
 
 body.tinder-auto-topic .tinder-auto-post {
-  display:flex !important;
-  grid-template-columns:none !important;
-  grid-template-rows:none !important;
-  width:500px !important;
-  max-width:calc(100% - 30px) !important;
-  min-height:0 !important;
-  height:auto !important;
-  align-items:flex-end !important;
-  gap:9px !important;
-  margin:4px auto !important;
-  padding:8px 15px !important;
-  position:relative !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+  width: 500px !important;
+  max-width: calc(100% - 30px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  align-items: flex-end !important;
+  gap: 9px !important;
+  margin: 4px auto !important;
+  padding: 8px 15px !important;
+  position: relative !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Masque le grand profil et son avatar */
@@ -3736,166 +3575,148 @@ body.tinder-auto-topic
 
 body.tinder-auto-topic
 .tinder-auto-post > .post_profile {
-  display:none !important;
-  width:0 !important;
-  height:0 !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  overflow:hidden !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
-
-/* ====================================================
-   PETIT AVATAR ROND
-   ==================================================== */
+/* PETIT AVATAR ROND */
 
 body.tinder-auto-topic
 .tinder-auto-post > .tinder-auto-avatar {
-  display:block !important;
-  width:34px !important;
-  height:34px !important;
-  min-width:34px !important;
-  flex:0 0 34px !important;
-  margin:0 0 20px !important;
-  padding:0 !important;
-  object-fit:cover !important;
-  object-position:center !important;
-  background:var(--neutralDark) !important;
-  border:2px solid #fff !important;
-  border-radius:50% !important;
-  box-shadow:0 3px 9px rgba(0,0,0,.15);
+  display: block !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  flex: 0 0 34px !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: var(--neutralDark) !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 3px 9px rgba(0,0,0,.15);
 }
 
-
-/* ====================================================
-   CONTENEUR DU MESSAGE
-   ==================================================== */
+/* CONTENEUR DU MESSAGE */
 
 body.tinder-auto-topic
 .tinder-auto-post > .post_message {
-  display:flex !important;
-  grid-column:auto !important;
-  grid-row:auto !important;
-  flex-direction:column !important;
-  width:auto !important;
-  max-width:72% !important;
-  min-height:0 !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  position:static !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
+  display: flex !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  flex-direction: column !important;
+  width: auto !important;
+  max-width: 72% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-
-/* ====================================================
-   POSITION GAUCHE
-   ==================================================== */
+/* POSITION GAUCHE */
 
 body.tinder-auto-topic .tinder-auto-left {
-  justify-content:flex-start !important;
+  justify-content: flex-start !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-left > .tinder-auto-avatar {
-  order:1 !important;
+  order: 1 !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-left > .post_message {
-  order:2 !important;
-  align-items:flex-start !important;
+  order: 2 !important;
+  align-items: flex-start !important;
 }
 
-
-/* ====================================================
-   POSITION DROITE
-   ==================================================== */
+/* POSITION DROITE */
 
 body.tinder-auto-topic .tinder-auto-right {
-  justify-content:flex-end !important;
+  justify-content: flex-end !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-right > .tinder-auto-avatar {
-  order:2 !important;
+  order: 2 !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-right > .post_message {
-  order:1 !important;
-  align-items:flex-end !important;
+  order: 1 !important;
+  align-items: flex-end !important;
 }
 
-
-/* ====================================================
-   PSEUDO ET DATE
-   ==================================================== */
+/* PSEUDO ET DATE */
 
 body.tinder-auto-topic
 .tinder-auto-post .tinder-auto-infos {
-  order:1 !important;
-  display:flex !important;
-  align-items:center !important;
-  width:auto !important;
-  margin:0 7px 4px !important;
-  gap:6px !important;
-  font-size:8px !important;
-  line-height:1.2 !important;
+  order: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: auto !important;
+  margin: 0 7px 4px !important;
+  gap: 6px !important;
+  font-size: 8px !important;
+  line-height: 1.2 !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-post .tinder-auto-author {
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.6px;
-  opacity:.7;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  opacity: .7;
 }
 
 body.tinder-auto-topic
 .tinder-auto-post .tinder-auto-date {
-  opacity:.45;
+  opacity: .45;
 }
 
 body.tinder-auto-topic
 .tinder-auto-right .tinder-auto-infos {
-  flex-direction:row-reverse !important;
+  flex-direction: row-reverse !important;
 }
 
 html[data-color-scheme="dark"]
 body.tinder-auto-topic .tinder-auto-infos {
-  color:rgba(255,255,255,.62);
+  color: rgba(255,255,255,.62);
 }
 
 html[data-color-scheme="light"]
 body.tinder-auto-topic .tinder-auto-infos {
-  color:#77777e;
+  color: #77777e;
 }
 
-
-/* ====================================================
-   BULLES
-   ==================================================== */
+/* BULLES */
 
 body.tinder-auto-topic
 .tinder-auto-post .postbody.content {
-  order:2 !important;
-  display:block !important;
-  width:auto !important;
-  max-width:100% !important;
-  min-height:0 !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:10px 14px !important;
-  float:none !important;
-  position:static !important;
-  font-size:inherit !important;
-  line-height:1.5 !important;
-  text-align:left !important;
-  overflow-wrap:anywhere;
+  order: 2 !important;
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  float: none !important;
+  position: static !important;
+  font-size: inherit !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  overflow-wrap: anywhere;
 }
 
 /* Bulle reçue en dark */
@@ -3903,10 +3724,10 @@ body.tinder-auto-topic
 html[data-color-scheme="dark"]
 body.tinder-auto-topic
 .tinder-auto-left .postbody.content {
-  color:#f3f3f5 !important;
-  background:#2a272e !important;
-  border:1px solid rgba(255,255,255,.08) !important;
-  border-radius:18px 18px 18px 5px !important;
+  color: #f3f3f5 !important;
+  background: #2a272e !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 18px 18px 18px 5px !important;
 }
 
 /* Bulle reçue en light */
@@ -3914,82 +3735,79 @@ body.tinder-auto-topic
 html[data-color-scheme="light"]
 body.tinder-auto-topic
 .tinder-auto-left .postbody.content {
-  color:#26262b !important;
-  background:#f1f1f3 !important;
-  border:1px solid #e5e5e7 !important;
-  border-radius:18px 18px 18px 5px !important;
+  color: #26262b !important;
+  background: #f1f1f3 !important;
+  border: 1px solid #e5e5e7 !important;
+  border-radius: 18px 18px 18px 5px !important;
 }
 
 /* Bulle envoyée */
 
 body.tinder-auto-topic
 .tinder-auto-right .postbody.content {
-  color:#fff !important;
-  background:#fd267a !important;
-  border:1px solid transparent !important;
-  border-radius:18px 18px 5px 18px !important;
+  color: #fff !important;
+  background: #fd267a !important;
+  border: 1px solid transparent !important;
+  border-radius: 18px 18px 5px 18px !important;
 }
 
 /* Paragraphes */
 
 body.tinder-auto-topic
 .tinder-auto-post .postbody.content p:first-child {
-  margin-top:0 !important;
+  margin-top: 0 !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-post .postbody.content p:last-child {
-  margin-bottom:0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* Images envoyées */
 
 body.tinder-auto-topic
 .tinder-auto-post .postbody.content img {
-  display:block;
-  max-width:100% !important;
-  height:auto !important;
-  margin:5px 0 !important;
-  object-fit:cover;
-  object-position:center;
-  border-radius:11px;
+  display: block;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 5px 0 !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 11px;
 }
 
-
-/* ====================================================
-   MODIFIER, SUPPRIMER, CITER ET AIMER
-   ==================================================== */
+/* MODIFIER, SUPPRIMER, CITER ET AIMER */
 
 body.tinder-auto-topic
 .tinder-auto-opening .post_details,
 
 body.tinder-auto-topic
 .tinder-auto-post .post_details {
-  display:flex !important;
-  min-height:16px !important;
-  height:auto !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
+  display: flex !important;
+  min-height: 16px !important;
+  height: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
 }
 
 /* Outils des réponses */
 
 body.tinder-auto-topic
 .tinder-auto-post .post_details {
-  order:3 !important;
-  width:auto !important;
-  margin:4px 7px 0 !important;
+  order: 3 !important;
+  width: auto !important;
+  margin: 4px 7px 0 !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-left .post_details {
-  align-self:flex-start !important;
+  align-self: flex-start !important;
 }
 
 body.tinder-auto-topic
 .tinder-auto-right .post_details {
-  align-self:flex-end !important;
+  align-self: flex-end !important;
 }
 
 /* Masque la date native */
@@ -3999,24 +3817,24 @@ body.tinder-auto-topic
 
 body.tinder-auto-topic
 .tinder-auto-opening .post_details > .post_date {
-  display:none !important;
+  display: none !important;
 }
 
 /* Conteneur des outils */
 
 body.tinder-auto-topic .post_manage {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:flex-end !important;
-  gap:5px !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  float:none !important;
-  position:static !important;
-  opacity:.55;
-  transition:var(--transi);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 5px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  position: static !important;
+  opacity: .55;
+  transition: var(--transi);
 }
 
 body.tinder-auto-topic
@@ -4024,317 +3842,291 @@ body.tinder-auto-topic
 
 body.tinder-auto-topic
 .tinder-auto-post:hover .post_manage {
-  opacity:1;
+  opacity: 1;
 }
 
-
-/* ====================================================
-   CITER, MODIFIER ET SUPPRIMER
-   ==================================================== */
+/* CITER, MODIFIER ET SUPPRIMER */
 
 body.tinder-auto-topic .profile-icons {
-  display:flex !important;
-  align-items:center !important;
-  gap:5px !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  list-style:none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
 body.tinder-auto-topic .profile-icons li {
-  display:block !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  float:none !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
 }
 
 body.tinder-auto-topic .profile-icons a {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 body.tinder-auto-topic .profile-icons img {
-  display:block !important;
-  width:auto !important;
-  max-width:16px !important;
-  height:14px !important;
-  margin:0 !important;
-  padding:0 !important;
-  object-fit:contain !important;
-  opacity:.75;
-  transition:var(--transi);
+  display: block !important;
+  width: auto !important;
+  max-width: 16px !important;
+  height: 14px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  opacity: .75;
+  transition: var(--transi);
 }
 
 body.tinder-auto-topic
 .profile-icons a:hover img {
-  opacity:1;
+  opacity: 1;
 }
 
-
-/* ====================================================
-   BOUTON J’AIME
-   ==================================================== */
+/* BOUTON J’AIME */
 
 body.tinder-auto-topic .like_button {
-  display:block !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 0 0 5px !important;
-  padding:0 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0 0 5px !important;
+  padding: 0 !important;
 }
 
 body.tinder-auto-topic
 .like_button .rep-button {
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:2px 7px !important;
-  color:inherit;
-  background:transparent !important;
-  border:var(--border) !important;
-  border-radius:10px !important;
-  font-size:8px !important;
-  line-height:1.2 !important;
-  opacity:.75;
-  cursor:pointer;
-  transition:var(--transi);
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 2px 7px !important;
+  color: inherit;
+  background: transparent !important;
+  border: var(--border) !important;
+  border-radius: 10px !important;
+  font-size: 8px !important;
+  line-height: 1.2 !important;
+  opacity: .75;
+  cursor: pointer;
+  transition: var(--transi);
 }
 
 body.tinder-auto-topic
 .like_button .rep-button:hover {
-  color:#fd267a !important;
-  border-color:#fd267a !important;
-  opacity:1;
+  color: #fd267a !important;
+  border-color: #fd267a !important;
+  opacity: 1;
 }
 
-
-/* ====================================================
-   SIGNATURES
-   ==================================================== */
+/* SIGNATURES */
 
 body.tinder-auto-topic
 .tinder-auto-opening .signature_div,
 
 body.tinder-auto-topic
 .tinder-auto-post .signature_div {
-  display:none !important;
+  display: none !important;
 }
 
+/* VERSION MOBILE */
 
-/* ====================================================
-   VERSION MOBILE
-   ==================================================== */
-
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
   .tinder-app {
-    width:100%;
-    border-radius:18px;
+    width: 100%;
+    border-radius: 18px;
   }
 
   .tinder-match {
-    padding:29px 16px 22px;
+    padding: 29px 16px 22px;
   }
 
   .tinder-match-title {
-    font-size:32px;
+    font-size: 32px;
   }
 
   .tinder-match-profile {
-    width:112px;
-    height:112px;
+    width: 112px;
+    height: 112px;
   }
 
   .tinder-match-profile:first-child {
-    margin-left:-78px;
+    margin-left: -78px;
   }
 
   .tinder-match-profile:last-child {
-    margin-left:78px;
+    margin-left: 78px;
   }
 
   body.tinder-auto-topic .tinder-auto-opening {
-    width:100% !important;
-    max-width:100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   body.tinder-auto-topic
   .tinder-auto-opening .post_details {
-    width:100% !important;
-    padding:0 8px !important;
+    width: 100% !important;
+    padding: 0 8px !important;
   }
 
   body.tinder-auto-topic .tinder-auto-post {
-    width:100% !important;
-    max-width:100% !important;
-    padding-right:8px !important;
-    padding-left:8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
   }
 
   body.tinder-auto-topic
   .tinder-auto-post > .post_message {
-    max-width:80% !important;
+    max-width: 80% !important;
   }
 
   body.tinder-auto-topic .post_manage {
-    opacity:1;
+    opacity: 1;
   }
 
 }
 
-/* ====================================================
-   CRUSH HOUR — PROFIL À ONGLETS
-   ==================================================== */
+/* CRUSH HOUR — PROFIL À ONGLETS */
 
 .crush-profile,
 .crush-profile * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 /* Retours à la ligne ajoutés par Forumactif */
 
 .crush-profile br {
-  display:none !important;
+  display: none !important;
 }
 
-
-/* ====================================================
-   APPLICATION
-   ==================================================== */
+/* APPLICATION */
 
 .crush-profile {
-  width:360px;
-  max-width:100%;
-  margin:25px auto;
-  overflow:hidden;
-  position:relative;
-  font-family:Arial, Helvetica, sans-serif;
-  border-radius:18px;
+  width: 360px;
+  max-width: 100%;
+  margin: 25px auto;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 18px;
 }
 
-
-/* ====================================================
-   EN-TÊTE
-   ==================================================== */
+/* EN-TÊTE */
 
 .crush-profile-header {
-  height:50px;
-  display:grid;
-  grid-template-columns:34px 1fr 34px;
-  align-items:center;
-  padding:6px 10px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  align-items: center;
+  padding: 6px 10px;
 }
 
 .crush-profile-back,
 .crush-profile-menu {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
 }
 
 .crush-profile-back {
-  color:#fd267a;
+  color: #fd267a;
 }
 
 .crush-profile-menu {
-  opacity:.5;
+  opacity: .5;
 }
 
 .crush-profile-brand {
-  text-align:center;
+  text-align: center;
 }
 
 .crush-profile-brand-name {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  color:#fd267a;
-  font-size:15px;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:-.6px;
-  text-transform:lowercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fd267a;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.6px;
+  text-transform: lowercase;
 }
 
 .crush-profile-brand-name i {
-  font-size:11px;
-  transform:rotate(-8deg);
+  font-size: 11px;
+  transform: rotate(-8deg);
 }
 
 .crush-profile-tagline {
-  margin-top:3px;
-  font-size:10px;
-  font-weight:600;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:1.1px;
-  opacity:.45;
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  opacity: .45;
 }
 
-
-/* ====================================================
-   CONTRÔLES DES ONGLETS
-   ==================================================== */
+/* CONTRÔLES DES ONGLETS */
 
 .crush-tab-control {
-  display:none !important;
+  display: none !important;
 }
 
 .crush-profile-tabs {
-  height:40px;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  align-items:stretch;
-  padding:0 10px;
-  border-bottom:1px solid;
+  height: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  padding: 0 10px;
+  border-bottom: 1px solid;
 }
 
 .crush-profile-tab {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  color:inherit;
-  font-size:10px;
-  font-weight:700;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:.8px;
-  opacity:.45;
-  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  opacity: .45;
+  cursor: pointer;
   transition:
     color .2s ease,
     opacity .2s ease;
 }
 
 .crush-profile-tab::after {
-  content:"";
-  height:2px;
-  position:absolute;
-  right:12px;
-  bottom:0;
-  left:12px;
-  background:#fd267a;
-  border-radius:3px 3px 0 0;
-  opacity:0;
-  transform:scaleX(.4);
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  background: #fd267a;
+  border-radius: 3px 3px 0 0;
+  opacity: 0;
+  transform: scaleX(.4);
   transition:
     opacity .2s ease,
     transform .2s ease;
 }
 
-
-/* ====================================================
-   ONGLET ACTIF
-   ==================================================== */
+/* ONGLET ACTIF */
 
 #crush-tab-profile:checked
 ~ .crush-profile-tabs
@@ -4347,8 +4139,8 @@ label[for="crush-tab-details"],
 #crush-tab-photos:checked
 ~ .crush-profile-tabs
 label[for="crush-tab-photos"] {
-  color:#fd267a;
-  opacity:1;
+  color: #fd267a;
+  opacity: 1;
 }
 
 #crush-tab-profile:checked
@@ -4362,21 +4154,18 @@ label[for="crush-tab-details"]::after,
 #crush-tab-photos:checked
 ~ .crush-profile-tabs
 label[for="crush-tab-photos"]::after {
-  opacity:1;
-  transform:scaleX(1);
+  opacity: 1;
+  transform: scaleX(1);
 }
 
-
-/* ====================================================
-   PANNEAUX
-   ==================================================== */
+/* PANNEAUX */
 
 .crush-profile-panels {
-  position:relative;
+  position: relative;
 }
 
 .crush-profile-panel {
-  display:none;
+  display: none;
 }
 
 #crush-tab-profile:checked
@@ -4390,452 +4179,422 @@ label[for="crush-tab-photos"]::after {
 #crush-tab-photos:checked
 ~ .crush-profile-panels
 .crush-profile-panel-three {
-  display:block;
+  display: block;
 }
 
-
-/* ====================================================
-   ONGLET 1 — PHOTO PRINCIPALE
-   ==================================================== */
+/* ONGLET 1 — PHOTO PRINCIPALE */
 
 .crush-profile-main-photo {
-  height:255px;
-  overflow:hidden;
-  position:relative;
-  background:#222;
+  height: 255px;
+  overflow: hidden;
+  position: relative;
+  background: #222;
 }
 
 .crush-profile-main-photo > img {
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .crush-profile-main-photo::after {
-  content:"";
-  position:absolute;
-  inset:48% 0 0;
-  z-index:1;
-  background:linear-gradient(
+  content: "";
+  position: absolute;
+  inset: 48% 0 0;
+  z-index: 1;
+  background: linear-gradient(
     to bottom,
     transparent,
     rgba(0,0,0,.25) 35%,
     rgba(0,0,0,.88) 100%
   );
-  pointer-events:none;
+  pointer-events: none;
 }
 
-
-/* ====================================================
-   IDENTITÉ SUR LA PHOTO
-   ==================================================== */
+/* IDENTITÉ SUR LA PHOTO */
 
 .crush-profile-identity {
-  position:absolute;
-  right:15px;
-  bottom:13px;
-  left:15px;
-  z-index:2;
-  color:#fff;
-  text-align:left;
+  position: absolute;
+  right: 15px;
+  bottom: 13px;
+  left: 15px;
+  z-index: 2;
+  color: #fff;
+  text-align: left;
 }
 
 .crush-profile-name-line {
-  display:flex;
-  align-items:center;
-  gap:6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .crush-profile-name {
-  font-size:22px;
-  font-weight:800;
-  line-height:1.1;
-  letter-spacing:-.6px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.6px;
 }
 
 .crush-profile-age {
-  font-size:18px;
-  font-weight:400;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .crush-profile-verified {
-  width:15px;
-  height:15px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  color:#fff;
-  background:#1786ff;
-  border-radius:50%;
-  font-size:7px;
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  background: #1786ff;
+  border-radius: 50%;
+  font-size: 7px;
 }
 
 .crush-profile-job,
 .crush-profile-location {
-  display:flex;
-  align-items:center;
-  gap:7px;
-  margin-top:5px;
-  font-size:9px;
-  line-height:1.3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  font-size: 9px;
+  line-height: 1.3;
 }
 
 .crush-profile-job {
-  opacity:.95;
+  opacity: .95;
 }
 
 .crush-profile-location {
-  opacity:.8;
+  opacity: .8;
 }
 
 .crush-profile-job i,
 .crush-profile-location i {
-  width:11px;
-  flex-shrink:0;
-  text-align:center;
+  width: 11px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
-
-/* ====================================================
-   BIOGRAPHIE
-   ==================================================== */
+/* BIOGRAPHIE */
 
 .crush-profile-about {
-  padding:15px 16px 17px;
+  padding: 15px 16px 17px;
 }
 
 .crush-profile-section-title {
-  margin-bottom:9px;
-  font-size:9px;
-  font-weight:800;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:1px;
+  margin-bottom: 9px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .crush-profile-bio {
-  font-size:inherit;
-  line-height:1.5;
-  text-align:left;
+  font-size: inherit;
+  line-height: 1.5;
+  text-align: left;
 }
 
 .crush-profile-bio p {
-  margin:0 0 8px;
+  margin: 0 0 8px;
 }
 
 .crush-profile-bio p:last-child {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
-
-/* ====================================================
-   ONGLET 2 — INFORMATIONS
-   ==================================================== */
+/* ONGLET 2 — INFORMATIONS */
 
 .crush-profile-details {
-  padding:16px;
+  padding: 16px;
 }
 
 .crush-profile-detail-section + .crush-profile-detail-section {
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid;
 }
 
-
-/* ====================================================
-   RECHERCHE
-   ==================================================== */
+/* RECHERCHE */
 
 .crush-profile-information {
-  display:flex;
-  align-items:flex-start;
-  gap:9px;
-  padding:10px;
-  border-radius:11px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 10px;
+  border-radius: 11px;
 }
 
 .crush-profile-information-icon {
-  width:27px;
-  height:27px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 27px;
-  color:#fff;
-  background:#fd267a;
-  border-radius:50%;
-  font-size:10px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 27px;
+  color: #fff;
+  background: #fd267a;
+  border-radius: 50%;
+  font-size: 10px;
 }
 
 .crush-profile-information-content {
-  min-width:0;
-  font-size:11px;
-  line-height:1.45;
-  text-align:left;
+  min-width: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: left;
 }
 
 .crush-profile-information-content strong {
-  display:block;
-  margin-bottom:3px;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.7px;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
 }
 
-
-/* ====================================================
-   MON RYTHME — CHANSON DU MOMENT
-   ==================================================== */
+/* MON RYTHME — CHANSON DU MOMENT */
 
 .crush-profile-music {
-  display:grid !important;
-  grid-template-columns:48px minmax(0, 1fr) 30px !important;
-  align-items:center !important;
-  gap:10px !important;
-  width:100% !important;
-  min-width:0 !important;
-  max-width:100% !important;
-  overflow:hidden !important;
-  padding:10px !important;
-  border-radius:11px !important;
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) 30px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  padding: 10px !important;
+  border-radius: 11px !important;
 }
 
 .crush-profile-music-cover {
-  display:block !important;
-  grid-column:1 !important;
-  width:48px !important;
-  min-width:48px !important;
-  max-width:48px !important;
-  height:48px !important;
-  min-height:48px !important;
-  max-height:48px !important;
-  aspect-ratio:1 / 1 !important;
-  margin:0 !important;
-  padding:0 !important;
-  float:none !important;
-  position:static !important;
-  object-fit:cover !important;
-  object-position:center !important;
-  border:0 !important;
-  border-radius:8px !important;
+  display: block !important;
+  grid-column: 1 !important;
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  position: static !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: 0 !important;
+  border-radius: 8px !important;
 }
 
 .crush-profile-music-content {
-  grid-column:2 !important;
-  width:auto !important;
-  min-width:0 !important;
-  max-width:100% !important;
-  overflow:hidden !important;
-  margin:0 !important;
-  padding:0 !important;
-  text-align:left !important;
+  grid-column: 2 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
 }
 
 .crush-profile-music-content strong {
-  display:block;
-  margin:0 0 6px;
-  font-size:10px;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:.7px;
+  display: block;
+  margin: 0 0 6px;
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .7px;
 }
 
 .crush-profile-music-title,
 .crush-profile-music-artist {
-  display:block !important;
-  width:100% !important;
-  min-width:0 !important;
-  max-width:100% !important;
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 .crush-profile-music-title {
-  font-size:12px !important;
-  font-weight:700 !important;
-  line-height:1.3 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
 }
 
 .crush-profile-music-artist {
-  margin-top:5px !important;
-  font-size:10px !important;
-  line-height:1.3 !important;
-  opacity:.55;
+  margin-top: 5px !important;
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  opacity: .55;
 }
 
 .crush-profile-music-play {
-  grid-column:3 !important;
-  width:30px !important;
-  min-width:30px !important;
-  height:30px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  margin:0 !important;
-  padding:0 !important;
-  color:#fd267a !important;
-  font-size:18px !important;
+  grid-column: 3 !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fd267a !important;
+  font-size: 18px !important;
 }
 
-
-/* ====================================================
-   CENTRES D’INTÉRÊT
-   ==================================================== */
+/* CENTRES D’INTÉRÊT */
 
 .crush-profile-tags {
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .crush-profile-tag {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:6px 10px;
-  border:1px solid;
-  border-radius:20px;
-  font-size:8px;
-  font-weight:600;
-  line-height:1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Centre d’intérêt partagé */
 
 .crush-profile-tag.is-common {
-  color:#fd267a;
-  border-color:#fd267a;
+  color: #fd267a;
+  border-color: #fd267a;
 }
 
 /* Emoji facultatif */
 
 .crush-profile-tag-emoji {
-  margin-right:5px;
-  font-size:9px;
-  line-height:1;
+  margin-right: 5px;
+  font-size: 9px;
+  line-height: 1;
 }
 
-
-/* ====================================================
-   ONGLET 3 — PHOTOS
-   ==================================================== */
+/* ONGLET 3 — PHOTOS */
 
 .crush-profile-gallery {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:7px;
-  padding:16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  padding: 16px;
 }
 
 .crush-profile-gallery-item {
-  overflow:hidden;
-  position:relative;
-  border-radius:10px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
 }
 
 .crush-profile-gallery-item img {
-  display:block;
-  width:100%;
-  height:225px;
-  object-fit:cover;
-  object-position:center;
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .crush-profile-gallery-number {
-  position:absolute;
-  right:8px;
-  bottom:8px;
-  padding:4px 7px;
-  color:#fff;
-  background:rgba(0,0,0,.55);
-  border-radius:10px;
-  font-size:10px;
-  line-height:1;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 7px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 1;
 }
 
-
-/* ====================================================
-   ACTIONS DU PROFIL
-   ==================================================== */
+/* ACTIONS DU PROFIL */
 
 .crush-profile-actions {
-  height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-  border-top:1px solid;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border-top: 1px solid;
 }
 
 .crush-profile-action {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0;
-  background:transparent;
-  border:2px solid currentColor;
-  border-radius:50%;
-  cursor:pointer;
-  transition:transform .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s ease;
 }
 
 .crush-profile-action:hover {
-  transform:translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .crush-profile-action.is-rewind,
 .crush-profile-action.is-super {
-  width:35px;
-  height:35px;
+  width: 35px;
+  height: 35px;
 }
 
 .crush-profile-action.is-nope,
 .crush-profile-action.is-like {
-  width:45px;
-  height:45px;
+  width: 45px;
+  height: 45px;
 }
 
 .crush-profile-action.is-rewind {
-  color:#f4b400;
-  font-size:12px;
+  color: #f4b400;
+  font-size: 12px;
 }
 
 .crush-profile-action.is-nope {
-  color:#fd267a;
-  font-size:18px;
+  color: #fd267a;
+  font-size: 18px;
 }
 
 .crush-profile-action.is-super {
-  color:#1786ff;
-  font-size:13px;
+  color: #1786ff;
+  font-size: 13px;
 }
 
 .crush-profile-action.is-like {
-  color:#20c997;
-  font-size:16px;
+  color: #20c997;
+  font-size: 16px;
 }
 
-
-/* ====================================================
-   MODE DARK
-   ==================================================== */
+/* MODE DARK */
 
 html[data-color-scheme="dark"] .crush-profile {
-  color:#f3f3f5;
-  background:#1d1a20;
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  color: #f3f3f5;
+  background: #1d1a20;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 8px 24px rgba(0,0,0,.22);
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-header {
-  background:#17151b;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background: #17151b;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 html[data-color-scheme="dark"]
@@ -4843,17 +4602,17 @@ html[data-color-scheme="dark"]
 
 html[data-color-scheme="dark"]
 .crush-profile-actions {
-  border-color:rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.08);
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-section-title {
-  color:#aaa7ae;
+  color: #aaa7ae;
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-detail-section + .crush-profile-detail-section {
-  border-color:rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.08);
 }
 
 html[data-color-scheme="dark"]
@@ -4861,42 +4620,39 @@ html[data-color-scheme="dark"]
 
 html[data-color-scheme="dark"]
 .crush-profile-music {
-  background:#29262d;
+  background: #29262d;
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-tag {
-  color:#e2dfe5;
-  border-color:#4a464e;
+  color: #e2dfe5;
+  border-color: #4a464e;
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-tag.is-common {
-  color:#fd267a;
-  border-color:#fd267a;
+  color: #fd267a;
+  border-color: #fd267a;
 }
 
 html[data-color-scheme="dark"]
 .crush-profile-actions {
-  background:#17151b;
+  background: #17151b;
 }
 
-
-/* ====================================================
-   MODE LIGHT
-   ==================================================== */
+/* MODE LIGHT */
 
 html[data-color-scheme="light"] .crush-profile {
-  color:#242429;
-  background:#fff;
-  border:1px solid #e6e6e8;
-  box-shadow:0 8px 24px rgba(20,20,25,.09);
+  color: #242429;
+  background: #fff;
+  border: 1px solid #e6e6e8;
+  box-shadow: 0 8px 24px rgba(20,20,25,.09);
 }
 
 html[data-color-scheme="light"]
 .crush-profile-header {
-  background:#fff;
-  border-bottom:1px solid #ededee;
+  background: #fff;
+  border-bottom: 1px solid #ededee;
 }
 
 html[data-color-scheme="light"]
@@ -4904,17 +4660,17 @@ html[data-color-scheme="light"]
 
 html[data-color-scheme="light"]
 .crush-profile-actions {
-  border-color:#ededee;
+  border-color: #ededee;
 }
 
 html[data-color-scheme="light"]
 .crush-profile-section-title {
-  color:#73737a;
+  color: #73737a;
 }
 
 html[data-color-scheme="light"]
 .crush-profile-detail-section + .crush-profile-detail-section {
-  border-color:#ededee;
+  border-color: #ededee;
 }
 
 html[data-color-scheme="light"]
@@ -4922,276 +4678,246 @@ html[data-color-scheme="light"]
 
 html[data-color-scheme="light"]
 .crush-profile-music {
-  background:#f4f4f5;
+  background: #f4f4f5;
 }
 
 html[data-color-scheme="light"]
 .crush-profile-tag {
-  color:#36363b;
-  border-color:#d8d8dc;
+  color: #36363b;
+  border-color: #d8d8dc;
 }
 
 html[data-color-scheme="light"]
 .crush-profile-tag.is-common {
-  color:#fd267a;
-  border-color:#fd267a;
+  color: #fd267a;
+  border-color: #fd267a;
 }
 
 html[data-color-scheme="light"]
 .crush-profile-actions {
-  background:#fff;
+  background: #fff;
 }
 
+/* VERSION MOBILE */
 
-/* ====================================================
-   VERSION MOBILE
-   ==================================================== */
-
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
   .crush-profile {
-    width:100%;
-    border-radius:16px;
+    width: 100%;
+    border-radius: 16px;
   }
 
   .crush-profile-main-photo {
-    height:245px;
+    height: 245px;
   }
 
   .crush-profile-gallery-item img {
-    height:205px;
+    height: 205px;
   }
 
   .crush-profile-actions {
-    gap:11px;
+    gap: 11px;
   }
 
 }
-/* ====================================================
-   CRUSH HOUR — NOTIFICATION DE LIKE
-   ==================================================== */
+/* CRUSH HOUR — NOTIFICATION DE LIKE */
 
 .crush-like,
 .crush-like * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 .crush-like br {
-  display:none !important;
+  display: none !important;
 }
 
-
-/* ====================================================
-   CONTENEUR
-   ==================================================== */
+/* CONTENEUR */
 
 .crush-like {
-  width:285px;
-  max-width:100%;
-  display:grid;
-  grid-template-columns:48px 1fr 32px;
-  align-items:center;
-  gap:10px;
-  margin:20px auto;
-  padding:12px;
-  overflow:hidden;
-  position:relative;
-  font-family:Arial, Helvetica, sans-serif;
-  border-radius:15px;
+  width: 285px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr 32px;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 12px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
 }
 
-
-/* ====================================================
-   AVATAR
-   ==================================================== */
+/* AVATAR */
 
 .crush-like-avatar {
-  width:48px;
-  height:48px;
-  position:relative;
+  width: 48px;
+  height: 48px;
+  position: relative;
 }
 
 .crush-like-avatar > img {
-  display:block;
-  width:48px;
-  height:48px;
-  object-fit:cover;
-  object-position:center;
-  border:2px solid #fff;
-  border-radius:50%;
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
 }
 
 .crush-like-avatar-heart {
-  width:21px;
-  height:21px;
-  position:absolute;
-  right:-3px;
-  bottom:-2px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  background:#fd267a;
-  border:2px solid;
-  border-radius:50%;
-  font-size:8px;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #fd267a;
+  border: 2px solid;
+  border-radius: 50%;
+  font-size: 8px;
 }
 
-
-/* ====================================================
-   MESSAGE
-   ==================================================== */
+/* MESSAGE */
 
 .crush-like-content {
-  min-width:0;
-  text-align:left;
+  min-width: 0;
+  text-align: left;
 }
 
 .crush-like-brand {
-  margin-bottom:4px;
-  color:#fd267a;
-  font-size:7px;
-  font-weight:800;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:1px;
+  margin-bottom: 4px;
+  color: #fd267a;
+  font-size: 7px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .crush-like-message {
-  font-size:inherit;
-  line-height:1.35;
+  font-size: inherit;
+  line-height: 1.35;
 }
 
 .crush-like-name {
-  font-weight:800;
+  font-weight: 800;
 }
 
 .crush-like-time {
-  margin-top:4px;
-  font-size:7px;
-  line-height:1;
-  opacity:.45;
+  margin-top: 4px;
+  font-size: 7px;
+  line-height: 1;
+  opacity: .45;
 }
 
-
-/* ====================================================
-   GRAND CŒUR
-   ==================================================== */
+/* GRAND CŒUR */
 
 .crush-like-symbol {
-  width:32px;
-  height:45px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fd267a;
-  font-size:27px;
-  transform:rotate(-7deg);
+  width: 32px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fd267a;
+  font-size: 27px;
+  transform: rotate(-7deg);
 }
 
-
-/* ====================================================
-   BOUTON
-   ==================================================== */
+/* BOUTON */
 
 .crush-like-button {
-  grid-column:2 / 4;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  width:max-content;
-  min-width:120px;
-  margin-top:2px;
-  padding:8px 13px;
-  color:#fff;
-  background:#fd267a;
-  border-radius:20px;
-  font-size:8px;
-  font-weight:800;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:.6px;
-  cursor:pointer;
+  grid-column: 2 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content;
+  min-width: 120px;
+  margin-top: 2px;
+  padding: 8px 13px;
+  color: #fff;
+  background: #fd267a;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  cursor: pointer;
   transition:
     background .2s ease,
     transform .2s ease;
 }
 
 .crush-like-button:hover {
-  background:#e91e63;
-  transform:translateY(-1px);
+  background: #e91e63;
+  transform: translateY(-1px);
 }
 
 .crush-like-button i {
-  font-size:7px;
+  font-size: 7px;
 }
 
 .crush-like-button,
 .crush-like-button:link,
 .crush-like-button:visited {
-  color:#fff !important;
-  text-decoration:none !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
-
-/* ====================================================
-   MODE DARK
-   ==================================================== */
+/* MODE DARK */
 
 html[data-color-scheme="dark"] .crush-like {
-  color:#f3f3f5;
-  background:#1d1a20;
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow:0 6px 18px rgba(0,0,0,.2);
+  color: #f3f3f5;
+  background: #1d1a20;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
 }
 
 html[data-color-scheme="dark"]
 .crush-like-avatar-heart {
-  border-color:#1d1a20;
+  border-color: #1d1a20;
 }
 
-
-/* ====================================================
-   MODE LIGHT
-   ==================================================== */
+/* MODE LIGHT */
 
 html[data-color-scheme="light"] .crush-like {
-  color:#242429;
-  background:#fff;
-  border:1px solid #e6e6e8;
-  box-shadow:0 6px 18px rgba(20,20,25,.08);
+  color: #242429;
+  background: #fff;
+  border: 1px solid #e6e6e8;
+  box-shadow: 0 6px 18px rgba(20,20,25,.08);
 }
 
 html[data-color-scheme="light"]
 .crush-like-avatar-heart {
-  border-color:#fff;
+  border-color: #fff;
 }
 
+/* MOBILE */
 
-/* ====================================================
-   MOBILE
-   ==================================================== */
-
-@media (max-width:340px) {
+@media (max-width: 340px) {
 
   .crush-like {
-    width:100%;
+    width: 100%;
   }
 
 }
 
-
 .crush-profile-music-play,
 .crush-profile-music-play:link,
 .crush-profile-music-play:visited {
-  color:#fd267a !important;
-  text-decoration:none !important;
+  color: #fd267a !important;
+  text-decoration: none !important;
 }
 
 .crush-profile-music-play:hover {
-  color:#e91e63 !important;
-  transform:scale(1.1);
+  color: #e91e63 !important;
+  transform: scale(1.1);
 }
 
 .crush-profile-music-play {
@@ -5199,6 +4925,3 @@ html[data-color-scheme="light"]
     color .2s ease,
     transform .2s ease;
 }
-
-
-
