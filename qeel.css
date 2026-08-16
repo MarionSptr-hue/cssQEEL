@@ -5070,8 +5070,8 @@ html[data-color-scheme="light"]
     overflow-y: auto;
     box-sizing: border-box;
     border-radius: 8px;
-    background: color-mix(in srgb, var(--neutralDarker, #141019) 92%, transparent);
-    backdrop-filter: blur(4px);
+    background: color-mix(in srgb, var(--neutralDarker, #141019) 97%, transparent);
+    backdrop-filter: blur(6px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -5088,21 +5088,21 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__quick .profile_field {
     display: grid;
-    grid-template-columns: 108px minmax(0, 1fr);
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
     align-items: start;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.4;
     min-height: 0 !important;
     margin: 0 !important;
-    padding: 4px 0 !important;
+    padding: 5px 0 !important;
 }
 
 #wombat .cj-profile__quick label {
     color: var(--accentClr, #df829b);
     font-weight: 700;
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 11px;
+    line-height: 1.35;
 }
 
 #wombat .cj-profile__main {
@@ -5116,8 +5116,12 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__quick field,
 #wombat .cj-profile__quick .field_uneditable {
-    font-size: 13px;
-    line-height: 1.5;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 #wombat .cj-profile__quick .cj-profile__post-links {
@@ -5255,6 +5259,7 @@ html[data-color-scheme="light"]
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
+
 
 
 
