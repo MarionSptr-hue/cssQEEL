@@ -4932,8 +4932,8 @@ html[data-color-scheme="light"]
 /* NOUVEAU PROFIL A VOLETS */
 
 #wombat.cj-profile {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 960px !important;
+    max-width: calc(100vw - 48px) !important;
     margin-right: auto !important;
     margin-left: auto !important;
     height: auto !important;
@@ -4995,8 +4995,8 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__layout {
     display: grid;
-    grid-template-columns: 230px minmax(0, 1fr);
-    gap: 12px;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 8px;
     align-items: start;
 }
 
@@ -5019,7 +5019,10 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__avatar img {
-    height: 285px;
+    height: 258px;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -5033,11 +5036,11 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__quick .profile_field {
     display: grid;
-    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-    gap: 6px;
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 8px;
     align-items: start;
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 13px;
+    line-height: 1.5;
     min-height: 0 !important;
     margin: 0 !important;
     padding: 4px 0 !important;
@@ -5046,6 +5049,8 @@ html[data-color-scheme="light"]
 #wombat .cj-profile__quick label {
     color: var(--accentClr, #df829b);
     font-weight: 700;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 #wombat .cj-profile__main {
@@ -5053,6 +5058,20 @@ html[data-color-scheme="light"]
     gap: 7px;
     align-content: start;
     min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#wombat .cj-profile__quick field,
+#wombat .cj-profile__quick .field_uneditable {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#wombat .cj-profile__quick .cj-profile__post-links {
+    gap: 4px 9px;
+    margin-top: 5px;
+    font-size: 12px;
 }
 
 #wombat .cj-profile__drawer-toggle {
@@ -5068,6 +5087,19 @@ html[data-color-scheme="light"]
     font: inherit;
     text-align: left;
     cursor: pointer;
+}
+
+#wombat .cj-profile__drawer-toggle > span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#wombat .cj-profile__drawer-toggle > span > .fa-solid {
+    width: 18px;
+    color: var(--accentClr, #df829b);
+    text-align: center;
+    flex: 0 0 18px;
 }
 
 #wombat .cj-profile__drawer-toggle::-webkit-details-marker {
@@ -5145,19 +5177,6 @@ html[data-color-scheme="light"]
     justify-content: center;
     gap: 8px;
     margin-top: 12px;
-}
-
-#wombat .cj-profile__drawer-toggle > span {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#wombat .cj-profile__drawer-toggle > span > .fa-solid {
-    width: 18px;
-    color: var(--accentClr, #df829b);
-    text-align: center;
-    flex: 0 0 18px;
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
