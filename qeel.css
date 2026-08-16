@@ -4932,6 +4932,8 @@ html[data-color-scheme="light"]
 
 /* NOUVEAU PROFIL A VOLETS */
 
+/* Concrete Jungle — profil complet desktop à volets */
+
 #wombat.cj-profile {
     width: 100% !important;
     max-width: 100% !important;
@@ -4957,7 +4959,7 @@ html[data-color-scheme="light"]
     height: 388px !important;
     min-height: 388px !important;
     max-height: 388px !important;
-    padding: 14px !important;
+    padding: 14px 14px 0 !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
     box-sizing: border-box !important;
@@ -5013,6 +5015,7 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__sidebar {
     position: relative;
+    margin-bottom: 14px !important;
     padding: 10px;
     border-radius: 12px;
     overflow: hidden !important;
@@ -5147,17 +5150,10 @@ html[data-color-scheme="light"]
     padding: 0 !important;
 }
 
-/* Conserve 14px visibles après le dernier volet, même lorsque la colonne
-   dépasse la hauteur du profil et doit être parcourue avec la scrollbar. */
-#wombat .cj-profile__main::after {
-    display: block;
-    height: 7px;
-    content: "";
-    pointer-events: none;
-}
-
-#wombat.cj-profile .user_profile.cj-profile__layout {
-    scroll-padding-bottom: 14px;
+/* Marge réelle portée par le dernier volet : elle reste visible au bas du
+   scroll, contrairement au padding du conteneur que le navigateur rognait. */
+#wombat .cj-profile__main > .cj-profile__drawer:last-of-type {
+    margin-bottom: 14px !important;
 }
 
 #wombat .cj-profile__drawer-toggle {
@@ -5319,7 +5315,6 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
     margin-top: 10px;
     text-align: center;
 }
-
 
 
 /* mini-profil des messages à cinq onglets */
