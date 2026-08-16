@@ -5147,4 +5147,17 @@ html[data-color-scheme="light"]
     margin-top: 12px;
 }
 
+#wombat .cj-profile__drawer-toggle > span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#wombat .cj-profile__drawer-toggle > span > .fa-solid {
+    width: 18px;
+    color: var(--accentClr, #df829b);
+    text-align: center;
+    flex: 0 0 18px;
+}
+
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
