@@ -42,6 +42,8 @@
    - MODE DARK
    - MODE LIGHT
    - VERSION MOBILE
+
+   NOUVEAU PROFIL A VOLETS 
    ========================================================== */
 
 
@@ -4925,3 +4927,179 @@ html[data-color-scheme="light"]
     color .2s ease,
     transform .2s ease;
 }
+
+
+/* NOUVEAU PROFIL A VOLETS */
+
+#wombat.cj-profile {
+    width: 820px;
+    max-width: none;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#wombat .cj-profile__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 14px;
+}
+
+#wombat .cj-profile__name { margin: 0; }
+
+#wombat .cj-profile__rank {
+    margin-top: 4px;
+    font-size: 12px;
+    opacity: .65;
+}
+
+#wombat .cj-profile__header-actions,
+#wombat .profile_contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#wombat .cj-profile__layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+}
+
+#wombat .cj-profile__sidebar,
+#wombat .cj-profile__drawer-toggle,
+#wombat .cj-profile__drawer-content {
+    background: var(--neutralDark, #141019);
+    border: 1px solid var(--border, rgba(255,255,255,.08));
+}
+
+#wombat .cj-profile__sidebar {
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#wombat .cj-profile__avatar,
+#wombat .cj-profile__avatar img {
+    display: block;
+    width: 100%;
+}
+
+#wombat .cj-profile__avatar img {
+    height: 330px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#wombat .cj-profile__quick {
+    display: grid;
+    gap: 8px;
+    margin-top: 11px;
+}
+
+#wombat .cj-profile__quick .profile_field {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 8px;
+    align-items: start;
+    font-size: 11px;
+}
+
+#wombat .cj-profile__quick label {
+    color: var(--accentClr, #df829b);
+    font-weight: 700;
+}
+
+#wombat .cj-profile__main {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+#wombat .cj-profile__drawer-toggle {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 13px;
+    border-radius: 10px;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+#wombat .cj-profile__drawer-toggle small { opacity: .55; }
+
+#wombat .cj-profile__drawer.is-open .cj-profile__drawer-toggle {
+    color: var(--accentClr, #df829b);
+    border-color: currentColor;
+    border-radius: 10px 10px 0 0;
+}
+
+#wombat .cj-profile__drawer-content {
+    display: none;
+    max-height: 285px;
+    overflow-y: auto;
+    padding: 13px;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+#wombat .cj-profile__drawer.is-open .cj-profile__drawer-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+}
+
+#wombat .cj-profile__drawer[data-cj-drawer="story"] .profile_field,
+#wombat .cj-profile__drawer[data-cj-drawer="temperament"] .profile_field,
+#wombat .cj-profile__drawer[data-cj-drawer="badges"] .profile_field,
+#wombat .cj-profile__drawer[data-cj-drawer="limits"] .profile_field {
+    grid-column: 1 / -1;
+}
+
+#wombat .cj-profile__drawer-content .profile_field {
+    min-width: 0;
+}
+
+#wombat .cj-profile__drawer-content .profile_field > label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--accentClr, #df829b);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+#wombat .cj-profile__drawer-content field {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+#wombat .cj-profile__post-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    margin-top: 6px;
+}
+
+#wombat .cj-profile__source,
+#wombat .cj-profile__hidden-field,
+#wombat .profile-dark-avatar-popup-field {
+    display: none !important;
+}
+
+#wombat .cj-profile__admin {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
+
