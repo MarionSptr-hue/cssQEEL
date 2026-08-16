@@ -4932,8 +4932,6 @@ html[data-color-scheme="light"]
 
 /* NOUVEAU PROFIL A VOLETS */
 
-/* Concrete Jungle — profil complet desktop à volets */
-
 #wombat.cj-profile {
     width: 100% !important;
     max-width: 100% !important;
@@ -5315,6 +5313,25 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
     margin-top: 10px;
     text-align: center;
 }
+
+/* Correctif final : marge basse réelle dans le viewport scrollable. */
+#wombat.cj-profile .user_profile.cj-profile__layout {
+    padding: 14px 14px 0 !important;
+}
+
+#wombat.cj-profile .user_profile.cj-profile__layout > .cj-profile__sidebar {
+    margin-bottom: 14px !important;
+}
+
+#wombat.cj-profile .user_profile.cj-profile__layout > .profile_infos.cj-profile__main {
+    padding-bottom: 14px !important;
+    box-sizing: border-box !important;
+}
+
+#wombat.cj-profile .profile_infos.cj-profile__main > details.cj-profile__drawer:last-of-type {
+    margin-bottom: 0 !important;
+}
+
 
 
 /* mini-profil des messages à cinq onglets */
