@@ -5697,3 +5697,27 @@ body:not(.tinder-auto-topic) .post_row .post_message {
         animation: none !important;
     }
 }
+
+/* Avatar identique uniquement dans les profils des messages. */
+body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar {
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    height: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    overflow: visible !important;
+}
+
+body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar img {
+    display: block !important;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    height: 352px !important;
+    min-height: 352px !important;
+    max-height: 352px !important;
+    object-fit: fill !important;
+    border-radius: 5px !important;
+}
+
