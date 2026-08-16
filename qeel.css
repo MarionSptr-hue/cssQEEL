@@ -5297,10 +5297,45 @@ html[data-color-scheme="light"]
 .post_row .cj-post-tabs__tab[aria-selected="true"] i,
 .post_row .cj-post-tabs__tab.selected i::before,
 .post_row .cj-post-tabs__tab[aria-selected="true"] i::before {
-    color: var(--neutralDarker, #111) !important;
+    display: none !important;
+}
+
+.post_row .cj-post-tabs__tab.selected::after,
+.post_row .cj-post-tabs__tab[aria-selected="true"]::after {
+    display: inline-block !important;
+    color: #fff !important;
+    font-family: "Font Awesome 6 Free" !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
     opacity: 1 !important;
     visibility: visible !important;
-    font-size: 14px !important;
+}
+
+.post_row .cj-post-tabs__tab[data-cj-post-tab="identity"].selected::after,
+.post_row .cj-post-tabs__tab[data-cj-post-tab="identity"][aria-selected="true"]::after {
+    content: "\f5ab" !important;
+}
+
+.post_row .cj-post-tabs__tab[data-cj-post-tab="fog"].selected::after,
+.post_row .cj-post-tabs__tab[data-cj-post-tab="fog"][aria-selected="true"]::after {
+    content: "\f75f" !important;
+}
+
+.post_row .cj-post-tabs__tab[data-cj-post-tab="compass"].selected::after,
+.post_row .cj-post-tabs__tab[data-cj-post-tab="compass"][aria-selected="true"]::after {
+    content: "\f14e" !important;
+}
+
+.post_row .cj-post-tabs__tab[data-cj-post-tab="curiosities"].selected::after,
+.post_row .cj-post-tabs__tab[data-cj-post-tab="curiosities"][aria-selected="true"]::after {
+    content: "\f49e" !important;
+}
+
+.post_row .cj-post-tabs__tab[data-cj-post-tab="warnings"].selected::after,
+.post_row .cj-post-tabs__tab[data-cj-post-tab="warnings"][aria-selected="true"]::after {
+    content: "\f071" !important;
 }
 
 .post_row .cj-post-tabs__tab i {
@@ -5408,8 +5443,4 @@ html[data-color-scheme="light"]
 
 .post_row .curiositiesTab:empty::after {
     content: "aucun badge obtenu";
-}
-
-.post_row .cj-post-profile .profil_contact {
-    margin-top: 8px;
 }
