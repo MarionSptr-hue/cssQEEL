@@ -44,6 +44,7 @@
    - VERSION MOBILE
 
    NOUVEAU PROFIL A VOLETS 
+   mini-profil des messages à cinq onglets
    ========================================================== */
 
 
@@ -5203,3 +5204,70 @@ html[data-color-scheme="light"]
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
+
+
+
+/* Concrete Jungle — mini-profil des messages à cinq onglets */
+
+.post_row .cj-post-profile {
+    min-width: 0;
+}
+
+.post_row .cj-post-tabs {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.post_row .cj-post-tabs__nav {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.post_row .cj-post-tabs__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-mini, 5px);
+    color: var(--textColor);
+    background: var(--neutralDarker);
+    cursor: pointer;
+}
+
+.post_row .cj-post-tabs__tab:hover,
+.post_row .cj-post-tabs__tab.selected,
+.post_row .cj-post-tabs__tab[aria-selected="true"] {
+    color: var(--stay-white);
+    background: var(--gradient-one, var(--accentClr));
+}
+
+.post_row .cj-post-tabs__tab i {
+    pointer-events: none;
+}
+
+.post_row .cj-post-tabs__contents {
+    width: 100%;
+    height: 255px;
+    min-height: 255px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-radius: var(--radius-mini, 5px);
+    background: var(--neutralDarker);
+}
+
+.post_row .cj-post-tabs__panel {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
