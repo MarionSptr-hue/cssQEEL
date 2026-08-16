@@ -5336,6 +5336,7 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
 
 /* mini-profil des messages à cinq onglets */
 
+/* Concrete Jungle — mini-profil des messages à cinq onglets */
 
 body:not(.tinder-auto-topic) .post_row.post {
     grid-template-columns: 240px minmax(0, 1fr) !important;
@@ -5374,7 +5375,10 @@ body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar {
     width: 220px !important;
     min-width: 220px !important;
     max-width: 220px !important;
-    overflow: hidden;
+    height: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    overflow: visible;
 }
 
 body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar img {
@@ -5382,9 +5386,11 @@ body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar img {
     width: 220px !important;
     min-width: 220px !important;
     max-width: 220px !important;
-    height: 330px !important;
-    max-height: 330px !important;
-    object-fit: cover;
+    height: 352px !important;
+    min-height: 352px !important;
+    max-height: 352px !important;
+    object-fit: fill !important;
+    border-radius: 5px;
 }
 
 body:not(.tinder-auto-topic) .post_row .post_message {
@@ -5393,6 +5399,35 @@ body:not(.tinder-auto-topic) .post_row .post_message {
     max-width: 100% !important;
     box-sizing: border-box;
     overflow: hidden;
+}
+
+/* Selfie place dans le petit encadre a droite de l'en-tete. */
+body:not(.tinder-auto-topic) .post_row .post_image:has(.cj-post-selfie-field) {
+    overflow: hidden !important;
+    border-radius: 5px;
+}
+
+body:not(.tinder-auto-topic) .post_row .post_image .cj-post-selfie-field,
+body:not(.tinder-auto-topic) .post_row .post_image .field_content {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:not(.tinder-auto-topic) .post_row .post_image .cj-post-selfie-field > .field_label,
+body:not(.tinder-auto-topic) .post_row .post_image .cj-post-selfie-field > .field_separator {
+    display: none !important;
+}
+
+body:not(.tinder-auto-topic) .post_row .post_image .cj-post-selfie-field img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
 }
 
 .post_row .cj-post-tabs {
@@ -5595,6 +5630,15 @@ body:not(.tinder-auto-topic) .post_row .post_message {
     stroke: var(--two, var(--accentClr, currentColor));
 }
 
+.post_row .compassTab.cj-gauges-animate .cj-post-gauge-value {
+    animation: cjPostGaugeFill .48s cubic-bezier(.2, .75, .35, 1) both;
+}
+
+@keyframes cjPostGaugeFill {
+    from { stroke-dasharray: 0 100; }
+    to { stroke-dasharray: var(--cj-gauge-value) 100; }
+}
+
 .post_row .cj-post-gauge-label {
     font-size: 11px;
     font-weight: 700;
@@ -5609,6 +5653,12 @@ body:not(.tinder-auto-topic) .post_row .post_message {
 
 .post_row .cj-post-gauge-label--2 {
     fill: var(--two, var(--accentClr, currentColor));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post_row .cj-post-gauge-value {
+        animation: none !important;
+    }
 }
 
 .post_row .curiositiesTab:empty::after {
