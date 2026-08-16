@@ -5413,3 +5413,28 @@ html[data-color-scheme="light"]
 .post_row .curiositiesTab:empty::after {
     content: "aucun badge obtenu";
 }
+
+.post_row .cj-post-tabs__panel .field-humeur,
+.post_row .cj-post-tabs__panel .field-commentaires {
+    display: none !important;
+}
+
+.post_row .cj-post-awards:empty::after,
+.post_row .compassTab:empty::after,
+.post_row .curiositiesTab:empty::after {
+    display: block;
+    color: var(--textColor);
+    opacity: .55;
+    font-size: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+.post_row .compassTab:empty::after {
+    content: "aucune jauge renseignée";
+}
+
+.post_row .curiositiesTab:empty::after {
+    content: "aucun badge obtenu";
+}
+
