@@ -5062,6 +5062,7 @@ html[data-color-scheme="light"]
     z-index: 5;
     inset: 10px;
     display: grid;
+    grid-auto-rows: max-content;
     gap: 5px;
     margin: 0;
     padding: 14px 12px;
@@ -5094,8 +5095,11 @@ html[data-color-scheme="light"]
     font-size: 12px;
     line-height: 1.4;
     min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
     margin: 0 !important;
     padding: 5px 0 !important;
+    overflow: visible !important;
 }
 
 #wombat .cj-profile__quick label {
@@ -5125,9 +5129,20 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__quick .cj-profile__post-links {
-    gap: 4px 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
     margin-top: 5px;
     font-size: 12px;
+}
+
+#wombat .cj-profile__quick .cj-profile__post-links a {
+    display: block;
+    width: 100%;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
 }
 
 #wombat .cj-profile__contacts {
