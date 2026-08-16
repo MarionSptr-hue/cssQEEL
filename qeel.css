@@ -5122,4 +5122,21 @@ html[data-color-scheme="light"]
     margin-top: 12px;
 }
 
+#wombat.cj-profile .user_profile.cj-profile__layout {
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+    overflow: hidden !important;
+}
+
+#wombat.cj-profile .cj-profile__sidebar,
+#wombat.cj-profile .cj-profile__main {
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    scrollbar-gutter: stable;
+}
+
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
