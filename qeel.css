@@ -5619,37 +5619,54 @@ body:not(.tinder-auto-topic) .post_row .post_message {
 /* JAUGES */
 
 
-/* JAUGES — à ajouter tout en bas du CSS global */
+/* JAUGES CIRCULAIRES — MINI-PROFILS DES MESSAGES
+   À ajouter tout en bas de la feuille CSS globale. */
 
-#wombat .cj-profile__drawer-content .cj-profile__gauges-field {
+.post_row .compassTab .cj-post-gauges-field {
     display: block !important;
-    grid-column: 1 / -1 !important;
-    width: 100%;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
-#wombat .cj-profile__gauges-field > label,
-#wombat .cj-profile__gauges-field > field {
-    display: none !important;
-}
-
-#wombat .cj-profile__gauges {
+.post_row .cj-post-gauges {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 185px;
+    justify-content: center;
     justify-items: center;
-    gap: 12px;
+    gap: 8px;
     width: 100%;
 }
 
-#wombat .cj-profile__gauge-chart {
+.post_row svg.cj-post-gauge-chart {
     display: block;
-    width: 230px !important;
-    height: 230px !important;
+    width: 185px !important;
+    min-width: 185px !important;
+    height: 185px !important;
+    min-height: 185px !important;
     max-width: none !important;
-    flex: none !important;
     overflow: visible;
 }
 
-#wombat .cj-profile__gauge-label {
+.post_row .cj-post-gauge-track,
+.post_row .cj-post-gauge-value {
+    fill: none;
+    stroke-linecap: butt;
+    stroke-width: 13px;
+}
+
+.post_row .cj-post-gauge-track {
+    stroke: var(--neutralDark, rgba(127, 127, 127, .18));
+}
+
+.post_row .cj-post-gauge-value--1 {
+    stroke: var(--one, var(--accentClr, currentColor));
+}
+
+.post_row .cj-post-gauge-value--2 {
+    stroke: var(--two, var(--accentClr, currentColor));
+}
+
+.post_row .cj-post-gauge-label {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .02em;
@@ -5657,53 +5674,30 @@ body:not(.tinder-auto-topic) .post_row .post_message {
     text-transform: uppercase;
 }
 
-#wombat .cj-profile__gauge-label--1 {
+.post_row .cj-post-gauge-label--1 {
     fill: var(--one, var(--accentClr, currentColor));
 }
 
-#wombat .cj-profile__gauge-label--2 {
+.post_row .cj-post-gauge-label--2 {
     fill: var(--two, var(--accentClr, currentColor));
 }
 
-#wombat .cj-profile__gauge-track,
-#wombat .cj-profile__gauge-value {
-    fill: none;
-    stroke-linecap: butt;
-    stroke-width: 13px;
+.post_row .compassTab:not(.hidden):not([hidden]) .cj-post-gauge-value {
+    animation: cjPostGaugeFill .48s cubic-bezier(.2, .75, .35, 1) both;
 }
 
-#wombat .cj-profile__gauge-track {
-    stroke: var(--neutralDarker, rgba(127,127,127,.18));
+@keyframes cjPostGaugeFill {
+    from {
+        stroke-dasharray: 0 100;
+    }
+
+    to {
+        stroke-dasharray: var(--cj-gauge-value) 100;
+    }
 }
 
-#wombat .cj-profile__gauge-value--1 {
-    stroke: var(--one, var(--accentClr, currentColor));
-}
-
-#wombat .cj-profile__gauge-value--2 {
-    stroke: var(--two, var(--accentClr, currentColor));
-}
-
-/* Verrouillage final du champ Jauges. */
-#wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__gauges-field {
-    display: block !important;
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    max-width: none !important;
-}
-
-#wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__gauges-field > label,
-#wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__gauges-field > field {
-    display: none !important;
-}
-
-#wombat.cj-profile .cj-profile__gauges-field > .cj-profile__gauges {
-    display: grid !important;
-    grid-template-columns: repeat(2, 230px) !important;
-    justify-content: center !important;
-    justify-items: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
+@media (prefers-reduced-motion: reduce) {
+    .post_row .cj-post-gauge-value {
+        animation: none !important;
+    }
 }
