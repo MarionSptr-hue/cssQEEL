@@ -5618,10 +5618,6 @@ body:not(.tinder-auto-topic) .post_row .post_message {
 
 /* JAUGES */
 
-
-/* JAUGES CIRCULAIRES — MINI-PROFILS DES MESSAGES
-   À ajouter tout en bas de la feuille CSS globale. */
-
 .post_row .compassTab .cj-post-gauges-field {
     display: block !important;
     width: 100% !important;
@@ -5682,7 +5678,7 @@ body:not(.tinder-auto-topic) .post_row .post_message {
     fill: var(--two, var(--accentClr, currentColor));
 }
 
-.post_row .compassTab:not(.hidden):not([hidden]) .cj-post-gauge-value {
+.post_row .compassTab.cj-gauges-animate .cj-post-gauge-value {
     animation: cjPostGaugeFill .48s cubic-bezier(.2, .75, .35, 1) both;
 }
 
