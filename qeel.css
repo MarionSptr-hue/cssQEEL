@@ -4932,6 +4932,8 @@ html[data-color-scheme="light"]
 
 /* NOUVEAU PROFIL A VOLETS */
 
+/* Concrete Jungle — profil complet desktop à volets */
+
 #wombat.cj-profile {
     width: 100% !important;
     max-width: 100% !important;
@@ -5269,7 +5271,7 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__drawer-content .profile_field {
     display: grid !important;
-    grid-template-columns: max-content minmax(0, 1fr) !important;
+    grid-template-columns: 95px minmax(0, 1fr) !important;
     column-gap: 6px !important;
     align-items: start;
     min-width: 0;
