@@ -4955,10 +4955,11 @@ html[data-color-scheme="light"]
 }
 
 #wombat.cj-profile .user_profile.cj-profile__layout {
-    height: 362px !important;
-    min-height: 362px !important;
-    max-height: 362px !important;
-    padding: 0 !important;
+    height: 382px !important;
+    min-height: 382px !important;
+    max-height: 382px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
     scrollbar-gutter: stable;
