@@ -5209,6 +5209,8 @@ html[data-color-scheme="light"]
 
 /* mini-profil des messages à cinq onglets */
 
+/* Concrete Jungle — mini-profil des messages à cinq onglets */
+
 .post_row.post {
     grid-template-columns: 240px minmax(0, 1fr) !important;
     width: 100% !important;
@@ -5290,12 +5292,30 @@ html[data-color-scheme="light"]
 .post_row .cj-post-tabs__tab:hover,
 .post_row .cj-post-tabs__tab.selected,
 .post_row .cj-post-tabs__tab[aria-selected="true"] {
-    color: var(--stay-white);
+    color: var(--stay-white, #fff) !important;
     background: var(--gradient-one, var(--accentClr));
+}
+
+.post_row .cj-post-tabs__tab.selected i,
+.post_row .cj-post-tabs__tab[aria-selected="true"] i {
+    color: var(--stay-white, #fff) !important;
+    opacity: 1 !important;
 }
 
 .post_row .cj-post-tabs__tab i {
     pointer-events: none;
+}
+
+.post_row .post_quote .field_label,
+.post_row .post_quote .field_separator {
+    display: none !important;
+}
+
+.post_row .post_quote .user_field,
+.post_row .post_quote .field_content {
+    display: block;
+    width: 100%;
+    margin: 0;
 }
 
 .post_row .cj-post-tabs__contents {
