@@ -5553,3 +5553,67 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
 .post_row .curiositiesTab:empty::after {
     content: "aucun badge obtenu";
 }
+
+
+/* JAUGES — à ajouter tout en bas du CSS global */
+
+#wombat .cj-profile__drawer-content .cj-profile__gauges-field {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100%;
+}
+
+#wombat .cj-profile__gauges-field > label,
+#wombat .cj-profile__gauges-field > field {
+    display: none !important;
+}
+
+#wombat .cj-profile__gauges {
+    display: grid;
+    gap: 6px;
+    width: 100%;
+}
+
+#wombat .cj-profile__gauge {
+    display: grid;
+    grid-template-columns: 90px minmax(100px, 1fr) 90px;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+#wombat .cj-profile__gauge-label {
+    color: var(--textColor, inherit);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+#wombat .cj-profile__gauge-label--right {
+    text-align: left;
+}
+
+#wombat .cj-profile__gauge-track {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--neutralDarker, rgba(255,255,255,.12));
+}
+
+#wombat .cj-profile__gauge-fill {
+    display: block;
+    height: 100%;
+    min-width: 4px;
+    border-radius: inherit;
+    background: linear-gradient(
+        90deg,
+        var(--one, var(--accentClr)),
+        var(--two, var(--accentClr))
+    );
+}
+
