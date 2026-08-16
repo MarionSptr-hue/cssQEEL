@@ -5074,6 +5074,29 @@ html[data-color-scheme="light"]
     font-size: 12px;
 }
 
+#wombat .cj-profile__contacts {
+    padding: 12px 13px;
+}
+
+#wombat .cj-profile__contacts .profile_contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+#wombat .cj-profile__contact {
+    display: flex;
+    align-items: center;
+    min-height: 28px;
+}
+
+#wombat .cj-profile__contact img {
+    display: block;
+    max-width: 28px;
+    max-height: 28px;
+}
+
 #wombat .cj-profile__drawer-toggle {
     width: 100%;
     min-height: 42px;
