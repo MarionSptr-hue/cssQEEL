@@ -5152,10 +5152,46 @@ html[data-color-scheme="light"]
 }
 
 #wombat .cj-profile__contacts .profile_contact {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 8px !important;
+    width: 100%;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link {
+    display: block !important;
+    width: 100%;
+    min-height: 0;
+    padding: 9px 11px !important;
+    box-sizing: border-box;
+    border-radius: 7px;
+    background: var(--neutral, rgba(255,255,255,.04));
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > label {
+    display: block;
+    margin: 0;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > label a {
+    display: block;
+    width: 100%;
+    color: var(--textColorAccent, var(--accentClr));
+    text-decoration: none;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > label a:hover {
+    color: var(--textColor, currentColor);
+    text-decoration: underline;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link > .field_uneditable,
+#wombat .cj-profile__contacts .cj-profile__contact-link > .field_editable {
+    display: none !important;
+}
+
+#wombat .cj-profile__contacts .cj-profile__contact-link.is-empty {
+    opacity: .45;
 }
 
 #wombat .cj-profile__contact {
@@ -5285,6 +5321,7 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content .profile_fiel
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
+
 
 /* mini-profil des messages à cinq onglets */
 
