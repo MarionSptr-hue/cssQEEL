@@ -5207,14 +5207,59 @@ html[data-color-scheme="light"]
 
 
 
-/* Concrete Jungle — mini-profil des messages à cinq onglets */
+/* mini-profil des messages à cinq onglets */
+
+.post_row.post {
+    grid-template-columns: 240px minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+.post_row .post_head {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+}
 
 .post_row .cj-post-profile {
-    min-width: 0;
+    width: 240px !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.post_row .cj-post-profile .post_avatar {
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    overflow: hidden;
+}
+
+.post_row .cj-post-profile .post_avatar img {
+    display: block;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    height: 330px !important;
+    max-height: 330px !important;
+    object-fit: cover;
+}
+
+.post_row .post_message {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .post_row .cj-post-tabs {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     margin-top: 10px;
 }
 
@@ -5255,6 +5300,8 @@ html[data-color-scheme="light"]
 
 .post_row .cj-post-tabs__contents {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     height: 255px;
     min-height: 255px;
     padding: 10px;
@@ -5269,5 +5316,79 @@ html[data-color-scheme="light"]
     display: block;
     width: 100%;
     min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
+.post_row .cj-post-tabs__panel.hidden,
+.post_row .cj-post-tabs__panel[hidden] {
+    display: none !important;
+}
+
+.post_row .cj-post-tabs__panel .user_field {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 7px;
+    padding: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.45;
+}
+
+.post_row .cj-post-tabs__panel .user_field:last-child {
+    margin-bottom: 0;
+}
+
+.post_row .cj-post-tabs__panel .field_label {
+    margin-right: 4px;
+    color: var(--textColorAccent, var(--accentClr));
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.post_row .cj-post-tabs__panel .field_content {
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.post_row .cj-post-tabs__panel .field_separator {
+    display: none;
+}
+
+.post_row .cj-post-tabs__panel img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post_row .cj-post-tabs__panel .field-avatar-mode-sombre,
+.post_row .cj-post-tabs__panel .field-genre,
+.post_row .cj-post-tabs__panel .field-date-de-naissance,
+.post_row .cj-post-tabs__panel .field-emploi-loisirs,
+.post_row .cj-post-tabs__panel .field-humeur,
+.post_row .cj-post-tabs__panel .field-commentaires {
+    display: none !important;
+}
+
+.post_row .cj-post-awards:empty::after,
+.post_row .compassTab:empty::after,
+.post_row .curiositiesTab:empty::after {
+    display: block;
+    color: var(--textColor);
+    opacity: .55;
+    font-size: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+.post_row .compassTab:empty::after {
+    content: "aucune jauge renseignée";
+}
+
+.post_row .curiositiesTab:empty::after {
+    content: "aucun badge obtenu";
+}
+
+.post_row .cj-post-profile .profil_contact {
+    margin-top: 8px;
+}
