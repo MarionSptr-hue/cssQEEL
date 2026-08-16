@@ -4955,9 +4955,10 @@ html[data-color-scheme="light"]
 }
 
 #wombat.cj-profile .user_profile.cj-profile__layout {
-    height: 370px !important;
-    min-height: 370px !important;
-    max-height: 370px !important;
+    height: 362px !important;
+    min-height: 362px !important;
+    max-height: 362px !important;
+    padding: 0 !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
     scrollbar-gutter: stable;
@@ -5248,6 +5249,11 @@ html[data-color-scheme="light"]
     letter-spacing: .04em;
 }
 
+/* Contraste renforcé des intitulés de champs dans le thème sombre. */
+html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content .profile_field > label {
+    color: var(--textColorAccent, var(--textColor)) !important;
+}
+
 #wombat .cj-profile__drawer-content field {
     display: block;
     overflow-wrap: anywhere;
@@ -5274,6 +5280,8 @@ html[data-color-scheme="light"]
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
+
+
 /* mini-profil des messages à cinq onglets */
 
 
