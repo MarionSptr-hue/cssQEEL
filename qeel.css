@@ -4955,9 +4955,9 @@ html[data-color-scheme="light"]
 }
 
 #wombat.cj-profile .user_profile.cj-profile__layout {
-    height: 430px !important;
-    min-height: 430px !important;
-    max-height: 430px !important;
+    height: 370px !important;
+    min-height: 370px !important;
+    max-height: 370px !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
     scrollbar-gutter: stable;
@@ -5274,11 +5274,6 @@ html[data-color-scheme="light"]
 }
 
 /* Les volets vides restent visibles pour préparer les futurs champs Badges et Jauges. */
-
-
-
-
-
 /* mini-profil des messages à cinq onglets */
 
 
