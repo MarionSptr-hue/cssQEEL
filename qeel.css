@@ -5557,6 +5557,7 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
 
 /* JAUGES */
 
+
 #wombat .cj-profile__drawer-content .cj-profile__gauges-field {
     display: block !important;
     grid-column: 1 / -1 !important;
@@ -5571,19 +5572,22 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
 #wombat .cj-profile__gauges {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    justify-items: center;
+    gap: 12px;
     width: 100%;
 }
 
 #wombat .cj-profile__gauge-chart {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 230px !important;
+    height: 230px !important;
+    max-width: none !important;
+    flex: none !important;
     overflow: visible;
 }
 
 #wombat .cj-profile__gauge-label {
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: .02em;
     text-anchor: end;
@@ -5632,9 +5636,12 @@ html[data-color-scheme="dark"] #wombat .cj-profile__drawer-content:not([data-cj-
 
 #wombat.cj-profile .cj-profile__gauges-field > .cj-profile__gauges {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 18px !important;
+    grid-template-columns: repeat(2, 230px) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    gap: 12px !important;
     width: 100% !important;
-    max-width: 560px;
+    max-width: none !important;
     margin: 0 auto !important;
 }
+
