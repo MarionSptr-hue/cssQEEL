@@ -4932,8 +4932,10 @@ html[data-color-scheme="light"]
 /* NOUVEAU PROFIL A VOLETS */
 
 #wombat.cj-profile {
-    width: 820px;
-    max-width: none;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
@@ -4993,8 +4995,8 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__layout {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 12px;
     align-items: start;
 }
 
@@ -5024,16 +5026,21 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__quick {
     display: grid;
-    gap: 8px;
-    margin-top: 11px;
+    gap: 5px;
+    margin-top: 8px;
+    align-content: start;
 }
 
 #wombat .cj-profile__quick .profile_field {
     display: grid;
     grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-    gap: 8px;
+    gap: 6px;
     align-items: start;
     font-size: 11px;
+    line-height: 1.45;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 4px 0 !important;
 }
 
 #wombat .cj-profile__quick label {
@@ -5056,7 +5063,7 @@ html[data-color-scheme="light"]
     color: inherit;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 15px;
     font: inherit;
     text-align: left;
@@ -5070,8 +5077,6 @@ html[data-color-scheme="light"]
 #wombat .cj-profile__drawer-toggle::marker {
     content: "";
 }
-
-#wombat .cj-profile__drawer-toggle small { opacity: .55; }
 
 #wombat .cj-profile__drawer[open] .cj-profile__drawer-toggle {
     color: var(--accentClr, #df829b);
@@ -5100,6 +5105,11 @@ html[data-color-scheme="light"]
 
 #wombat .cj-profile__drawer-content .profile_field {
     min-width: 0;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5;
 }
 
 #wombat .cj-profile__drawer-content .profile_field > label {
