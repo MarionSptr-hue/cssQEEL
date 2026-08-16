@@ -5045,9 +5045,17 @@ html[data-color-scheme="light"]
     cursor: pointer;
 }
 
+#wombat .cj-profile__drawer-toggle::-webkit-details-marker {
+    display: none;
+}
+
+#wombat .cj-profile__drawer-toggle::marker {
+    content: "";
+}
+
 #wombat .cj-profile__drawer-toggle small { opacity: .55; }
 
-#wombat .cj-profile__drawer.is-open .cj-profile__drawer-toggle {
+#wombat .cj-profile__drawer[open] .cj-profile__drawer-toggle {
     color: var(--accentClr, #df829b);
     border-color: currentColor;
     border-radius: 10px 10px 0 0;
@@ -5062,7 +5070,7 @@ html[data-color-scheme="light"]
     border-radius: 0 0 10px 10px;
 }
 
-#wombat .cj-profile__drawer.is-open .cj-profile__drawer-content {
+#wombat .cj-profile__drawer[open] .cj-profile__drawer-content {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px 18px;
