@@ -44,7 +44,8 @@
    - VERSION MOBILE
 
    NOUVEAU PROFIL A VOLETS 
-   mini-profil des messages à cinq onglets
+   MINI PROFIL DES MESSAGES A CING ONGLETS BITCH
+   CORRECTIF BITCH
    ========================================================== */
 
 
@@ -5769,5 +5770,18 @@ body:not(.tinder-auto-topic) .post_row .cj-post-profile .post_avatar img {
     max-height: 352px !important;
     object-fit: fill !important;
     border-radius: 5px !important;
+}
+
+/* CORRECTIF BITCH */ 
+
+
+/* Espace entre le mini-profil et le message — sujets ordinaires uniquement. */
+body:not(.tinder-auto-topic) .post_row.post:not(.cj-post-no-profile) {
+    column-gap: 10px !important;
+}
+
+/* Aucun espace résiduel lorsque le profil est masqué dans une annonce. */
+body:not(.tinder-auto-topic) .post_row.post.cj-post-no-profile {
+    column-gap: 0 !important;
 }
 
