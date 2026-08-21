@@ -1805,19 +1805,19 @@ body {
 
 html[data-forum-layout="columns"] {
 
-#c1 { --forum-filler-image: url("https://i.pinimg.com/736x/85/77/80/857780266e539dc89c9efe2300f59c3e.jpg"); }
-#c2 { --forum-filler-image: url("https://i.pinimg.com/736x/66/41/4a/66414a495e7d8bcb282778ba99a34966.jpg"); }
-#c3 { --forum-filler-image: url("https://i.pinimg.com/736x/af/c0/b4/afc0b44e06a1026ae01a80f1d44e6e34.jpg"); }
-#c4 { --forum-filler-image: url("https://i.pinimg.com/1200x/95/4f/05/954f05741e2b25d3fd169bd307d18876.jpg"); }
-#c5 { --forum-filler-image: url("https://i.pinimg.com/736x/24/f1/e0/24f1e0b5e293c7f6fcbca45becb01180.jpg"); }
-#c6 { --forum-filler-image: url("https://i.pinimg.com/736x/37/3c/ba/373cba842760333de889333e7e08255f.jpg"); }
+#c1 { --forum-filler-image: url("https://i.postimg.cc/hjyn3QSf/cat1.png"); }
+#c2 { --forum-filler-image: url("https://i.postimg.cc/bJN8T9j1/cat2.png"); }
+#c3 { --forum-filler-image: url("https://i.postimg.cc/fL2sgSwj/cat3.png"); }
+#c4 { --forum-filler-image: url("https://i.postimg.cc/fL2sgSw5/cat4.png"); }
+#c5 { --forum-filler-image: url("https://i.postimg.cc/26cYXLzt/cat5.png"); }
+#c6 { --forum-filler-image: url("https://i.postimg.cc/C1P06nFX/cat6-2.png"); }
 
-&[data-color-scheme="dark"] #c1 { --forum-filler-image: url("https://i.pinimg.com/1200x/09/09/34/090934a491c6a0cbeae34eb78d2f3106.jpg"); }
-&[data-color-scheme="dark"] #c2 { --forum-filler-image: url("https://i.pinimg.com/736x/7f/40/73/7f4073f459c5e08a4a52b55a66969b87.jpg"); }
-&[data-color-scheme="dark"] #c3 { --forum-filler-image: url("https://i.pinimg.com/736x/3b/f2/26/3bf226f3e3557e0b9dad74d011bac865.jpg"); }
-&[data-color-scheme="dark"] #c4 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
-&[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
-&[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.pinimg.com/736x/a0/29/41/a0294182f52d07cf789e400d966b6e62.jpg"); }
+&[data-color-scheme="dark"] #c1 { --forum-filler-image: url("https://i.postimg.cc/XJHWDBVX/cat1-2.png"); }
+&[data-color-scheme="dark"] #c2 { --forum-filler-image: url("https://i.postimg.cc/9M82NwW0/cat2-2.png"); }
+&[data-color-scheme="dark"] #c3 { --forum-filler-image: url("https://i.postimg.cc/MTPwrfW1/cat3-2.png"); }
+&[data-color-scheme="dark"] #c4 { --forum-filler-image: url("https://i.postimg.cc/9M82NwWp/cat4-2.png"); }
+&[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.postimg.cc/6q8Ks63c/cat6.png"); }
+&[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.postimg.cc/j2DTVq5F/cat7.png"); }
 
 /* GRILLE */
 
